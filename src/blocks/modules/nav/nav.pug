@@ -1,0 +1,18 @@
+.nav
+    .nav__logo
+        +logo()
+    .nav__info
+        button.btn.btn_small.btn_primary.nav__btn Оставить заявку
+        ul.nav__socials
+            li
+                a.nav__social(href="#" target="_blank")
+                    +icon('socials-house', 'icon-social')
+            li
+                a.nav__social(href="#" target="_blank")
+                    +icon('socials-inst', 'icon-social')
+            li
+                a.nav__social(href="#" target="_blank")
+                    +icon('socials-whatsapp', 'icon-social')
+        .nav__contacts
+            a.nav__contacts-link.h6(href="tel:+79035874577") 8 (903) 587 45 77
+            a.nav__contacts-link.small.link(href="mailto:info@andruban.ru") info@andruban.ru

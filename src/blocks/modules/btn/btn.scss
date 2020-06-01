@@ -1,0 +1,86 @@
+.btn {
+    text-align: center;
+    border: {
+        width: rem(1);
+        style: solid;
+    }
+    transition: {
+        property: color, background-color, border-color, transform;
+        duration: $duration;
+    }
+    &_wide {
+        width: 100%;
+    }
+    &_primary {
+        color: $light;
+        background-color: $primary;
+        border-color: $primary;
+
+        &:hover {
+            color: $primary;
+            background-color: transparent;
+        }
+    }
+    &_transparent {
+        &_primary {
+            color: $primary;
+            .btn__icon {
+                border-color: $primary;
+                stroke: $primary;
+            }
+
+            &:hover {
+                .btn__icon {
+                    background-color: $primary;
+                    stroke: $light;
+                }
+            }
+        }
+        &_light {
+            color: $light;
+            .btn__icon {
+                border-color: $light;
+                stroke: $light;
+            }
+
+            &:hover {
+                .btn__icon {
+                    background-color: $light;
+                    stroke: $dark;
+                }
+            }
+        }
+    }
+    &_small {
+        padding: rem(6) rem(16);
+    }
+    &_large {
+        padding: rem(23) rem(20);
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+    &_rect {
+        display: flex;
+        align-items: center;
+        border: 0;
+        background: transparent;
+
+        .btn__icon {
+            padding: rem(18);
+            width: rem(70);
+            height: rem(70);
+            margin-right: rem(20);
+            border: {
+                width: rem(1);
+                style: solid;
+            }
+            transition: {
+                property: border-color, stroke, background-color;
+                duration: $duration;
+            };
+        }
+    }
+    &_uppercase {
+        text-transform: uppercase;
+    }
+}

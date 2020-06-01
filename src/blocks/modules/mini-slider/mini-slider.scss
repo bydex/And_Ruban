@@ -1,0 +1,28 @@
+.mini-slider {
+    position: relative;
+    z-index: 2;
+
+    &__body {
+        margin-bottom: rem(20);
+    }
+    &__control {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: rem(30);
+    }
+    &__pagination {
+        text-align: center;
+    }
+    &__title {
+        margin-bottom: rem(15);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__subtitle {
+        margin-bottom: rem(35);
+        text-transform: uppercase;
+    }
+    &__description {
+        line-height: 156%;
+    }
+}

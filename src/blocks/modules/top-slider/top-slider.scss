@@ -1,0 +1,59 @@
+.top-slider {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    &_left {
+        margin-left: calc(#{$atom} + #{rem(45)});
+    }
+
+    &__footer {
+        margin-top: auto;
+    }
+    &__control {
+        display: flex;
+        width: fit-content;
+    }
+    &__pagination {
+        margin-left: rem(15);
+        margin-right: rem(15);
+    }
+    &__description {
+        margin-bottom: rem(100);
+    }
+    &__btn {
+        margin-bottom: rem(25);
+    }
+    &__control {
+        margin-bottom: rem(25);
+    }
+    .swiper-wrapper {
+        height: auto;
+    }
+    .swiper-slide {
+        picture {
+            position: relative;
+            display: block;
+            padding-bottom: 60%;
+        }
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .swiper-border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        box-shadow:inset 0 0 0 rem(2) $primary;
+        transition: {
+            property: transform;
+            duration: $duration;
+        }
+        pointer-events: none;
+    }
+}

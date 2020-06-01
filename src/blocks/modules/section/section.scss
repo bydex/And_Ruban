@@ -1,0 +1,119 @@
+.section {
+    &_create {
+        .section__title {
+            margin-top: rem(60);
+            margin-bottom: rem(70);
+        }
+    }
+
+    &__col {
+        @include col();
+
+        &_left {
+            @include size(5);
+        }
+        &_right {
+            @include size(7);
+        }
+        &_flex {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &_light {
+        color: $secondary;
+        background-color: $light;
+
+        svg {
+            fill: $secondary;
+        }
+    }
+    &_dark {
+        color: $light;
+        background-color: $secondary;
+
+        svg {
+            fill: $light;
+        }
+    }
+
+    &__wrapper {
+        @include container();
+        position: relative;
+        z-index: 4;
+        height: 100%;
+        max-height: rem(1080);
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    &__row {
+        @include row-flex();
+        height: 100%;
+
+        .section_column & {
+            flex-direction: column;
+        }
+    }
+    &__description {
+        @include col();
+        @include shift-left(1);
+        @include size(5);
+        margin-bottom: rem(45);
+    }
+    &__title {
+        margin-bottom: rem(50);
+    }
+    &__btn {
+        @include col();
+        @include size(4);
+    }
+    &__bg-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 78%;
+
+        &_top {
+            top:0;
+        }
+        &_bottom {
+            bottom:0;
+        }
+    }
+    &__bg-inner {
+        position: relative;
+    }
+    &__bg {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 65%;
+        transition: {
+            property: filter;
+            duration: $duration;
+        };
+
+        &_grayscale {
+            filter: grayscale(100%);
+            &:hover {
+                filter: grayscale(0);
+            }
+        }
+        &_right {
+            margin-left: auto;
+        }
+    }
+    &__bg-garant {
+        @include container();
+        position: absolute;
+        bottom: rem(65);
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        pointer-events: none;
+    }
+}

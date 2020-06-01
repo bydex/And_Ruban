@@ -1,0 +1,65 @@
+.card {
+    // @include col();
+    position: relative;
+    // width: col(5.5);
+
+    &_top {
+        &_50 {
+            margin-top: calc(83.33vh / 2 * -1);
+        }
+    }
+
+    &__inner {
+        position: relative;
+        height: 83.33vh;
+        background: {
+            color: $light;
+            position: center;
+            size: cover;
+        };
+        .card_left & {
+            margin-left: -14.89%;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: rem(2);
+            display: flex;
+
+
+            .card_left & {
+                margin-left: rem(-60);
+            }
+            .card_top_50 & {
+                top: 14.44%;
+                background-image: linear-gradient(90deg, $light 14.44%, $dark 100%);
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: $light, $alpha: .4);
+        }
+    }
+    &__title {
+        position: absolute;
+        right: calc(100% + #{rem(12)});
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        writing-mode: vertical-rl;
+        transform: scale(-1, -1);
+        text-transform: uppercase;
+    }
+    &__wrapper {
+        margin-right: calc(14.89% + #{rem(30)});
+    }
+    &__mini-slider {
+        margin-top: rem(55);
+    }
+}

@@ -69,7 +69,11 @@
         "yargs": "~13.2.4"
     },
     "dependencies": {
-        "smart-grid": "^2.1.2"
+        "fullpage": "^1.5.1",
+        "fullpage.js": "^3.0.8",
+        "jquery": "^3.5.1",
+        "smart-grid": "^2.1.2",
+        "swiper": "^5.4.1"
     },
     "husky": {
         "hooks": {

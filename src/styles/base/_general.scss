@@ -1,7 +1,47 @@
+::selection {
+    color: $light;
+    background-color: $primary;
+}
+
 h1, h2, h3, h4, h5, h6, ul {
     margin: 0;
     padding: 0;
 }
+
+a {
+    color: inherit;
+    fill: inherit;
+    text-decoration: none;
+    transition: {
+        property: color;
+        duration: $duration;
+    }
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    line-height: normal;
+    color: inherit;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+li {
+    padding: 0;
+    margin: 0;
+}
+
 
 .container {
     @include container();
@@ -9,4 +49,167 @@ h1, h2, h3, h4, h5, h6, ul {
     @include md(max-width, rem(690));
     @include lg(max-width, rem(930));
     @include xl(max-width, rem(1110));
+}
+html {
+    box-sizing: border-box;
+}
+body, html {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+.h1 {
+    font-size: rem($h1);
+    font-weight: 700;
+}
+.h2 {
+    margin-bottom: rem(7);
+    font-size: rem($h2);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+}
+.h3 {
+    font-size: rem($h3);
+}
+.h4 {
+    font-size: rem($h4);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+.h5 {
+    font-size: rem($h5);
+    font-weight: 400;
+}
+.h6 {
+    font-size: rem($h6);
+}
+.p {
+    margin: {
+        top: 0;
+        bottom: rem(15);
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &_font {
+        &_light {
+            font-weight: 300;
+            line-height: 156%;
+        }
+    }
+}
+.small {
+    font-size: rem($small);
+}
+
+.swiper-wrapper {
+    transition-timing-function: ease;
+}
+#fullpage {
+    height: 100vh;
+}
+
+
+.link {
+    text-decoration-line: underline;
+    text-transform: lowercase;
+    transition: {
+        property: color;
+        duration: $duration;
+    };
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+
+.icon-social {
+    max-width: rem(20);
+    max-height: rem(20);
+    fill: inherit;
+    transition: {
+        property: fill;
+        duration: $duration;
+    }
+
+    &:hover {
+        fill: $primary;
+    }
+}
+.icon-garant {
+    min-width: rem(347);
+    max-width: rem(347);
+    min-height: rem(347);
+    max-height: rem(347);
+    margin: rem(-30);
+}
+
+
+
+
+
+
+.title {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+
+    &_card {
+        @include shift-left(-4);
+    }
+}
+
+.mini-slider {
+
+}
+
+
+
+.arrow {
+    &-h {
+        max-width: rem(30);
+        max-height: rem(12);
+    }
+    &-v {
+        max-width: rem(12);
+        max-height: rem(30);
+    }
+}
+
+
+.light-mask {
+    position: relative;
+    z-index: 1;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: $light, $alpha: .75);
+    }
+}
+.dark-mask {
+    position: relative;
+    z-index: 1;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: $dark, $alpha: .75);
+    }
 }

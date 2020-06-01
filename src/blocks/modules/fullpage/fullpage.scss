@@ -1,0 +1,88 @@
+.fullpage {
+    &__control {
+        @include container();
+        position: fixed;
+        top: 0;
+        left: 50%;
+        z-index: 999;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    &__control-inner {
+        position: absolute;
+        top: 50%;
+        right: rem(-100);
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        pointer-events: all;
+    }
+    &__navigation {
+        z-index: 999;
+        color: $primary;
+    }
+    &__arrow {
+        display: block;
+        padding: rem(7) rem(10);
+
+        .fullpage_theme_light & {
+            stroke: $light;
+        }
+        stroke: $dark;
+
+        &_down {
+            stroke: $primary;
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: rem(180);
+        counter-reset: fullpage;
+
+        .swiper-pagination-bullet {
+            position: relative;
+            width: rem(2);
+            height: rem(30);
+            background-color: $light;
+            border-radius: 0;
+            outline: none;
+            opacity: 1;
+            transition: {
+                property: background-color;
+                duration: $duration;
+            }
+
+            &:after {
+                counter-increment: fullpage;
+                content: "0" counter(fullpage);
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                transform: translate(#{rem(0)},-50%);
+                color: $light;
+                font-weight: 30;
+                opacity: 0;
+                transition: {
+                    property: color, opacity, transform;
+                    duration: $duration;
+                }
+            }
+            &-active, &:hover {
+                background-color: $primary;
+                &:after {
+                    color: $primary;
+                    opacity: 1;
+                    transform: translate(#{rem(15)},-50%);
+                }
+            }
+        }
+    }
+}

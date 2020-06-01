@@ -1,0 +1,58 @@
+%nav-item {
+    margin: {
+        left: rem(20);
+        right: rem(20);
+    }
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: {
+        top: rem(30);
+        bottom: rem(3)
+    }
+    margin-bottom: rem(55);
+    border-bottom: {
+        width: rem(1);
+        color: $gray;
+        style: solid;
+    }
+
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        margin: {
+            left: rem(-20);
+            right: rem(-20);
+        }
+    }
+    &__btn {
+        @extend %nav-item;
+    }
+    &__socials {
+        display: flex;
+        margin: {
+            left: rem(10);
+            right: rem(10);
+        }
+    }
+    &__social {
+        display: inline-block;
+        margin: {
+            left: rem(10);
+            right: rem(10);
+        }
+    }
+    &__contacts {
+        @extend %nav-item;
+        display: flex;
+        flex-direction: column;
+    }
+    &__contacts-link {
+        margin-bottom: rem(7);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
