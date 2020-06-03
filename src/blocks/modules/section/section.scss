@@ -1,4 +1,55 @@
 .section {
+    &_bg {
+        &_colored {
+            .top-slider {
+                color: $light;
+
+                .swiper-slide {
+                    &:after {
+                        background-color: rgba($color: $secondary, $alpha: .75);
+                    }
+
+                    &-thumb-active {
+                        filter: grayscale(0);
+                        &:after {
+                            background-color: transparent;
+                        }
+                    }
+                }
+                &__btn {
+                    color: $light;
+
+                    .btn__icon {
+                        border-color: $light;
+                        stroke: $light;
+                    }
+                    &:hover {
+                        .btn__icon {
+                            background-color: $light;
+                            stroke: $secondary;
+                        }
+                    }
+                }
+                &__arrow {
+                    &_prev, &_next {
+                        svg {
+                            stroke: $light;
+                        }
+                    }
+                }
+            }
+            .section__bg-inner .section__bg,
+            .swiper-slide-active .sectoin__bg {
+                filter: grayscale(0);
+            }
+            .section__bg {
+                &:after {
+                    background-color: rgba($color: $secondary, $alpha: .75);
+                }
+            }
+        }
+    }
+
     &_create {
         .section__title {
             margin-top: rem(60);
@@ -103,6 +154,12 @@
         }
         &_right {
             margin-left: auto;
+        }
+        &:after {
+            transition: {
+                property: background-color;
+                duration: $duration;
+            };
         }
     }
     &__bg-garant {

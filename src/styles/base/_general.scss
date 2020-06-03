@@ -177,6 +177,7 @@ body, html {
     &-h {
         max-width: rem(30);
         max-height: rem(12);
+        stroke: $secondary;
     }
     &-v {
         max-width: rem(12);
@@ -197,6 +198,10 @@ body, html {
         top: 0;
         left: 0;
         background-color: rgba($color: $light, $alpha: .75);
+        transition: {
+            property: background-color;
+            duration: $duration;
+        };
     }
 }
 .dark-mask {
@@ -210,6 +215,10 @@ body, html {
         height: 100%;
         top: 0;
         left: 0;
-        background-color: rgba($color: $dark, $alpha: .75);
+        background-color: rgba($color: $secondary, $alpha: .75);
+        transition: {
+            property: background-color;
+            duration: $duration;
+        };
     }
 }

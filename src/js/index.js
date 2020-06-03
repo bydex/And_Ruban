@@ -37,3 +37,29 @@ fullpage.on('init slideChange', function() {
 })
 
 fullpage.init();
+
+
+const backgrounds = document.querySelectorAll(".section__bg");
+
+const getPos = (e) => ({
+  x: e.clientX,
+  y: e.clientY,
+});
+
+document.body.addEventListener("mousemove", (e) => {
+  const mousePos = getPos(e);
+
+  backgrounds.forEach((el) => {
+    const blockConfig = el.getBoundingClientRect();
+    if (
+      mousePos.x > blockConfig.x &&
+      mousePos.x < blockConfig.x + blockConfig.width &&
+      mousePos.y > blockConfig.y &&
+      mousePos.y < blockConfig.y + blockConfig.height
+    ) {
+      el.closest(".section").classList.add("section_bg_colored");
+    } else {
+      el.closest(".section").classList.remove("section_bg_colored");
+    }
+  });
+});

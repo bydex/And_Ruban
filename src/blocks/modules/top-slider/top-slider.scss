@@ -31,7 +31,12 @@
         height: auto;
     }
     .swiper-slide {
+        filter: grayscale(100%);
         cursor: pointer;
+        transition: {
+            property: filter;
+            duration: $duration;
+        }
         picture {
             position: relative;
             display: block;
@@ -43,6 +48,12 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+        }
+        &:hover {
+            filter: grayscale(0);
+            &:after {
+                background-color: transparent;
+            }
         }
     }
     .swiper-border {
@@ -56,5 +67,10 @@
             duration: $duration;
         }
         pointer-events: none;
+    }
+    &__arrow {
+        &_prev, &_next {
+
+        }
     }
 }
