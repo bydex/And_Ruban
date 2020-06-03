@@ -1,17 +1,17 @@
 .tabs {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
     margin: {
-        left: rem(-20);
         right: rem(-20);
+        left: rem(-20);
     }
 
     &__item {
         margin: {
-            left: rem(20);
             right: rem(20);
-            bottom: rem(14)
+            bottom: rem(14);
+            left: rem(20);
         }
         padding: {
             top: rem(3);
@@ -20,6 +20,11 @@
         text-transform: uppercase;
         font-weight: 300;
         cursor: pointer;
+
+        transition: {
+            property: color;
+            duration: $duration;
+        };
     }
     &__underline {
         position: absolute;

@@ -1,61 +1,4 @@
 .section {
-    &_bg {
-        &_colored {
-            .top-slider {
-                color: $light;
-
-                .swiper-slide {
-                    &:after {
-                        background-color: rgba($color: $secondary, $alpha: .75);
-                    }
-
-                    &-thumb-active {
-                        filter: grayscale(0);
-                        &:after {
-                            background-color: transparent;
-                        }
-                    }
-                }
-                &__btn {
-                    color: $light;
-
-                    .btn__icon {
-                        border-color: $light;
-                        stroke: $light;
-                    }
-                    &:hover {
-                        .btn__icon {
-                            background-color: $light;
-                            stroke: $secondary;
-                        }
-                    }
-                }
-                &__arrow {
-                    &_prev, &_next {
-                        svg {
-                            stroke: $light;
-                        }
-                    }
-                }
-            }
-            .section__bg-inner .section__bg,
-            .swiper-slide-active .sectoin__bg {
-                filter: grayscale(0);
-            }
-            .section__bg {
-                &:after {
-                    background-color: rgba($color: $secondary, $alpha: .75);
-                }
-            }
-        }
-    }
-
-    &_create {
-        .section__title {
-            margin-top: rem(60);
-            margin-bottom: rem(70);
-        }
-    }
 
     &__col {
         @include col();
@@ -69,22 +12,6 @@
         &_flex {
             display: flex;
             flex-direction: column;
-        }
-    }
-    &_light {
-        color: $secondary;
-        background-color: $light;
-
-        svg {
-            fill: $secondary;
-        }
-    }
-    &_dark {
-        color: $light;
-        background-color: $secondary;
-
-        svg {
-            fill: $light;
         }
     }
 
@@ -127,10 +54,10 @@
         height: 78%;
 
         &_top {
-            top:0;
+            top: 0;
         }
         &_bottom {
-            bottom:0;
+            bottom: 0;
         }
     }
     &__bg-inner {
@@ -139,8 +66,15 @@
     &__bg {
         display: block;
         position: relative;
-        overflow: hidden;
         width: 65%;
+        overflow: hidden;
+        will-change: filter;
+        &:after {
+            transition: {
+                property: background-color;
+                duration: $duration;
+            };
+        }
         transition: {
             property: filter;
             duration: $duration;
@@ -155,22 +89,88 @@
         &_right {
             margin-left: auto;
         }
-        &:after {
-            transition: {
-                property: background-color;
-                duration: $duration;
-            };
-        }
     }
     &__bg-garant {
         @include container();
+        display: flex;
+        justify-content: flex-end;
         position: absolute;
         bottom: rem(65);
         left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: flex-end;
         width: 100%;
+        transform: translateX(-50%);
         pointer-events: none;
+    }
+    &_bg {
+        &_colored {
+            .top-slider {
+                color: $light;
+
+                .swiper-slide {
+                    &:after {
+                        background-color: rgba($color: $secondary, $alpha: .75);
+                    }
+
+                    &-thumb-active {
+                        filter: grayscale(0);
+                        &:after {
+                            background-color: transparent;
+                        }
+                    }
+                }
+                &__btn {
+                    color: $light;
+                    &:hover {
+                        .btn__icon {
+                            background-color: $light;
+                            stroke: $secondary;
+                        }
+                    }
+
+                    .btn__icon {
+                        border-color: $light;
+                        stroke: $light;
+                    }
+                }
+                &__arrow {
+                    &_prev, &_next {
+                        svg {
+                            stroke: $light;
+                        }
+                    }
+                }
+            }
+            .section__bg-inner > .section__bg, .swiper-slide-active .section__bg {
+                filter: grayscale(0);
+            }
+            .section__bg {
+                &:after {
+                    background-color: rgba($color: $secondary, $alpha: .75);
+                }
+            }
+        }
+    }
+
+    &_create {
+        .section__title {
+            margin-top: rem(60);
+            margin-bottom: rem(70);
+        }
+    }
+    &_light {
+        color: $secondary;
+        background-color: $light;
+
+        svg {
+            fill: $secondary;
+        }
+    }
+    &_dark {
+        color: $light;
+        background-color: $secondary;
+
+        svg {
+            fill: $light;
+        }
     }
 }

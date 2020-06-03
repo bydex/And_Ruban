@@ -178,10 +178,20 @@ body, html {
         max-width: rem(30);
         max-height: rem(12);
         stroke: $secondary;
+
+        transition: {
+            property: stroke;
+            duration: $duration;
+        };
     }
     &-v {
         max-width: rem(12);
         max-height: rem(30);
+
+        transition: {
+            property: stroke;
+            duration: $duration;
+        };
     }
 }
 
