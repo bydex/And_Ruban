@@ -1,15 +1,14 @@
 import Swiper from 'swiper';
 
-const cardSlider = new Swiper(".card-slider", {
+const cardThumbs = new Swiper("#make-card-thumb", {
+  allowTouchMove: false,
+});
+const cardSlider = new Swiper("#make-card-slider", {
   navigation: {
-    nextEl: ".card-slider__arrow_next",
+    nextEl: "#make-card-slider .card-slider__arrow_next",
   },
-  pagination: {
-    el: ".section_make .tabs",
-    clickable: true,
-    bulletActiveClass: "tabs__item_active",
-    renderBullet: function (index, className) {
-      return `<li class="tabs__item swiper-pagination-bullet"><span data-tabs-item></span></д>`;
-    },
+  thumbs: {
+    swiper: cardThumbs,
   },
+  loop: true,
 });

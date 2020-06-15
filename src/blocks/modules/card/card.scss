@@ -89,8 +89,6 @@
         }
     }
     &__wrapper {
-        width: 100%;
-
         .card_left & {
             margin-right: calc(14.89% + #{rem(30)});
         }

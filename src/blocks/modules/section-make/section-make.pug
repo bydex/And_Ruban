@@ -43,15 +43,16 @@ section.section.section_light.swiper-slide.section_bottom(class="section_make")
                     .title.section__title
                         h2.h2 Как мы создаем мебель
                         h4.h4 Простые шаги к вашей новой реальности
-                    ul.tabs.tabs_numbers.tabs_col.section__tabs(data-tabs)
-                        each index, val in ['Заявка', 'Предварительный <br>расчет', 'Замер', 'Проектирование', 'Производство', 'Сборка и <br>монтаж']
-                            if val === 0
-                                li.tabs__item.tabs__item_active
-                                    span(data-tabs-item) !{index}
-                            else
-                                li.tabs__item
-                                    span(data-tabs-item) !{index}
-                        li.tabs__underline(data-tabs-underline)
+                    ul.tabs.tabs_numbers.tabs_col.section__tabs.swiper-container(data-tabs id="make-card-thumb")
+                        .swiper-wrapper
+                            each index, val in ['Заявка', 'Предварительный <br>расчет', 'Замер', 'Проектирование', 'Производство', 'Сборка и <br>монтаж']
+                                if val === 0
+                                    li.tabs__item.tabs__item_active.swiper-slide
+                                        span(data-tabs-item) !{index}
+                                else
+                                    li.tabs__item.swiper-slide
+                                        span(data-tabs-item) !{index}
+                            li.tabs__underline(data-tabs-underline)
                 div
                     button.btn.btn_transparent_primary.btn_play.btn_play_dark
                         +icon('play', 'btn__icon')
@@ -60,7 +61,7 @@ section.section.section_light.swiper-slide.section_bottom(class="section_make")
                 .card.card_right.card_bottom_30
                     .card__inner(style="background-image:url(./img/card-img-4.jpg")
                         .card__title andruban — мебель  иных реальностей
-                        .card__wrapper.swiper-container.card-slider
+                        .card__wrapper.swiper-container.card-slider(id="make-card-slider")
                             ul.swiper-wrapper.card-slider__swiper
                                 each val, index in makeSlider
                                     li.swiper-slide

@@ -10,6 +10,13 @@
     &_col {
         .tabs__item {
             width: calc(50% - #{rem(40)});
+
+            &.swiper-slide {
+                position: static;
+                width: calc(50% - #{rem(40)}) !important;
+                height: auto;
+                box-sizing: border-box;
+            }
         }
     }
 
@@ -95,5 +102,12 @@
             property: width, transform;
             duration: $duration;
         }
+    }
+
+    .swiper-wrapper {
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        transform: none !important;
     }
 }
