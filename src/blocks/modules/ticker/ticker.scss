@@ -1,0 +1,15 @@
+.ticker {
+    margin-bottom: rem(40);
+    overflow: visible;
+    white-space: nowrap;
+    color: $primary;
+
+    &__inner {
+        display: inline-block;
+        width: auto;
+        line-height: 80%;
+    }
+    .swiper-wrapper {
+        transition-timing-function: linear;
+    }
+}

@@ -1,0 +1,79 @@
+-
+    const makeSlider = [
+        {
+            icon: 'request',
+            title: 'Заявка',
+            desc: 'Всё просто — вы оставляете заявку на сайте и мы связываемся с вами в течении дня. Или вы звоните напрямую по номеру  телефона и мы договариваемся о встрече. Также вы можете связаться с нами по e-mail.'
+        },
+        {
+            icon: 'calculator',
+            title: 'Предварительный расчет',
+            desc: 'Всё просто — вы оставляете заявку на сайте и мы связываемся с вами в течении дня. Или вы звоните напрямую по номеру  телефона и мы договариваемся о встрече. Также вы можете связаться с нами по e-mail.',
+            viewbox: '0 0 40 55',
+            width: '55px',
+        },
+        {
+            icon: 'ruler',
+            title: 'Замер',
+            desc: ''
+        },
+        {
+            icon: 'projecting',
+            title: 'Проектирование',
+            desc: ''
+        },
+        {
+            icon: 'tools',
+            title: 'Производство',
+            desc: ''
+        },
+        {
+            icon: 'give-home',
+            title: 'Сборка и монтаж',
+            desc: ''
+        },
+    ];
+
+section.section.section_light.swiper-slide.section_bottom(class="section_make")
+    .section__wrapper
+        .section__row
+            .section__col.section__col_right.section__col_flex
+                .section__row
+                    p.p.p_font_light.section__description Процесс заказа отлажен, всё сделано для вашего удобства. Наш опыт позволяет нам оперативно работать на каждом этапе, гарантирую сроки производства и надлежащее качество нашей мебели.
+                    .title.section__title
+                        h2.h2 Как мы создаем мебель
+                        h4.h4 Простые шаги к вашей новой реальности
+                    ul.tabs.tabs_numbers.tabs_col.section__tabs(data-tabs)
+                        each index, val in ['Заявка', 'Предварительный <br>расчет', 'Замер', 'Проектирование', 'Производство', 'Сборка и <br>монтаж']
+                            if val === 0
+                                li.tabs__item.tabs__item_active
+                                    span(data-tabs-item) !{index}
+                            else
+                                li.tabs__item
+                                    span(data-tabs-item) !{index}
+                        li.tabs__underline(data-tabs-underline)
+                div
+                    button.btn.btn_transparent_primary.btn_play.btn_play_dark
+                        +icon('play', 'btn__icon')
+                        span.btn__title Видеоролик <br>«Процесса заказа»
+            .section__col.section__col_left
+                .card.card_right.card_bottom_30
+                    .card__inner(style="background-image:url(./img/card-img-4.jpg")
+                        .card__title andruban — мебель  иных реальностей
+                        .card__wrapper.swiper-container.card-slider
+                            ul.swiper-wrapper.card-slider__swiper
+                                each val, index in makeSlider
+                                    li.swiper-slide
+                                        svg(class=`card-slider__icon` viewBox=val.viewbox width=val.width)
+                                            use(xlink:href=`./img/sprites/sprite.svg#make-${val.icon}`)
+                                        h3.h3.card-slider__title= val.title
+                                        p.card-slider__description.p.p_font_light Всё просто — вы оставляете заявку на сайте и мы связываемся с вами в течении дня. Или вы звоните напрямую по номеру  телефона и мы договариваемся о встрече. Также вы можете связаться с нами по e-mail.
+                            button.btn.btn_large.btn_primary.btn_wide.h6 Онлайн расчет в Whatsapp
+                            .card-slider__control
+                                button.card-slider__arrow.card-slider__arrow_next
+                                    +icon('arrow-right', 'arrow-h')
+    .section__bg-wrapper.section__bg-wrapper_bottom
+        .section__bg-inner.swiper-wrapper
+            picture.section__bg.section__bg_grayscale.section__bg_left.section__bg_top.light-mask
+                source(srcset=`./img/section-4.webp`)
+                img(src=`./img/section-4.jpg` alt="")

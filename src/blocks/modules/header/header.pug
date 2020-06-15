@@ -1,0 +1,14 @@
+header.section.section_dark.section_column.swiper-slide(class=`section_header`)
+    .section__bg-wrapper
+        .section__bg-inner
+            picture.section__bg.section__bg_grayscale.section__bg_right.dark-mask
+                source(srcset="./img/header.webp")
+                img(src="./img/header.jpg" alt="")
+            .section__bg-garant
+                img(src="./img/sprites/sprite.svg#garant", class="section__bg-icon icon-garant" alt="")
+    .section__wrapper
+        +nav()
+        .section__row
+            p.p.p_font_light.section__description Мы воплощаем любой смелый дизайн. Производим мебель любых стилей. Работаем по Москве и Московской области. Более 40 проектов на houzz.ru.
+            h2.h2.section__title Создаем мебель иных реальностей
+            button.btn.btn_large.btn_primary.h6.section__btn рассчитать стоимость

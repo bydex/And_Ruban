@@ -8,6 +8,7 @@
         property: color, background-color, border-color, transform;
         duration: $duration;
     }
+    box-sizing: border-box;
     &_wide {
         width: 100%;
     }
@@ -63,7 +64,7 @@
         display: flex;
         align-items: center;
         border: 0;
-        background: transparent;
+        background-color: transparent;
 
         .btn__icon {
             padding: rem(18);
@@ -78,6 +79,48 @@
                 property: border-color, stroke, background-color;
                 duration: $duration;
             };
+        }
+    }
+    &_play {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        color: inherit;
+        border: 0;
+        background-color: transparent;
+
+        .btn__icon {
+            width: rem(72);
+            height: rem(72);
+            margin-right: rem(20);
+            background-color: transparent;
+            stroke: none;
+            border: none;
+            transition: {
+                property: stroke, fill;
+                duration: $duration;
+            };
+        }
+        &:hover .btn__icon {
+            background-color: transparent;
+            stroke: transparent;
+        }
+        &_light {
+            .btn__icon {
+                fill: $light;
+            }
+        }
+        &_dark {
+            .btn__icon {
+                fill: $secondary;
+            }
+            &:hover {
+                color: $primary;
+
+                .btn__icon {
+                    fill: $primary;
+                }
+            }
         }
     }
     &_uppercase {

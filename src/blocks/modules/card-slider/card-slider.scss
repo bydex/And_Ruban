@@ -1,0 +1,22 @@
+.card-slider {
+    &__icon {
+        max-width: rem(70);
+        max-height: rem(60);
+        margin-bottom: rem(30);
+    }
+    &__title {
+        margin-bottom: rem(25);
+        font-weight: 300;
+    }
+    &__description {
+    }
+    &__swiper {
+        margin-bottom: rem(30);
+    }
+    &__control {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+    }
+}
