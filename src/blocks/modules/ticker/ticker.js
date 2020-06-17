@@ -1,9 +1,9 @@
-import Swiper from 'swiper';
+import Swiper from "swiper";
 
-const swiper = new Swiper('.ticker', {
+new Swiper(".ticker", {
     slidesPerView: 1,
     spaceBetween: 30,
-    slidesPerView: 'auto',
+    // slidesPerView: 'auto',
     freeMode: true,
     loop: true,
     autoplay: {

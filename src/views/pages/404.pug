@@ -1,1 +1,13 @@
-h3 Page not found
+extends ../layouts/default
+include ../../blocks/modules/404/404
+
+block variables
+    - const error = true
+
+block content
+    +404
+		
+
+block scripts
+    script(src="js/main.js")
+    script(src="js/vendor.js")

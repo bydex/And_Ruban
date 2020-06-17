@@ -32,16 +32,19 @@ html(lang="ru")
 		link(rel="stylesheet" href="styles/main.css")
 	body
 		block header
-		#fullpage.fullpage
-			.swiper-wrapper
-				block content
-			.fullpage__control
-				.fullpage__control-inner
-					.fullpage__pagination
-					.fullpage__navigation
-						button.fullpage__arrow.fullpage__arrow_up
-							+icon('arrow-up', 'arrow-v')
-						button.fullpage__arrow.fullpage__arrow_down
-							+icon('arrow-down', 'arrow-v')
+		if error === true
+			block content
+		else
+			#fullpage.fullpage
+				.swiper-wrapper
+					block content
+				.fullpage__control
+					.fullpage__control-inner
+						.fullpage__pagination
+						.fullpage__navigation
+							button.fullpage__arrow.fullpage__arrow_up
+								+icon('arrow-up', 'arrow-v')
+							button.fullpage__arrow.fullpage__arrow_down
+								+icon('arrow-down', 'arrow-v')
 		block footer
 		block scripts

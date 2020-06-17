@@ -67,6 +67,9 @@ body, html {
 .h1 {
     font-size: rem($h1);
     font-weight: 700;
+    &_lite {
+        color: $light;
+    }
 }
 .h2 {
     margin-bottom: rem(7);
