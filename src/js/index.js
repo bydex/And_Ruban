@@ -23,6 +23,13 @@ let fullpage = new Swiper('#fullpage', {
   init: false,
 });
 
+
+fullpage.on('init', function() {
+  console.log(this.slides.length);
+  if (this.slides.length <= 1) {
+    document.querySelector("#fullpage").classList.add('fullpage_disabled');
+  }
+})
 fullpage.on('init slideChange', function() {
   let index   = this.realIndex,
       isEven  = index % 2,

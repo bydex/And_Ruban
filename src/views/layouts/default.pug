@@ -31,20 +31,16 @@ html(lang="ru")
 		link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet")
 		link(rel="stylesheet" href="styles/main.css")
 	body
-		block header
-		if error === true
-			block content
-		else
-			#fullpage.fullpage
-				.swiper-wrapper
-					block content
-				.fullpage__control
-					.fullpage__control-inner
-						.fullpage__pagination
-						.fullpage__navigation
-							button.fullpage__arrow.fullpage__arrow_up
-								+icon('arrow-up', 'arrow-v')
-							button.fullpage__arrow.fullpage__arrow_down
-								+icon('arrow-down', 'arrow-v')
-		block footer
-		block scripts
+		#fullpage.fullpage
+			.swiper-wrapper
+				block content
+			.fullpage__control
+				.fullpage__control-inner
+					.fullpage__pagination
+					.fullpage__navigation
+						button.fullpage__arrow.fullpage__arrow_up
+							+icon('arrow-up', 'arrow-v')
+						button.fullpage__arrow.fullpage__arrow_down
+							+icon('arrow-down', 'arrow-v')
+	block footer
+	block scripts

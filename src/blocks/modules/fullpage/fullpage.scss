@@ -1,4 +1,9 @@
 .fullpage {
+    &_disabled {
+        .fullpage__control {
+            display: none;
+        }
+    }
     &__control {
         @include container();
         position: fixed;
