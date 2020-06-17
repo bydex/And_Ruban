@@ -3,13 +3,13 @@
     overflow: visible;
     white-space: nowrap;
     color: $primary;
+    .swiper-wrapper {
+        transition-timing-function: linear;
+    }
 
     &__inner {
         display: inline-block;
         width: auto;
         line-height: 80%;
-    }
-    .swiper-wrapper {
-        transition-timing-function: linear;
     }
 }
