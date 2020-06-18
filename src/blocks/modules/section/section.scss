@@ -22,7 +22,6 @@
             align-items: center;
         }
     }
-
     &__wrapper {
         @include container();
         position: relative;
@@ -271,6 +270,27 @@
             @include size(10);
             position: relative;
         }
+        .card__inner {
+            align-items: flex-end;
+            padding-bottom: rem(120);
+        }
+        .section__list {
+            margin-bottom: rem(20);
+        }
+        .section__col-inner {
+            @include shift-left(1.5);
+        }
+        .section__col_right {
+            margin-top: rem(70);
+        }
+    }
+    &__bests {
+        @include row-flex();
+        margin-bottom: rem(40);
+    }
+    &__best {
+        @include col();
+        width: rem(70);
     }
     &__ticker {
         width: 100%;
@@ -304,5 +324,16 @@
                 bottom: rem(20);
             };
         }
+    }
+    &__logo-row {
+        @include row-flex();
+        align-items: center;
+    }
+    &__logo-wrapper {
+        @include col();
+    }
+    &__logo-button {
+        @include col();
+        flex-grow: 1;
     }
 }

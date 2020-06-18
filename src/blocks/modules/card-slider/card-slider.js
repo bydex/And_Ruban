@@ -15,4 +15,7 @@ const cardSlider = new Swiper("#make-card-slider", {
 
 const cardSlider2 = new Swiper("#make-card-slider2", {
   loop: true,
+  navigation: {
+    nextEl: "#make-card-slider2 .card-slider__arrow_next",
+  },
 });

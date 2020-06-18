@@ -240,3 +240,18 @@ body, html {
         };
     }
 }
+
+
+.list {
+    &__item {
+        @include col();
+        @include size(5);
+        margin-bottom: rem(12);
+    }
+    &__num {
+        margin-right: rem(10);
+        font-size: rem(42);
+        font-weight: 700;
+        color: $primary;
+    }
+}
