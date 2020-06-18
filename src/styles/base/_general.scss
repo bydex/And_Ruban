@@ -107,6 +107,9 @@ body, html {
             font-weight: 300;
             line-height: 156%;
         }
+        &_primary {
+            color: $primary;
+        }
     }
 }
 .small {
@@ -134,7 +137,6 @@ body, html {
     }
 }
 
-
 .icon-social {
     max-width: rem(20);
     max-height: rem(20);
@@ -142,6 +144,11 @@ body, html {
     transition: {
         property: fill;
         duration: $duration;
+    }
+    &_contact {
+        fill: $light;
+        max-width: rem(26);
+        max-height: rem(20);
     }
 
     &:hover {

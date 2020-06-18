@@ -1,0 +1,35 @@
+include ../../../../views/helpers/mixins
+mixin contact()
+    .contact
+        .contact__wrapper
+            .contact__text
+                p.contact__title Свяжитесь с нами по телефону
+                p.contact__subtitle  8 (903) 587 45 77
+                    +icon('socials-viber', 'icon-social icon-social_contact contact__svg')
+            .contact__text
+                p.contact__title Либо напишите на почту
+                p.contact__subtitle.contact__subtitle_border info@andruban.ru
+            .contact__text
+                p.contact__title Или приходите в офис
+                p.contact__subtitle Москва, ул.Планерная 5, офис 101
+        .nav.contact__nav
+            .nav__info
+                ul.nav__socials
+                    li
+                        a.nav__social(href="#" target="_blank")
+                            +icon('socials-inst', 'icon-social icon-social_contact')
+                    li
+                        a.nav__social(href="#" target="_blank")
+                            +icon('socials-facebook', 'icon-social icon-social_contact')
+                    li
+                        a.nav__social(href="#" target="_blank")
+                            +icon('socials-youtube', 'icon-social icon-social_contact')
+                    li
+                        a.nav__social(href="#" target="_blank")
+                            +icon('socials-house', 'icon-social icon-social_contact')
+        .contact__avatar
+            .contact__image-b
+                +picture('', 'avatar', 'jpg', 'webp', 'contact__img')
+            .contact__name
+                p.contact__title Директор компании 
+                p.contact__subtitle Андрей Рубан
