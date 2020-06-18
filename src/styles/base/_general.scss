@@ -89,6 +89,10 @@ body, html {
 .h5 {
     font-size: rem($h5);
     font-weight: 400;
+
+    &_light {
+        font-weight: 300;
+    }
 }
 .h6 {
     font-size: rem($h6);

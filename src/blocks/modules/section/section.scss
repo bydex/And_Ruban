@@ -17,6 +17,10 @@
             display: flex;
             flex-direction: column;
         }
+        &_center {
+            display: flex;
+            align-items: center;
+        }
     }
 
     &__wrapper {
@@ -135,6 +139,7 @@
         bottom: rem(65);
         left: 50%;
         width: 100%;
+        z-index: 1;
         transform: translateX(-50%);
         pointer-events: none;
     }
@@ -187,7 +192,12 @@
             }
         }
     }
-
+    &_header {
+        .section__title {
+            @include col();
+            @include size(9);
+        }
+    }
     &_create {
         .section__title {
             margin-top: rem(60);
@@ -235,6 +245,31 @@
             .btn__icon {
                 fill: $light;
             }
+        }
+    }
+    &_video {
+        .section__title {
+            @include col();
+        }
+        .section__col {
+            @include shift-left(3);
+            @include size(6);
+        }
+        .section__description {
+            @include shift-left(2);
+            @include shift-right(2);
+            width: auto;
+
+            .btn {
+                margin-top: rem(50);
+            }
+        }
+    }
+    &_progress {
+        .section__description {
+            @include shift-left(-2);
+            @include size(10);
+            position: relative;
         }
     }
     &__ticker {

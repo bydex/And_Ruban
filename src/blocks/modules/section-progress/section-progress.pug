@@ -1,0 +1,41 @@
+-
+    const progressSlider = [
+        {
+            icon: 'flag',
+            title: 'Произведено в России',
+        },
+        {
+            icon: 'clip',
+            title: '10 лет гарантии',
+        },
+        {
+            icon: 'exp',
+            title: '10 лет опыта',
+        },
+    ];
+
+
+section.section.section_light.swiper-slide(class=`section_progress`)
+    .section__wrapper
+        .section__row.section__row_fullheight
+            .section__col.section__col_left
+                .card.card_left.card_top_17
+                    .card__inner(style="background-image:url(./img/card-img-6.jpg")
+                        .card__title andruban — мебель  иных реальностей
+                        .card__wrapper.swiper-container.card-slider(id="make-card-slider2")
+                            ul.swiper-wrapper.card-slider__swiper
+                                each val, index in progressSlider
+                                    li.swiper-slide
+                                        svg(class=`card-slider__icon` viewBox=val.viewbox width=val.width)
+                                            use(xlink:href=`./img/sprites/sprite.svg#progress-${val.icon}`)
+                                        h3.h3.card-slider__title= val.title
+                            .card-slider__control
+                                button.card-slider__arrow.card-slider__arrow_next
+                                    +icon('arrow-right', 'arrow-h')
+            .section__col.section__col_right.section__col_flex
+                .section__row
+                    .section__description
+                        p.p.p_font_light Процесс заказа отлажен, всё сделано для вашего удобства. Наш опыт позволяет нам оперативно работать на каждом этапе, гарантируя сроки производства и надлежащее качество нашей мебели.
+                    .title.title_card.section__title
+                        h2.h2 Наши достижения
+                        h5.h5 44 выполненных проекта

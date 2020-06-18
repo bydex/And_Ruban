@@ -12,3 +12,7 @@ const cardSlider = new Swiper("#make-card-slider", {
   },
   loop: true,
 });
+
+const cardSlider2 = new Swiper("#make-card-slider2", {
+  loop: true,
+});

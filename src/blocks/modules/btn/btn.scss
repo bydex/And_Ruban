@@ -109,6 +109,13 @@
             .btn__icon {
                 fill: $light;
             }
+            &:hover {
+                color: $primary;
+
+                .btn__icon {
+                    fill: $primary;
+                }
+            }
         }
         &_dark {
             .btn__icon {

@@ -11,6 +11,13 @@
                 padding-top: calc(83.33vh / 2);
             }
         }
+        &_17 {
+            margin-top: calc(83.33vh / 5.7 * -1);
+
+            .card__inner {
+                padding-top: calc(83.33vh / 5.7);
+            }
+        }
     }
     &_bottom {
         &_30 {
@@ -62,6 +69,10 @@
                 bottom: -27.78%;
                 background-image: linear-gradient(90deg, $light 14.44%, $dark 100%);
             }
+            .card_top_17 & {
+                top: 12.78%;
+                background-image: linear-gradient(90deg, $light 12.78%, $dark 100%);
+            }
         }
         &:after {
             content: '';
@@ -91,6 +102,10 @@
     &__wrapper {
         .card_left & {
             margin-right: calc(14.89% + #{rem(30)});
+
+            &.card-slider {
+                margin-left: calc(14.89% - #{rem(10)});
+            }
         }
         .card_right & {
             margin-right: calc(14.89% - #{rem(10)});
