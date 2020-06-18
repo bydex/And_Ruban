@@ -1,5 +1,6 @@
 .btn {
     text-align: center;
+    box-sizing: border-box;
     border: {
         width: rem(1);
         style: solid;
@@ -8,7 +9,6 @@
         property: color, background-color, border-color, transform;
         duration: $duration;
     }
-    box-sizing: border-box;
     &_wide {
         width: 100%;
     }
@@ -25,10 +25,6 @@
     &_transparent {
         &_primary {
             color: $primary;
-            .btn__icon {
-                border-color: $primary;
-                stroke: $primary;
-            }
 
             &:hover {
                 .btn__icon {
@@ -36,19 +32,23 @@
                     stroke: $light;
                 }
             }
+            .btn__icon {
+                border-color: $primary;
+                stroke: $primary;
+            }
         }
         &_light {
             color: $light;
-            .btn__icon {
-                border-color: $light;
-                stroke: $light;
-            }
 
             &:hover {
                 .btn__icon {
                     background-color: $light;
                     stroke: $dark;
                 }
+            }
+            .btn__icon {
+                border-color: $light;
+                stroke: $light;
             }
         }
     }
@@ -67,9 +67,9 @@
         background-color: transparent;
 
         .btn__icon {
-            padding: rem(18);
             width: rem(70);
             height: rem(70);
+            padding: rem(18);
             margin-right: rem(20);
             border: {
                 width: rem(1);
@@ -106,20 +106,27 @@
             stroke: transparent;
         }
         &_light {
-            .btn__icon {
-                fill: $light;
-            }
-        }
-        &_dark {
-            .btn__icon {
-                fill: $secondary;
-            }
             &:hover {
                 color: $primary;
 
                 .btn__icon {
                     fill: $primary;
                 }
+            }
+            .btn__icon {
+                fill: $light;
+            }
+        }
+        &_dark {
+            &:hover {
+                color: $primary;
+
+                .btn__icon {
+                    fill: $primary;
+                }
+            }
+            .btn__icon {
+                fill: $secondary;
             }
         }
     }

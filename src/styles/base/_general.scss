@@ -89,6 +89,10 @@ body, html {
 .h5 {
     font-size: rem($h5);
     font-weight: 400;
+
+    &_light {
+        font-weight: 300;
+    }
 }
 .h6 {
     font-size: rem($h6);
@@ -241,5 +245,20 @@ body, html {
             property: background-color;
             duration: $duration;
         };
+    }
+}
+
+
+.list {
+    &__item {
+        @include col();
+        @include size(5);
+        margin-bottom: rem(12);
+    }
+    &__num {
+        margin-right: rem(10);
+        font-size: rem(42);
+        font-weight: 700;
+        color: $primary;
     }
 }

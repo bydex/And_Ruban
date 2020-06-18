@@ -26,7 +26,6 @@ let fullpage = new Swiper("#fullpage", {
 
 
 fullpage.on("init", function() {
-    console.log(this.slides.length);
     if (this.slides.length <= 1) {
         document.querySelector("#fullpage").classList.add("fullpage_disabled");
     }

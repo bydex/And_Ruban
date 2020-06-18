@@ -1,6 +1,93 @@
 .card {
     // @include col();
     position: relative;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 83.33vh;
+        &:before {
+            content: "";
+            display: flex;
+            position: absolute;
+            width: rem(2);
+            height: 100%;
+
+
+            .card_left & {
+                left: 0;
+                margin-left: rem(-60);
+            }
+            .card_right & {
+                right: 0;
+                margin-right: rem(-60);
+            }
+            .card_top_50 & {
+                top: 14.44%;
+                background-image: linear-gradient(90deg, $light 14.44%, $dark 100%);
+            }
+            .card_bottom_30 & {
+                bottom: -27.78%;
+                background-image: linear-gradient(90deg, $light 14.44%, $dark 100%);
+            }
+            .card_top_17 & {
+                top: 12.78%;
+                background-image: linear-gradient(90deg, $light 12.78%, $dark 100%);
+            }
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: $light, $alpha: .4);
+        }
+        .card_left & {
+            margin-left: -14.89%;
+        }
+        .card_right & {
+            margin-right: -14.89%;
+        }
+        background: {
+            position: center;
+            color: $light;
+            size: cover;
+        };
+    }
+    &__title {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: calc(100% + #{rem(12)});
+        bottom: 0;
+        transform: scale(-1, -1);
+        writing-mode: vertical-rl;
+        text-transform: uppercase;
+
+        .card_right & {
+            right: auto;
+            left: calc(100% + #{rem(12)});
+        }
+    }
+    &__wrapper {
+        .card_left & {
+            margin-right: calc(14.89% + #{rem(30)});
+
+            &.card-slider {
+                margin-left: calc(14.89% - #{rem(10)});
+            }
+        }
+        .card_right & {
+            margin-right: calc(14.89% - #{rem(10)});
+            margin-left: calc(14.89% + #{rem(20)});
+        }
+    }
+    &__mini-slider {
+        margin-top: rem(55);
+    }
     // width: col(5.5);
 
     &_top {
@@ -9,6 +96,13 @@
 
             .card__inner {
                 padding-top: calc(83.33vh / 2);
+            }
+        }
+        &_17 {
+            margin-top: calc(83.33vh / 5.7 * -1);
+
+            .card__inner {
+                padding-top: calc(83.33vh / 5.7);
             }
         }
     }
@@ -20,84 +114,5 @@
                 padding-bottom: calc(83.33vh / 3.6);
             }
         }
-    }
-
-    &__inner {
-        position: relative;
-        display: flex;
-        align-items: center;
-        height: 83.33vh;
-        background: {
-            color: $light;
-            position: center;
-            size: cover;
-        };
-        .card_left & {
-            margin-left: -14.89%;
-        }
-        .card_right & {
-            margin-right: -14.89%;
-        }
-        &:before {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: rem(2);
-            display: flex;
-
-
-            .card_left & {
-                margin-left: rem(-60);
-                left: 0;
-            }
-            .card_right & {
-                margin-right: rem(-60);
-                right: 0;
-            }
-            .card_top_50 & {
-                top: 14.44%;
-                background-image: linear-gradient(90deg, $light 14.44%, $dark 100%);
-            }
-            .card_bottom_30 & {
-                bottom: -27.78%;
-                background-image: linear-gradient(90deg, $light 14.44%, $dark 100%);
-            }
-        }
-        &:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba($color: $light, $alpha: .4);
-        }
-    }
-    &__title {
-        position: absolute;
-        right: calc(100% + #{rem(12)});
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        writing-mode: vertical-rl;
-        transform: scale(-1, -1);
-        text-transform: uppercase;
-
-        .card_right & {
-            left: calc(100% + #{rem(12)});
-            right: auto;
-        }
-    }
-    &__wrapper {
-        .card_left & {
-            margin-right: calc(14.89% + #{rem(30)});
-        }
-        .card_right & {
-            margin-right: calc(14.89% - #{rem(10)});
-            margin-left: calc(14.89% + #{rem(20)});
-        }
-    }
-    &__mini-slider {
-        margin-top: rem(55);
     }
 }

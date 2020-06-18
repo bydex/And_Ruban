@@ -17,16 +17,19 @@
             display: flex;
             flex-direction: column;
         }
+        &_center {
+            display: flex;
+            align-items: center;
+        }
     }
-
     &__wrapper {
         @include container();
+        box-sizing: border-box;
         position: relative;
         z-index: 4;
+        width: 100%;
         height: 100%;
         max-height: rem(1080);
-        width: 100%;
-        box-sizing: border-box;
 
         img {
             max-width: 100%;
@@ -132,6 +135,7 @@
         display: flex;
         justify-content: flex-end;
         position: absolute;
+        z-index: 1;
         bottom: rem(65);
         left: 50%;
         width: 100%;
@@ -187,7 +191,12 @@
             }
         }
     }
-
+    &_header {
+        .section__title {
+            @include col();
+            @include size(9);
+        }
+    }
     &_create {
         .section__title {
             margin-top: rem(60);
@@ -237,6 +246,52 @@
             }
         }
     }
+    &_video {
+        .section__title {
+            @include col();
+        }
+        .section__col {
+            @include shift-left(3);
+            @include size(6);
+        }
+        .section__description {
+            @include shift-left(2);
+            @include shift-right(2);
+            width: auto;
+
+            .btn {
+                margin-top: rem(50);
+            }
+        }
+    }
+    &_progress {
+        .section__description {
+            @include shift-left(-2);
+            @include size(10);
+            position: relative;
+        }
+        .card__inner {
+            align-items: flex-end;
+            padding-bottom: rem(120);
+        }
+        .section__list {
+            margin-bottom: rem(20);
+        }
+        .section__col-inner {
+            @include shift-left(1.5);
+        }
+        .section__col_right {
+            margin-top: rem(70);
+        }
+    }
+    &__bests {
+        @include row-flex();
+        margin-bottom: rem(40);
+    }
+    &__best {
+        @include col();
+        width: rem(70);
+    }
     &__ticker {
         width: 100%;
     }
@@ -269,5 +324,16 @@
                 bottom: rem(20);
             };
         }
+    }
+    &__logo-row {
+        @include row-flex();
+        align-items: center;
+    }
+    &__logo-wrapper {
+        @include col();
+    }
+    &__logo-button {
+        @include col();
+        flex-grow: 1;
     }
 }

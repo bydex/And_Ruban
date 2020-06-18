@@ -8,6 +8,10 @@
     &__title {
         margin-bottom: rem(25);
         font-weight: 300;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__description {
     }
@@ -16,8 +20,8 @@
     }
     &__control {
         position: absolute;
+        z-index: 1;
         top: 0;
         right: 0;
-        z-index: 1;
     }
 }
