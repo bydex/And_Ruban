@@ -87,6 +87,10 @@
         &_top {
             top: 0;
         }
+        &_center {
+            top: 50%;
+            transform: translateY(-50%);
+        }
         &_bottom {
             bottom: 0;
         }
