@@ -1,29 +1,24 @@
 .fullpage {
-    &_disabled {
-        .fullpage__control {
-            display: none;
-        }
-    }
     &__control {
         @include container();
         position: fixed;
+        z-index: 999;
         top: 0;
         left: 50%;
-        z-index: 999;
-        transform: translateX(-50%);
         width: 100%;
         height: 100%;
+        transform: translateX(-50%);
         pointer-events: none;
     }
     &__control-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         position: absolute;
         top: 50%;
         right: rem(-100);
         transform: translateY(-50%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         pointer-events: all;
     }
     &__navigation {
@@ -33,11 +28,11 @@
     &__arrow {
         display: block;
         padding: rem(7) rem(10);
+        stroke: $dark;
 
         .fullpage_theme_light & {
             stroke: $light;
         }
-        stroke: $dark;
 
         &_down {
             stroke: $primary;
@@ -47,8 +42,8 @@
     &__pagination {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         margin-bottom: rem(180);
         counter-reset: fullpage;
 
@@ -60,18 +55,14 @@
             border-radius: 0;
             outline: none;
             opacity: 1;
-            transition: {
-                property: background-color;
-                duration: $duration;
-            }
 
             &:after {
-                counter-increment: fullpage;
                 content: "0" counter(fullpage);
                 position: absolute;
                 top: 50%;
                 left: 100%;
-                transform: translate(#{rem(0)},-50%);
+                transform: translate(#{rem(0)}, -50%);
+                counter-increment: fullpage;
                 color: $light;
                 font-weight: 30;
                 opacity: 0;
@@ -80,14 +71,23 @@
                     duration: $duration;
                 }
             }
+            transition: {
+                property: background-color;
+                duration: $duration;
+            }
             &-active, &:hover {
                 background-color: $primary;
                 &:after {
+                    transform: translate(#{rem(15)}, -50%);
                     color: $primary;
                     opacity: 1;
-                    transform: translate(#{rem(15)},-50%);
                 }
             }
+        }
+    }
+    &_disabled {
+        .fullpage__control {
+            display: none;
         }
     }
 }

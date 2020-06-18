@@ -1,0 +1,13 @@
+include ../logo/logo
+include navigation/navigation
+include contact/contact
+mixin modal()
+    section.modal.modal_active
+        .modal__wrapper
+            .modal__inner
+                +logo('modal')
+                +logo('modal')
+            .modal__inner
+                .modal__content
+                    +navigation
+                    +contact

@@ -1,27 +1,40 @@
 .footer {
     margin-top: auto;
+    padding-bottom: rem(36);
+
     &__wrapper {
         @include container();
     }
+
     &__inner {
         @include row-flex();
     }
+
     &__logo {
         @include col();
         @include size-xl(3);
     }
+
     &__copyright {
         @include col();
         @include size-xl(3);
     }
+
     &__developed {
         @include col();
         @include size-xl(6);
         display: flex;
         justify-content: flex-end;
     }
+
     &__proseo {
         width: rem(101);
         height: rem(43);
+        margin-left: rem(18);
+    }
+
+    &__p {
+        margin-bottom: 0;
+        font-size: rem(15);
     }
 }

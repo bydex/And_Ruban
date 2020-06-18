@@ -1,3 +1,8 @@
-.logo(class=`logo_theme_${theme}`)
-    .h3.logo__title AND<span class="logo__dot">.</span>RUBAN
-    p.logo__subtitle.p Мастерская реальностей
+mixin logo(theme)
+    .logo(class=`logo_theme_${theme}`)
+        if logoModal = true
+            .h3.logo__title.modal__title AND<span class="modal__logo-span">RUBAN</span>
+            p.logo__subtitle.p.modal__p Мебель с душой
+        else
+            .h3.logo__title AND<span class="logo__dot">.</span>RUBAN
+            p.logo__subtitle.p Мастерская реальностей

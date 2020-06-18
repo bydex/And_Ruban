@@ -1,0 +1,25 @@
+.navigation {
+    @include col();
+    @include size-xl(6);
+    margin: {
+        top: rem(183);
+    };
+    &__list {
+        &-item {
+            display: inline-block;
+            margin: {
+                bottom: rem(50);
+            };
+        }
+        &-link {
+            color: $light;
+        }
+    }
+    &__link {
+        color: $primary;
+        display: inline-block;
+        margin: {
+            top: rem(63);
+        };
+    }
+}

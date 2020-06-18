@@ -2,7 +2,7 @@ import Swiper from "swiper";
 
 new Swiper(".ticker", {
     spaceBetween: 30,
-    slidesPerView: 'auto',
+    slidesPerView: "auto",
     freeMode: true,
     loop: true,
     autoplay: {

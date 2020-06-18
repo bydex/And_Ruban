@@ -1,0 +1,113 @@
+.contact {
+    @include col();
+    @include size-xl(6);
+    position: relative;
+    top: 330px;
+    left: 100px;
+    border: 1px solid $light;
+    color: $light;
+
+    padding: {
+        top: rem(234);
+        right: rem(100);
+        bottom: rem(234);
+        left: rem(100);
+    }
+
+    &:after {
+        content: "andruban — мебель  иных реальностей";
+        position: absolute;
+        right: rem(-210);
+        bottom: rem(170);
+        transform: rotate(-90deg);
+        font-weight: 300;
+        font-size: rem(15);
+        line-height: rem(24);
+        text-transform: uppercase;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        right: rem(-70);
+        bottom: rem(-100);
+        width: rem(2);
+        height: rem(1049);
+        background-color: $light;
+    }
+
+    &__text {
+        margin: {
+            bottom: rem(75);
+        }
+
+        ;
+    }
+
+    &__title {
+        font-size: rem(18);
+
+        margin: {
+            bottom: rem(8);
+        }
+
+        ;
+    }
+
+    &__subtitle {
+        font-size: rem(18);
+
+        &_border {
+            text-decoration-line: underline;
+        }
+    }
+
+    &__nav {
+        display: block;
+        margin: 0;
+        border: none;
+        padding: 0;
+    }
+
+    &__svg {
+        margin: {
+            left: rem(20);
+        }
+    }
+
+    &__avatar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        margin: {
+            top: rem(60);
+        }
+
+        ;
+    }
+
+    &__image-b {
+        margin: {
+            right: rem(19);
+        }
+    }
+
+    &__img {
+        border-radius: 50%;
+    }
+
+    &__name {
+
+        .contact__title, .contact__subtitle {
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact__title {
+            margin: {
+                bottom: rem(2);
+            }
+        }
+    }
+}
