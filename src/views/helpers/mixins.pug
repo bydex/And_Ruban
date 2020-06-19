@@ -7,5 +7,5 @@ mixin nav(theme)
     include ../../blocks/modules/nav/nav
 mixin picture(path, name, imgType, sourceType, Imgclass)
     picture
-        source(srcset= "./img/" + path + "/" + name + '.' + sourceType type="image/" + sourceType)
-        img(class= Imgclass src= "./img/" + path + "/" + name + '.' + imgType alt=name)
+        source(srcset= "./img" + path + "/" + name + '.' + sourceType type="image/" + sourceType)
+        img(class= Imgclass src= "./img" + path + "/" + name + '.' + imgType alt=name)

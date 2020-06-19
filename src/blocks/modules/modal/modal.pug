@@ -1,6 +1,9 @@
 include ../logo/logo
 include navigation/navigation
 include contact/contact
+include thanks/thanks
+include request/request
+include payment/payment
 mixin modal()
     section.modal.modal_active.swiper-container
         .swiper-wrapper
@@ -12,5 +15,8 @@ mixin modal()
                     .modal__inner
                         .modal__content
                             +navigation
+                            +thanks
+                            +request(false)
+                            +payment
                             +contact
         .swiper-scrollbar

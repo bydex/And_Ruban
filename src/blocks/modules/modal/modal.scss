@@ -6,10 +6,9 @@
     height: 100%;
     background-color: $secondary;
     overflow: hidden;
-
-    padding: {
-        top: rem(30);
-    };
+    .swiper-slide {
+        height: auto;
+    }
 
     &__wrapper {
         @include container();
@@ -29,10 +28,6 @@
         }
     }
 
-    &_active {
-        display: block;
-    }
-
     &__p {
         color: $light;
         font-size: 0.85rem;
@@ -43,10 +38,18 @@
         display: flex;
         width: 100%;
     }
-    .swiper-slide {
-        height: auto;
-    }
+
+    padding: {
+        top: rem(30);
+    };
 }
 
 @import "contact/contact";
-@import "navigation/navigation"
+@import "navigation/navigation";
+@import "thanks/thanks";
+@import "request/request";
+@import "payment/payment";
+
+.modal_active {
+    display: block;
+}

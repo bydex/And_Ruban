@@ -1,0 +1,30 @@
+.thanks {
+
+    @include col();
+    @include size-xl(6);
+    display: none;
+    &__p {
+        width: calc(85% - 1.875rem);
+        color: $light;
+    }
+    &__h2 {
+        color: $light;
+        margin-bottom: 0;
+    }
+    &__link {
+        display: inline-block;
+        margin-top: 3.125rem;
+        padding: {
+            right: rem(76);
+            left: rem(76);
+        }
+    }
+    &__svg {
+        width: rem(220);
+        height: rem(255.44);
+        margin-top: rem(90);
+    }
+    padding: {
+        top: rem(68);
+    }
+}

@@ -1,0 +1,34 @@
+.payment {
+    .request__form-dropdown {
+        margin-top: rem(45);
+    }
+
+    .dropdown__label-box {
+        margin-bottom: rem(20);
+    }
+}
+
+$delay: (1: .2s, 2: .4s, 3: .6s, 4: .8s, 5: 1s, 6: 1.2s, 7: 1.4s, 8: 1.6s);
+
+.payment__dropdown_active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    height: auto;
+    transition: all .3s linear;
+
+    @each $nth,
+        $animation-delay in $delay {
+        .dropdown__item:nth-child(#{$nth}) {
+            transition: {
+                delay: $animation-delay;
+                duration: .4s;
+                timing-function: linear;
+                property: opacity;
+            }
+
+            opacity: 1;
+        }
+    }
+}
+

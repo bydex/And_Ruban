@@ -1,5 +1,6 @@
 import "../../blocks/components/label/label";
 import "../../blocks/components/hamburger/hamburger";
+import "../../blocks/components/dropdown/dropdown";
 
 const helpers = {
     position: (child) => {

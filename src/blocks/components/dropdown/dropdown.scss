@@ -1,0 +1,126 @@
+.dropdown {
+    position: relative;
+    background-color: transparent;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.25);
+    padding: 0;
+
+    &:hover {
+        transition: {
+            delay: 1s;
+            duration: .4s;
+            timing-function: linear;
+        }
+
+        // .dropdown__list {
+        //     visibility: visible;
+        //     opacity: 1;
+        //     z-index: 1;
+        //     height: auto;
+        //     transition: all .3s linear;
+        // }
+
+        // .dropdown__paragraph {
+        //     background-color: transparent;
+
+        //     transition: all .3s;
+        //     color: $light;
+
+        //     &.select-form__border {
+        //         border: {
+        //             bottom: {
+        //                 color: transparent;
+        //             }
+        //         }
+        //     }
+
+        //     &:after {
+        //         right: rem(29);
+        //         transition: right .3s linear;
+        //     }
+        // }
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__svg {
+        position: absolute;
+        top: rem(0);
+        right: rem(10);
+        width: rem(12);
+        height: rem(7);
+        fill: $light;
+    }
+
+    &__paragraph {
+        position: relative;
+        transition: all .3s;
+
+        padding: {
+            top: rem(18);
+            bottom: rem(18);
+        }
+    }
+
+    &__list {
+        position: absolute;
+        left: rem(-10);
+
+        width: 102%;
+        transition: all 1s linear;
+        background-color: #212121;
+        visibility: hidden;
+        opacity: 0;
+        padding-left: rem(10);
+    }
+
+    &__item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+
+        opacity: 0;
+
+        &:hover {
+            .dropdown__link {
+                text-decoration: underline;
+                color: $light;
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+    }
+
+    &__link {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        width: 100%;
+
+        font: {
+            size: rem(16);
+        }
+
+        color: $light;
+        text-transform: uppercase;
+
+        padding: {
+            top: rem(16);
+            bottom: rem(16);
+        }
+
+        ;
+    }
+
+    &__label {
+        display: inline-block;
+        position: relative;
+    }
+}

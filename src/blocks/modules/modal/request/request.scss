@@ -1,0 +1,110 @@
+.request {
+    @include col();
+    @include size-xl(6);
+    display: none;
+    padding-top: rem(68);
+
+    &__form-box {
+        position: relative;
+        left: calc(8.33333% + 0.9375rem);
+        margin: {
+            top: rem(68);
+        }
+
+        ;
+    }
+
+    &__title {
+        display: flex;
+    }
+
+    &__image {
+        width: rem(100);
+        height: rem(70);
+    }
+
+    &__p {
+        margin: 0;
+        padding: 0;
+        color: $light;
+
+        &_size {
+            &_large {
+                font-size: rem(22);
+            }
+        }
+    }
+
+    &__p:not(:last-child) {
+        margin: {
+            bottom: rem(8);
+        }
+
+        ;
+    }
+
+    &__product {
+        &-name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            margin: {
+                left: rem(30);
+            }
+
+            ;
+        }
+    }
+
+    &__form {
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            margin: {
+                top: rem(74);
+            }
+
+            ;
+        }
+    }
+
+    &__label {
+        &-box {
+            width: calc(50% - 0.9375rem);
+
+            margin: {
+                bottom: 0;
+            }
+
+            ;
+        }
+    }
+
+    &__input {
+        width: 100%;
+    }
+
+    &__personal {
+        &-span {
+            font-size: rem(12);
+            color: $light;
+            display: inline-block;
+            margin: {
+                top: rem(25);
+            };
+        }
+        &-link {
+            text-decoration: underline;
+        }
+    }
+    &__exstra {
+        margin: {
+            top: rem(43);
+        };
+        &-span {
+            color: $primary;
+        }
+    }
+}

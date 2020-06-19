@@ -1,9 +1,7 @@
 .navigation {
     @include col();
     @include size-xl(6);
-    margin: {
-        top: rem(183);
-    };
+    display: none;
     &__list {
         &-item {
             display: inline-block;
@@ -22,4 +20,7 @@
             top: rem(63);
         };
     }
+    margin: {
+        top: rem(183);
+    };
 }

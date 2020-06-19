@@ -16,7 +16,7 @@ if (mainFormInputs !== undefined) {
 
     mainFormInputs.forEach((el) => {
         el.addEventListener("blur", () => {
-            if (el.value < 1) {
+            if (el.value.length < 1) {
                 el.parentElement.classList.remove("active");
             }
         });
