@@ -1,4 +1,39 @@
-section.section.section_dark.swiper-slide(class=`section_progress`)
+section.section.section_dark.swiper-slide(class=`section_and-ruban`)
+    .section__wrapper
+        .section__row.section__row_fullheight
+            .section__col.section__col_right.section__col_flex
+                .title.section__title
+                    h2.h2 Андрей <br>Рубан
+                .section__history
+                    ul.tabs(data-tabs)
+                        each index, val in ['История', 'Миссия', 'Работа']
+                            if val === 0
+                                li.tabs__item.tabs__item_active
+                                    span(data-tabs-item)= index
+                            else
+                                li.tabs__item
+                                    span(data-tabs-item)= index
+                            span.tabs__underline(data-tabs-underline)
+                    .swiper-container
+                        .swiper-wrapper
+                            .swiper-slide
+                                p.p.p_font_light «Начало было положено в 2010 году. Руководя производством крупной международной компании, возникло осознание того, что все твои усилия направлены только на улучшения той системы в которой мы функционируем. Желание творить и создавать что то своими руками, привело меня к созданию небольшого мебельного бизнеса. С самого начала ставка была сделана на производство индивидуальной мебели как более интересного, но в тоже время и более сложного направления.
+                                p.p.p_font_light С самого начала и по сегодняшний день принципы и ценности, которыми мы руководствуемся делают нашу команду сильнее. Дружелюбие и открытость в общении с покупателями позволяют выстраивать долгосрочные личные отношения с каждым из наших заказчиков. Год за годом мы расширяем наши возможности, предлагая всё самое лучшее…»
+                    p.p.p_font_light Присоединяйтесь в соц. сетях
+                    .links
+                        a.links__item.link.link_bold(href="#") instagram
+                        a.links__item.link.link_bold(href="#") facebook
+                        a.links__item.link.link_bold(href="#") youtube
+                        a.links__item.link.link_bold(href="#") houzz
+
+            .section__col.section__col_left
+                .card.card_right.card_bottom_30
+                    .card__inner(style="background-image:url(./img/card-img-and-ruban.jpg")
+                        .card__title andruban — мебель  иных реальностей
+                        .card__wrapper
+                            button.btn.btn_transparent_primary.btn_play.btn_play_dark
+                                +icon('play', 'btn__icon')
+                                span.btn__title.h5.h5_light Мой <br>ролик-презентация
     .section__bg-wrapper.section__bg-wrapper_center
         .section__bg-inner.swiper-wrapper
             picture.section__bg.section__bg_grayscale.section__bg_left.section__bg_top.dark-mask

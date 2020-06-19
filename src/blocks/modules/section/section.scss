@@ -288,6 +288,47 @@
             margin-top: rem(70);
         }
     }
+    &_and-ruban {
+        .section__wrapper {
+            max-height: none;
+        }
+        .card_right .card__inner {
+            padding-bottom: 0;
+        }
+        .card__wrapper {
+            color: $secondary;
+        }
+        .section__col_left {
+            margin-top: auto;
+        }
+        .section__col_right {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        .section__title {
+            margin-bottom: rem(55);
+        }
+        .section__history {
+            @include shift-left(1);
+        }
+        .tabs {
+            margin-bottom: rem(25);
+        }
+        .swiper-container {
+            margin-bottom: rem(45);
+
+            .p {
+                margin-bottom: 0;
+            }
+        }
+        .links {
+            @include row-flex();
+
+            &__item {
+                @include col();
+            }
+        }
+    }
     &__bests {
         @include row-flex();
         margin-bottom: rem(40);

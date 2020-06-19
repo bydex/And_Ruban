@@ -73,6 +73,8 @@
         }
     }
     &__wrapper {
+        position: relative;
+        z-index: 1;
         .card_left & {
             margin-right: calc(14.89% + #{rem(30)});
 

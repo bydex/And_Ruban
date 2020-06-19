@@ -139,6 +139,16 @@ body, html {
     &:hover {
         color: $primary;
     }
+
+    &_bold {
+        text-decoration: none;
+        color: $primary;
+        font-weight: 700;
+
+        &:hover {
+            color: $light;
+        }
+    }
 }
 
 .icon-social {
