@@ -2,9 +2,13 @@
     @include col();
     @include size-xl(6);
     position: relative;
-    top: 330px;
-    left: 100px;
-    border: 1px solid $light;
+    margin-top: rem(330);
+    left: rem(100);
+    border: {
+        width: rem(1);
+        style: solid;
+        color: $light;
+    }
     color: $light;
 
     padding: {

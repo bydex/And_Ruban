@@ -6,4 +6,5 @@ import "%modules%/404/404";
 import "%modules%/ticker/ticker";
 import "%modules%/producer/producer";
 import "%modules%/card-slider/card-slider";
+import "%modules%/modal/modal";
 import "%modules%/footer/footer";
