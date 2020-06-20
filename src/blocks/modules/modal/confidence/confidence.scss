@@ -1,0 +1,16 @@
+.confidence {
+    @include col();
+    @include size-xl(6);
+
+    padding: {
+        top: rem(192);
+    }
+
+    &__p {
+        margin-top: rem(75);
+    }
+
+    &__h2 {
+        letter-spacing: 0.04em;
+    }
+}

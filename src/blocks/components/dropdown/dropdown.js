@@ -48,5 +48,8 @@ paymentDropdownLink.forEach(el => {
         if (!dropdownLabel.classList.contains("active")) {
             dropdownLabel.classList.add("active");
         }
+        if (dropdownInput.value.length > 0) {
+            paymentDropdownList.classList.remove("payment__dropdown_active");
+        }
     });
 });

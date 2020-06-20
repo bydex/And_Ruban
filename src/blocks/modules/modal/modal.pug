@@ -4,6 +4,7 @@ include contact/contact
 include thanks/thanks
 include request/request
 include payment/payment
+include confidence/confidence
 mixin modal()
     section.modal.modal_active.swiper-container
         .swiper-wrapper
@@ -18,5 +19,6 @@ mixin modal()
                             +thanks
                             +request(false)
                             +payment
+                            +confidence
                             +contact
         .swiper-scrollbar
