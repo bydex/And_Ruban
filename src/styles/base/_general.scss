@@ -144,9 +144,20 @@ body, html {
         text-decoration: none;
         color: $primary;
         font-weight: 700;
+        border-bottom: {
+            width: rem(2);
+            color: transparent;
+            style: solid;
+        };
+        transition: {
+            property: border-color;
+            duration: $duration;
+        }
 
         &:hover {
-            color: $light;
+            border-bottom: {
+                color: $primary;
+            };
         }
     }
 }

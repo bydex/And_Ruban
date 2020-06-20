@@ -110,4 +110,9 @@
         flex-wrap: wrap;
         transform: none !important;
     }
+    .swiper-slide {
+        position: static;
+        width: auto !important;
+        height: auto;
+    }
 }

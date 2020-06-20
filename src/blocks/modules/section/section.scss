@@ -309,7 +309,7 @@
             margin-bottom: rem(55);
         }
         .section__history {
-            @include shift-left(1);
+            @include shift-left(1.5);
         }
         .tabs {
             margin-bottom: rem(25);
@@ -327,6 +327,56 @@
             &__item {
                 @include col();
             }
+        }
+        .card_bottom_30 .card__inner:before {
+            bottom: -13.33%;
+        }
+        .card_bottom_30 {
+            margin-bottom: calc(83.33vh / 5 * -1);
+        }
+    }
+    &_feedback {
+        .section__history {
+            @include shift-left(1.5);
+        }
+        .links {
+            @include row-flex();
+            margin-bottom: rem(8);
+
+            &__item {
+                @include col();
+            }
+        }
+        .section__form-row {
+            @include row-flex();
+        }
+        .section__form-col {
+            @include col();
+            @include size(6);
+            margin-bottom: rem(40);
+        }
+        .section__form-btn {
+            @include col();
+            @include size(8);
+        }
+        .section__row {
+            justify-content: center;
+            align-items: center;
+        }
+        .section__description {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: rem(45);
+        }
+        .section__wrapper {
+            max-height: calc(100% - #{rem(123)});
+        }
+        .section__bg-wrapper_bottom {
+            bottom: rem(123);
+        }
+        .section__col_right {
+            margin-top: rem(80);
         }
     }
     &__bests {

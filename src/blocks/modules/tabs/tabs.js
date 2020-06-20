@@ -6,21 +6,21 @@ let position    = helpers.position,
 let tabs        = document.querySelectorAll('[data-tabs]');
 
 
+const setUnderline = (element, underline) => {
+    const positions = position(element);
+    let left        = rem(positions.left),
+        top         = rem(positions.top + element.offsetHeight);
+    underline.style.width       = rem(element.offsetWidth);
+    underline.style.transform   = `translate(${left},${top})`;
+};
 tabs.forEach((el) => {
     const tab       = el.querySelectorAll("[data-tabs-item]"),
           underline = el.querySelector("[data-tabs-underline]");
 
-    const setUnderline = (element) => {
-        const positions = position(element);
-        let left        = rem(positions.left),
-            top         = rem(positions.top + element.offsetHeight);
-        underline.style.width       = rem(element.offsetWidth);
-        underline.style.transform   = `translate(${left},${top})`;
-    },
-    setOnLoad = () => {
+    const setOnLoad = () => {
         if (el.querySelector('.tabs__item_active')) {
             let element = el.querySelector(".tabs__item_active [data-tabs-item]");
-            setUnderline(element);
+            setUnderline(element, underline);
         };
     }
     window.addEventListener('resize orientationchange', setOnLoad);
@@ -29,7 +29,7 @@ tabs.forEach((el) => {
     tab.forEach((eltab) => {
         eltab.closest('.tabs__item').addEventListener('click', function() {
             const thistab = this.closest('.tabs__item');
-            setUnderline(this.querySelector('[data-tabs-item]'));
+            setUnderline(this.querySelector('[data-tabs-item]'), underline);
             Array.from(thistab.parentNode.children).forEach((elchild) => {
                 if (elchild.classList.contains('tabs__item_active')) {
                     elchild.classList.remove("tabs__item_active");
@@ -39,3 +39,6 @@ tabs.forEach((el) => {
         })
     })
 })
+
+
+export default setUnderline;

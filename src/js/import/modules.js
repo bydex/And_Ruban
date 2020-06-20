@@ -7,4 +7,5 @@ import "%modules%/ticker/ticker";
 import "%modules%/producer/producer";
 import "%modules%/card-slider/card-slider";
 import "%modules%/modal/modal";
+import "%modules%/section-feedback/section-feedback";
 import "%modules%/footer/footer";
