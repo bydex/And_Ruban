@@ -74,6 +74,7 @@
         "fullpage": "^1.5.1",
         "fullpage.js": "^3.0.8",
         "jquery": "^3.5.1",
+        "modernizr": "^3.11.2",
         "smart-grid": "^2.1.2",
         "swiper": "^5.4.1"
     },

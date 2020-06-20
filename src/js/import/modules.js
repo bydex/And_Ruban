@@ -8,4 +8,5 @@ import "%modules%/producer/producer";
 import "%modules%/card-slider/card-slider";
 import "%modules%/modal/modal";
 import "%modules%/section-feedback/section-feedback";
+import "%modules%/section-create/section-create";
 import "%modules%/footer/footer";

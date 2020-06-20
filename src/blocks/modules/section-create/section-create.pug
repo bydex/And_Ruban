@@ -1,9 +1,9 @@
-section.section.section_light.swiper-slide(class=`section_create`)
+section.section.section_light.swiper-slide(id="create" class=`section_create`)
     .section__wrapper
         .section__row.section__row_fullheight
             .section__col.section__col_left
                 .card.card_left.card_top_50
-                    .card__inner(style="background-image:url(./img/card-img-2.jpg")
+                    .card__inner.swiper-lazy(data-background="./img/card-img-2.jpg")
                         .card__title andruban — мебель  иных реальностей
                     .card__wrapper.card__mini-slider.mini-slider.swiper-container
                         ul.mini-slider__body.swiper-wrapper
@@ -36,7 +36,7 @@ section.section.section_light.swiper-slide(class=`section_create`)
                                         span(data-tabs-item)= index
                             span.tabs__underline(data-tabs-underline)
                     .top-slider__footer
-                        button.top-slider__btn.btn.btn_rect.btn_transparent_primary.btn_uppercase
+                        button.top-slider__btn.btn.btn_rect.btn_transparent_primary.btn_uppercase(id="watch-original")
                             +icon('eye', 'btn__icon')
                             span.btn__title смотреть оригинал фото
                         .swiper-container.top-slider__slider

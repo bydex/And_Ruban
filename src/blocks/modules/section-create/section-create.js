@@ -1,13 +1,5 @@
-modules.define('section-create', ['i-bem-dom'], function(provide, bemDom) {
+const btn = document.querySelector('#watch-original');
 
-provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-        js: {
-            inited: function() {
-                
-            }
-        }
-    }
-}));
-
-});
+btn.addEventListener('click', function() {
+    console.log('yep')
+})

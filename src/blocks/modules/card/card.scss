@@ -95,25 +95,31 @@
     &_top {
         &_50 {
             margin-top: calc(83.33vh / 2 * -1);
+            margin-top: calc(var(--vh, 1vh) * 83.33 / 2 * -1);
 
             .card__inner {
                 padding-top: calc(83.33vh / 2);
+                padding-top: calc(var(--vh, 1vh) * 83.33 / 2);
             }
         }
         &_17 {
             margin-top: calc(83.33vh / 5.7 * -1);
+            margin-top: calc(var(--vh, 1vh) * 83.33 / 5.7 * -1);
 
             .card__inner {
                 padding-top: calc(83.33vh / 5.7);
+                padding-top: calc(var(--vh, 1vh) * 83.33 / 5.7);
             }
         }
     }
     &_bottom {
         &_30 {
             margin-bottom: calc(83.33vh / 3.6 * -1);
+            margin-bottom: calc(var(--vh, 1vh) * 83.33 / 3.6 * -1);
 
             .card__inner {
                 padding-bottom: calc(83.33vh / 3.6);
+                padding-bottom: calc(var(--vh, 1vh) * 83.33 / 3.6);
             }
         }
     }

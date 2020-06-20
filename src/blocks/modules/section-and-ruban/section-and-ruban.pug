@@ -1,4 +1,4 @@
-section.section.section_dark.swiper-slide(class=`section_and-ruban`)
+section.section.section_dark.swiper-slide(id="and-ruban" class=`section_and-ruban`)
     .section__wrapper
         .section__row.section__row_fullheight
             .section__col.section__col_right.section__col_flex
@@ -34,7 +34,7 @@ section.section.section_dark.swiper-slide(class=`section_and-ruban`)
 
             .section__col.section__col_left
                 .card.card_right.card_bottom_30
-                    .card__inner(style="background-image:url(./img/card-img-and-ruban.jpg")
+                    .card__inner.swiper-lazy(data-background="./img/card-img-and-ruban.jpg")
                         .card__title andruban — мебель  иных реальностей
                         .card__wrapper
                             button.btn.btn_transparent_primary.btn_play.btn_play_dark
@@ -43,5 +43,5 @@ section.section.section_dark.swiper-slide(class=`section_and-ruban`)
     .section__bg-wrapper.section__bg-wrapper_center
         .section__bg-inner.swiper-wrapper
             picture.section__bg.section__bg_grayscale.section__bg_left.section__bg_top.dark-mask
-                source(srcset=`./img/section-and-ruban.webp`)
-                img(src=`./img/section-and-ruban.jpg` alt="")
+                source.swiper-lazy(data-srcset=`./img/section-and-ruban.webp`)
+                img.swiper-lazy(data-src=`./img/section-and-ruban.jpg` alt="")

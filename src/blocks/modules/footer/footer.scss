@@ -21,8 +21,19 @@
         }
     }
 
+    &__to-back {
+        position: absolute;
+        bottom: calc(100% + 65px);
+        left: calc(100% + 15px);
+        margin-bottom: 0;
+
+        .btn__icon {
+            margin-right: 0;
+        }
+    }
     &__wrapper {
         @include container();
+        position: relative;
     }
 
     &__inner {
