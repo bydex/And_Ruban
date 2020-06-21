@@ -4,6 +4,7 @@ block variables
 			logoModal = true;
 include ../helpers/mixins
 include ../../blocks/modules/modal/modal
+include ../../blocks/components/hamburger/hamburger
 
 doctype html
 html(lang="ru")
@@ -33,6 +34,7 @@ html(lang="ru")
 		link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet")
 		link(rel="stylesheet" href="styles/main.css")
 	body
+		+hamburger
 		+modal
 		#fullpage.fullpage
 			.swiper-wrapper

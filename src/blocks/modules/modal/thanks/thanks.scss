@@ -3,6 +3,8 @@
     @include col();
     @include size-xl(6);
     display: none;
+    visibility: hidden;
+    opacity: 0;
     &__p {
         width: calc(85% - 1.875rem);
         color: $light;

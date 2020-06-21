@@ -2,6 +2,14 @@
     @include col();
     @include size-xl(6);
     display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: {
+        property: display, visibility, opacity;
+        delay: 3s, s, s;
+        duration: 4s, .3s, .3s;
+        timing-function: linear;
+    }
     &__list {
         &-item {
             display: inline-block;

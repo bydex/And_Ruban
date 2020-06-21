@@ -36,7 +36,8 @@ mixin request(payment)
                         +label('request__label-box', 'request__label', 'Имя', 'request__input')
                         +label('request__label-box', 'request__label', 'Телефон', 'request__input')
                     .request__form-dropdown
-                        +dropdown('payment__dropdown', 'Выберите вид мебели', ['Кухни', 'гардеробные', 'гостиные', 'детские', 'прихожие', 'спальни', 'шкафы'], '', 'payment__dropdown-link')
+                        //- +dropdown('payment__dropdown', 'Выберите вид мебели', ['Кухни', 'гардеробные', 'гостиные', 'детские', 'прихожие', 'спальни', 'шкафы'], '', 'payment__dropdown-link')
+                        +dropdown(['Кухни', 'гардеробные', 'гостиные', 'детские', 'прихожие', 'спальни', 'шкафы'])
                     a.btn.btn_large.btn_primary.h6.thanks__link(href="#") Отправить
                 .request__text-bottom
                     .request__personal

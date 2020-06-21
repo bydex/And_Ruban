@@ -1,10 +1,9 @@
-include ../label/label
-mixin dropdown(dropdownClass, heading, ar, itemClass, linkClass, labelClass)
-    .dropdown(class= dropdownClass)
-        .dropdown__heading
-            +label('dropdown__label-box', 'dropdown__label', 'Выберите вид мебели', 'dropdown__input', 'text')
-            +icon('arrow-down', 'dropdown__svg')
-        ul.dropdown__list(class= payment ? 'payment__dropdown-list' : '')
-            each item in ar
-                li.dropdown__item(class= itemClass)
-                    a.dropdown__link(class=linkClass, data-title= num)= item
+mixin dropdown(ar)
+    .dropdown
+        .dropdown__title.label-box__input
+            p.dropdown__title-p.label-box__label(data-title="Надпись")
+        .dropdown__content
+            ul.dropdown__list
+                each item in ar
+                    li.dropdown__item
+                        a.dropdown__link= item

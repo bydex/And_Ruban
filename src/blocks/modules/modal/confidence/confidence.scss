@@ -1,6 +1,9 @@
 .confidence {
     @include col();
     @include size-xl(6);
+    display: none;
+    visibility: hidden;
+    opacity: 0;
 
     padding: {
         top: rem(192);

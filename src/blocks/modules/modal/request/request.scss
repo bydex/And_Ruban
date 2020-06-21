@@ -2,11 +2,14 @@
     @include col();
     @include size-xl(6);
     display: none;
+    visibility: hidden;
+    opacity: 0;
     padding-top: rem(68);
 
     &__form-box {
         position: relative;
         left: calc(8.33333% + 0.9375rem);
+
         margin: {
             top: rem(68);
         }
@@ -91,18 +94,26 @@
             font-size: rem(12);
             color: $light;
             display: inline-block;
+
             margin: {
                 top: rem(25);
-            };
+            }
+
+            ;
         }
+
         &-link {
             text-decoration: underline;
         }
     }
+
     &__exstra {
         margin: {
             top: rem(43);
-        };
+        }
+
+        ;
+
         &-span {
             color: $primary;
         }

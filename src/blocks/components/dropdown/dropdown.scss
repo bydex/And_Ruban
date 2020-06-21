@@ -1,67 +1,38 @@
-.dropdown {
-    position: relative;
-    background-color: transparent;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.25);
-    padding: 0;
+$delay: (1: .2s, 2: .4s, 3: .6s, 4: .8s, 5: 1s, 6: 1.2s, 7: 1.4s, 8: 1.6s);
 
-    &:hover {
-        transition: {
-            delay: 1s;
-            duration: .4s;
-            timing-function: linear;
+.dropdown {
+    cursor: pointer;
+
+    &__title {
+        position: relative;
+        overflow: visible;
+        padding: 0;
+        cursor: text;
+
+        &-p {
+            position: inherit;
+            padding: 0;
+            font-size: 15px;
+            text-transform: uppercase;
+            line-height: 0;
+
+            // &:before {
+            //     top: 0.1875rem;
+            // }
         }
 
-        // .dropdown__list {
-        //     visibility: visible;
-        //     opacity: 1;
-        //     z-index: 1;
-        //     height: auto;
-        //     transition: all .3s linear;
-        // }
-
-        // .dropdown__paragraph {
-        //     background-color: transparent;
-
-        //     transition: all .3s;
-        //     color: $light;
-
-        //     &.select-form__border {
-        //         border: {
-        //             bottom: {
-        //                 color: transparent;
-        //             }
-        //         }
-        //     }
-
-        //     &:after {
-        //         right: rem(29);
-        //         transition: right .3s linear;
-        //     }
-        // }
-    }
-
-    &__heading {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    &__svg {
-        position: absolute;
-        top: rem(0);
-        right: rem(10);
-        width: rem(12);
-        height: rem(7);
-        fill: $light;
-    }
-
-    &__paragraph {
-        position: relative;
-        transition: all .3s;
-
-        padding: {
-            top: rem(18);
-            bottom: rem(18);
+        .active.dropdown__title-p:after {
+            content: "";
+            position: absolute;
+            top: rem(-8);
+            width: rem(1);
+            height: 0.9875rem;
+            background-color: $light;
+            opacity: 1;
+            animation-name: opacityAnimation;
+            animation-duration: .9s;
+            animation-timing-function: inherit;
+            animation-iteration-count: infinite;
         }
     }
 
@@ -70,11 +41,37 @@
         left: rem(-10);
 
         width: 102%;
-        transition: all 1s linear;
+        transition: all .5s linear;
         background-color: #212121;
         visibility: hidden;
         opacity: 0;
         padding-left: rem(10);
+    }
+
+    &__content {
+        &.active {
+            .dropdown__list {
+                visibility: visible;
+                opacity: 1;
+                z-index: 1;
+                height: auto;
+                transition: all .3s linear;
+
+                @each $nth,
+                    $animation-delay in $delay {
+                    .dropdown__item:nth-child(#{$nth}) {
+                        transition: {
+                            delay: $animation-delay;
+                            duration: .4s;
+                            timing-function: linear;
+                            property: opacity;
+                        }
+
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
 
     &__item {
@@ -92,10 +89,6 @@
                 color: $light;
             }
         }
-    }
-
-    &__input {
-        width: 100%;
     }
 
     &__link {
@@ -118,9 +111,14 @@
 
         ;
     }
+}
 
-    &__label {
-        display: inline-block;
-        position: relative;
+@keyframes opacityAnimation {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
     }
 }
