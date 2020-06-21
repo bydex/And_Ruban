@@ -52,19 +52,23 @@ section.section.section_light.swiper-slide(id="create" class=`section_create`)
                                         picture
                                             source(srcset=`./img/create-thumb-${val + 1}.webp`)
                                             img(src=`./img/create-thumb-${val + 1}.jpg` alt="")
+                                each index, val in Array(5)
                                     li.swiper-slide.light-mask
                                         picture
                                             source(srcset=`./img/create-thumb-${val + 1}.webp`)
                                             img(src=`./img/create-thumb-${val + 1}.jpg` alt="")
                                 span.swiper-border
-    .section__bg-wrapper.section__bg-wrapper_bottom.swiper-container.slider-background
-            .section__bg-inner.swiper-wrapper
-                each index, val in Array(5)
-                    .swiper-slide
-                        picture.section__bg.section__bg_grayscale.section__bg_right.section__bg_top.light-mask
-                            source(srcset=`./img/create-slider-${val + 1}.webp`)
-                            img(src=`./img/create-slider-${val + 1}.jpg` alt="")
-                    .swiper-slide
-                        picture.section__bg.section__bg_grayscale.section__bg_right.section__bg_top.light-mask
-                            source(srcset=`./img/create-slider-${val + 1}.webp`)
-                            img(src=`./img/create-slider-${val + 1}.jpg` alt="")
+    .section__bg-wrapper.section__bg-wrapper_bottom
+        .section__bg.section__bg_grayscale.section__bg_right.section__bg_top.light-mask
+            .swiper-container.slider-background
+                .swiper-wrapper
+                    each index, val in Array(5)
+                        .swiper-slide
+                            picture
+                                source(srcset=`./img/create-slider-${val + 1}.webp`)
+                                img(src=`./img/create-slider-${val + 1}.jpg` alt="")
+                    each index, val in Array(5)
+                        .swiper-slide
+                            picture
+                                source(srcset=`./img/create-slider-${val + 1}.webp`)
+                                img(src=`./img/create-slider-${val + 1}.jpg` alt="")

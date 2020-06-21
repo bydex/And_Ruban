@@ -185,7 +185,7 @@
                     }
                 }
             }
-            .section__bg-inner > .section__bg, .swiper-slide-active .section__bg {
+            .section__bg {
                 filter: grayscale(0);
             }
             .section__bg {
@@ -205,6 +205,23 @@
         .section__title {
             margin-top: rem(60);
             margin-bottom: rem(70);
+        }
+        .section__bg-wrapper {
+            overflow: hidden;
+        }
+        .section__bg {
+            &:before {
+                content: '';
+                background: linear-gradient(360deg, $secondary 0%, rgba(33, 33, 33, 0.5) 58.47%, rgba(20, 16, 16, 0) 91.05%);
+                height: 25.56%;
+                width: 100%;
+                z-index: 2;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                opacity: 0;
+                pointer-events: none;
+            }
         }
     }
     &_producers {

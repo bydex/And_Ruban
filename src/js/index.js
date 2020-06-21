@@ -103,3 +103,6 @@ buttons.forEach((el) => {
         }, slideTimeout || 0)
     })
 })
+
+
+export default fullpage;
