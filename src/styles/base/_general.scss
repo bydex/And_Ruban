@@ -305,6 +305,12 @@ body, html {
 }
 .watch-original {
     .section_create {
+        .top-slider__control {
+            color: $light;
+            svg {
+                stroke: $light;
+            }
+        }
         .section__bg {
             overflow: visible;
             filter: grayscale(0);

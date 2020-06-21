@@ -1,9 +1,7 @@
 import fullpage from '../../../js/index';
 import sliders  from '../top-slider/top-slider';
 import Swiper   from 'swiper';
-import helpers  from "../../../js/import/components";
 
-const rem = helpers.rem;
 const btn = document.querySelector('#watch-original');
 
 
@@ -13,15 +11,16 @@ const initWatchOriginal = () => {
     fullpage.allowTouchMove = false;
     fullpage.mousewheel.disable();
 
-    let indexBackSlider = sliders.backSlider.activeIndex;
-    sliders.backSlider.destroy();
-    sliders.topSliderThumbs.destroy();
+    let indexBackSlider = sliders.backSlider.realIndex;
+    sliders.backSlider.destroy(true, true);
+    sliders.topSliderThumbs.destroy(true, true);
 
     let topSliderThumbs = new Swiper(".top-slider__slider", sliders.topSliderThumbsSettings);
 
     sliders.backSliderSettings.allowTouchMove   = true;
     sliders.backSliderSettings.effect           = false;
     sliders.backSliderSettings.thumbs.swiper    = topSliderThumbs;
+    sliders.backSliderSettings.initialSlide     = indexBackSlider;
 
 
     const backSlider = new Swiper(".slider-background", sliders.backSliderSettings);
@@ -29,12 +28,11 @@ const initWatchOriginal = () => {
 
 
     backSlider.init();
-    backSlider.slideTo(indexBackSlider, false, false);
     backSlider.update();
 
-    sliders.backSlider = backSlider;
-    sliders.topSliderThumbs = topSliderThumbs;
-    sliders.backSlider.activeIndex = backSlider.activeIndex;
+    sliders.backSlider              = backSlider;
+    sliders.topSliderThumbs         = topSliderThumbs;
+    sliders.backSlider.activeIndex  = backSlider.activeIndex;
 },
 destroyWatchOriginal = () => {
     document.body.classList.remove('watch-original');
@@ -42,7 +40,7 @@ destroyWatchOriginal = () => {
     fullpage.allowTouchMove = true;
     fullpage.mousewheel.enable();
 
-    let indexBackSlider = sliders.backSlider.activeIndex;
+    let indexBackSlider = sliders.backSlider.realIndex;
     sliders.backSlider.destroy(true, true);
     sliders.topSliderThumbs.destroy(true, true);
 
@@ -51,6 +49,7 @@ destroyWatchOriginal = () => {
     sliders.backSliderSettings.allowTouchMove   = false;
     sliders.backSliderSettings.effect           = 'fade';
     sliders.backSliderSettings.thumbs.swiper    = topSliderThumbs;
+    sliders.backSliderSettings.initialSlide     = indexBackSlider;
 
 
     const backSlider = new Swiper(".slider-background", sliders.backSliderSettings);
@@ -58,16 +57,15 @@ destroyWatchOriginal = () => {
 
 
     backSlider.init();
-    backSlider.slideTo(indexBackSlider, false, false);
     backSlider.update();
 
-    sliders.backSlider = backSlider;
-    sliders.topSliderThumbs = topSliderThumbs;
-    sliders.backSlider.activeIndex = backSlider.activeIndex;
+    sliders.backSlider              = backSlider;
+    sliders.topSliderThumbs         = topSliderThumbs;
+    sliders.backSlider.activeIndex  = backSlider.activeIndex;
 };
 
 document.body.addEventListener('keydown', (e) => {
-    if (e.keyCode === 27) {
+    if (e.keyCode === 27 && document.body.classList.contains('watch-original')) {
         destroyWatchOriginal();
     }
 })

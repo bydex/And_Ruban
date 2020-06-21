@@ -15,8 +15,6 @@ let fullpage = new Swiper("#fullpage", {
         el: ".fullpage__pagination",
         clickable: true,
     },
-    // draggable: false,
-    // allowTouchMove:false,
     speed: 1000,
     navigation: {
         nextEl: ".fullpage__arrow_down",
@@ -26,7 +24,8 @@ let fullpage = new Swiper("#fullpage", {
     lazy: {
         loadPrevNext: true,
         loadPrevNextAmount: 2
-    }
+    },
+    observerUpdate: true
 });
 
 
