@@ -1,6 +1,6 @@
-mixin logo(theme)
-    .logo(class=`logo_theme_${theme}`)
-        if logoModal = true
+mixin logo(theme, logoModal = false)
+    a.logo(class=`logo_theme_${theme}` href="#")
+        if logoModal === true
             .h3.logo__title.modal__title AND<span class="modal__logo-span">RUBAN</span>
             p.logo__subtitle.p.modal__p Мебель с душой
         else

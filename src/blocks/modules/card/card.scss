@@ -59,7 +59,8 @@
     }
     &__title {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        height: 100%;
         position: absolute;
         right: calc(100% + #{rem(12)});
         bottom: 0;
@@ -70,6 +71,17 @@
         .card_right & {
             right: auto;
             left: calc(100% + #{rem(12)});
+        }
+        &:after {
+            content: 'andruban — мебель  иных реальностей';
+            color: $light;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
         }
     }
     &__wrapper {
@@ -117,6 +129,11 @@
             margin-bottom: calc(83.33vh / 3.6 * -1);
             margin-bottom: calc(var(--vh, 1vh) * 83.33 / 3.6 * -1);
 
+            .card__title {
+                &:after {
+                    height: calc(83.33vh / 3.6);
+                }
+            }
             .card__inner {
                 padding-bottom: calc(83.33vh / 3.6);
                 padding-bottom: calc(var(--vh, 1vh) * 83.33 / 3.6);

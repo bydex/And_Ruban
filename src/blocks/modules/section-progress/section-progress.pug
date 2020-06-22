@@ -15,7 +15,7 @@
     ];
 
 
-section.section.section_light.swiper-slide(id="progress" class=`section_progress`)
+section.section.section_light.swiper-slide(id="progress" class=`section_progress` data-theme="light")
     .section__wrapper
         .section__row.section__row_fullheight
             .section__col.section__col_left
@@ -53,17 +53,21 @@ section.section.section_light.swiper-slide(id="progress" class=`section_progress
                             use(xlink:href='./img/sprites/sprite.svg#design-school')
                     p.p.p_font_light 4 года подряд получали награду за лучшее качество обслуживания клиентов сообществом Houzz
                     p.p.section__bests
-                        svg(viewBox="0 0 70 70" class="section__best houzz")
-                            use(xlink:href='./img/sprites/sprite.svg#houzz-logo_2017')
-                        svg(viewBox="0 0 70 70" class="section__best houzz")
-                            use(xlink:href='./img/sprites/sprite.svg#houzz-logo_2018')
-                        svg(viewBox="0 0 70 70" class="section__best houzz")
-                            use(xlink:href='./img/sprites/sprite.svg#houzz-logo_2019')
-                        svg(viewBox="0 0 70 70" class="section__best houzz")
-                            use(xlink:href='./img/sprites/sprite.svg#houzz-logo_2020')
+                        a(class="section__best" target="_blank" href="https://www.houzz.ru/hznb/professionaly/mebely-i-aksessuary/and-ruban-pfvwus-pf~344163869?")
+                            svg(viewBox="0 0 70 70" class="houzz")
+                                use(xlink:href='./img/sprites/sprite.svg#houzz-logo_2017')
+                        a(class="section__best" target="_blank" href="https://www.houzz.ru/hznb/professionaly/mebely-i-aksessuary/and-ruban-pfvwus-pf~344163869?")
+                            svg(viewBox="0 0 70 70" class="houzz")
+                                use(xlink:href='./img/sprites/sprite.svg#houzz-logo_2018')
+                        a(class="section__best" target="_blank" href="https://www.houzz.ru/hznb/professionaly/mebely-i-aksessuary/and-ruban-pfvwus-pf~344163869?")
+                            svg(viewBox="0 0 70 70" class="houzz")
+                                use(xlink:href='./img/sprites/sprite.svg#houzz-logo_2019')
+                        a(class="section__best" target="_blank" href="https://www.houzz.ru/hznb/professionaly/mebely-i-aksessuary/and-ruban-pfvwus-pf~344163869?")
+                            svg(viewBox="0 0 70 70" class="houzz")
+                                use(xlink:href='./img/sprites/sprite.svg#houzz-logo_2020')
                     .section__logo-row
-                        .section__logo-wrapper
+                        a.section__logo-wrapper.houzz(target="_blank" href="https://www.houzz.ru/hznb/professionaly/mebely-i-aksessuary/and-ruban-pfvwus-pf~344163869?")
                             svg(viewBox="0 0 170 39" width="170")
                                 use(xlink:href='./img/sprites/sprite.svg#houzz_logo')
                         .section__logo-button
-                            button.btn.btn_large.btn_primary.btn_wide.h6 Онлайн расчет в Whatsapp
+                            a.btn.btn_large.btn_primary.btn_wide.h6(href="https://www.houzz.ru/hznb/professionaly/mebely-i-aksessuary/and-ruban-pfvwus-pf~344163869?" target="_blank") отзывы о нас на houzz.ru

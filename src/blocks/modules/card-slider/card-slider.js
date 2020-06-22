@@ -13,6 +13,10 @@ if (document.querySelector("#make-card-slider")) {
             swiper: cardThumbs,
         },
         loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: true
+        }
     });
 
     makeSlider.on("slideChange", function () {
@@ -37,5 +41,9 @@ if (document.querySelector("#make-card-slider2")) {
         navigation: {
             nextEl: "#make-card-slider2 .card-slider__arrow_next",
         },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: true
+        }
     });
 }

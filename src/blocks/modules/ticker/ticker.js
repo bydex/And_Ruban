@@ -9,5 +9,5 @@ new Swiper(".ticker", {
         delay: 0,
     },
     speed: 10000,
-    allowTouchMove: false
+    allowTouchMove: false,
 });

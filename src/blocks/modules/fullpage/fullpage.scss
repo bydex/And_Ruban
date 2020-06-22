@@ -1,4 +1,16 @@
 .fullpage {
+    &_theme {
+        &_light {
+            .fullpage__pagination .swiper-pagination-bullet {
+                background-color: $light;
+
+                &-active {
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+
     &__control {
         @include container();
         position: fixed;
@@ -55,10 +67,14 @@
             position: relative;
             width: rem(2);
             height: rem(30);
-            background-color: $light;
+            background-color: $secondary;
             border-radius: 0;
             outline: none;
             opacity: 1;
+            transition: {
+                property: background-color;
+                duration: $duration;
+            }
 
             &:after {
                 content: "0" counter(fullpage);

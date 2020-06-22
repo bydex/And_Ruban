@@ -10,12 +10,19 @@ gulp.task("sprites", () => {
     return gulp.src(paths.sprites.src)
         .pipe(svg({
             shape: {
-                dest: "intermediate-svg"
+                dest: "intermediate-svg",
+                // dimension: {
+                //     attributes: true
+                // }
             },
             mode: {
                 stack: {
                     sprite: "../sprite.svg"
-                }
+                },
+                // css: { // Activate the «css» mode
+                //     defs: true,
+                //     css: true // Activate CSS output (with default options)
+                // }
             }
         }))
         .pipe(gulp.dest(paths.sprites.dist))

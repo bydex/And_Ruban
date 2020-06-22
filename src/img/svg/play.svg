@@ -1,6 +1,12 @@
-<svg width="70" height="70" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
-<mask id="path-1-inside-1">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M35 70C54.33 70 70 54.33 70 35C70 15.67 54.33 0 35 0C15.67 0 0 15.67 0 35C0 54.33 15.67 70 35 70ZM28.5 47.9904L51 35L28.5 22.0096L28.5 47.9904Z"/>
-</mask>
-<path d="M51 35L51.5 35.866L53 35L51.5 34.134L51 35ZM28.5 47.9904H27.5V49.7224L29 48.8564L28.5 47.9904ZM28.5 22.0096L29 21.1436L27.5 20.2776V22.0096H28.5ZM69 35C69 53.7777 53.7777 69 35 69V71C54.8823 71 71 54.8823 71 35H69ZM35 1C53.7777 1 69 16.2223 69 35H71C71 15.1177 54.8823 -1 35 -1V1ZM1 35C1 16.2223 16.2223 1 35 1V-1C15.1177 -1 -1 15.1177 -1 35H1ZM35 69C16.2223 69 1 53.7777 1 35H-1C-1 54.8823 15.1177 71 35 71V69ZM50.5 34.134L28 47.1244L29 48.8564L51.5 35.866L50.5 34.134ZM28 22.8756L50.5 35.866L51.5 34.134L29 21.1436L28 22.8756ZM29.5 47.9904L29.5 22.0096H27.5L27.5 47.9904H29.5Z" mask="url(#path-1-inside-1)"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 70 70" style="enable-background:new 0 0 70 70;" stoke="red" stroke-width="1" xml:space="preserve">
+<g>
+	<path class="st0" d="M35,1c18.7,0,34,15.3,34,34S53.7,69,35,69S1,53.7,1,35S16.3,1,35,1 M35,0C15.7,0,0,15.7,0,35s15.7,35,35,35
+		s35-15.7,35-35S54.3,0,35,0L35,0z" />
+</g>
+<g>
+	<path class="st0" d="M28.3,21.6L51.5,35L28.3,48.4V21.6 M27.3,19.8v30.3L53.5,35L27.3,19.8L27.3,19.8z"/>
+</g>
 </svg>

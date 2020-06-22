@@ -380,3 +380,24 @@ body, html {
         overflow: visible;
     }
 }
+
+
+.proseo {
+    color: $secondary;
+    transition: {
+        property: fill, color;
+        duration: $duration;
+    };
+    &_theme {
+        &_light {
+            fill: $light !important;
+        }
+        &_dark {
+            fill: $dark !important;
+        }
+    }
+
+    &:hover {
+        color: $green;
+    }
+}
