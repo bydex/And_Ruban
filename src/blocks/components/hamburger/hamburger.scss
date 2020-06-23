@@ -3,9 +3,11 @@
     position: absolute;
     z-index: 2051;
     top: rem(140);
-    left: 6rem;
+    right: calc(100% + #{rem(90)});
     width: rem(30);
     height: rem(30);
+    cursor: pointer;
+    pointer-events: all;
 
     &__inner {
         display: inline-block;
@@ -73,6 +75,10 @@
         position: relative;
         margin-bottom: rem(8);
         line-height: 0;
+
+        &:after {
+            content: 'Меню';
+        }
     }
 }
 
@@ -94,5 +100,9 @@
         width: 100%;
         height: 100%;
         transition: all .3s ease-out;
+    }
+    &_original {
+        position: absolute;
+        z-index: 500;
     }
 }

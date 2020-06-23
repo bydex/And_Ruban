@@ -1,6 +1,7 @@
 import fullpage from '../../../js/index';
 import sliders  from '../top-slider/top-slider';
 import Swiper   from 'swiper';
+import burger   from '../../components/hamburger/hamburger';
 
 const btn = document.querySelector('#watch-original');
 
@@ -67,7 +68,26 @@ destroyWatchOriginal = () => {
 document.body.addEventListener('keydown', (e) => {
     if (e.keyCode === 27 && document.body.classList.contains('watch-original')) {
         destroyWatchOriginal();
+        burger.overlayClose(true);
+        burger.hamburgerClose();
     }
 })
 
-btn.addEventListener("click", initWatchOriginal);
+btn.addEventListener("click", function() {
+    burger.overlayOpen(true);
+    burger.hamburgerOpen();
+    setTimeout(initWatchOriginal, 300);
+});
+
+
+burger.hamburger.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (document.body.classList.contains('watch-original')) {
+        destroyWatchOriginal();
+        burger.overlayClose(true);
+        burger.hamburgerClose();
+    }
+});
+
+
+export default destroyWatchOriginal;
