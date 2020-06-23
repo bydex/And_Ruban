@@ -1,124 +1,241 @@
 $delay: (1: .2s, 2: .4s, 3: .6s, 4: .8s, 5: 1s, 6: 1.2s, 7: 1.4s, 8: 1.6s);
 
-.dropdown {
-    cursor: pointer;
+// .dropdown {
+//     cursor: pointer;
 
-    &__title {
-        position: relative;
-        overflow: visible;
-        padding: 0;
-        cursor: text;
+//     &__title {
+//         position: relative;
+//         overflow: visible;
+//         padding: 0;
+//         cursor: text;
 
-        &-p {
-            position: inherit;
-            padding: 0;
-            font-size: 15px;
-            text-transform: uppercase;
-            line-height: 0;
+//         &-p {
+//             position: inherit;
+//             padding: 0;
+//             font-size: 15px;
+//             text-transform: uppercase;
+//             line-height: 0;
 
-            // &:before {
-            //     top: 0.1875rem;
-            // }
-        }
+//             // &:before {
+//             //     top: 0.1875rem;
+//             // }
+//         }
 
-        .active.dropdown__title-p:after {
-            content: "";
-            position: absolute;
-            top: rem(-8);
-            width: rem(1);
-            height: 0.9875rem;
-            background-color: $light;
-            opacity: 1;
-            animation-name: opacityAnimation;
-            animation-duration: .9s;
-            animation-timing-function: inherit;
-            animation-iteration-count: infinite;
-        }
+//         .active.dropdown__title-p:after {
+//             content: "";
+//             position: absolute;
+//             top: rem(-8);
+//             width: rem(1);
+//             height: 0.9875rem;
+//             background-color: $light;
+//             opacity: 1;
+//             animation-name: opacityAnimation;
+//             animation-duration: .9s;
+//             animation-timing-function: inherit;
+//             animation-iteration-count: infinite;
+//         }
+//     }
+
+//     &__list {
+//         position: absolute;
+//         left: rem(-10);
+
+//         width: 102%;
+//         transition: all .5s linear;
+//         background-color: #212121;
+//         visibility: hidden;
+//         opacity: 0;
+//         padding-left: rem(10);
+//     }
+
+//     &__content {
+//         &.active {
+//             .dropdown__list {
+//                 visibility: visible;
+//                 opacity: 1;
+//                 z-index: 1;
+//                 height: auto;
+//                 transition: all .3s linear;
+
+//                 @each $nth,
+//                     $animation-delay in $delay {
+//                     .dropdown__item:nth-child(#{$nth}) {
+//                         transition: {
+//                             delay: $animation-delay;
+//                             duration: .4s;
+//                             timing-function: linear;
+//                             property: opacity;
+//                         }
+
+//                         opacity: 1;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     &__item {
+//         display: inline-flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         width: 100%;
+//         height: 100%;
+
+//         opacity: 0;
+
+//         &:hover {
+//             .dropdown__link {
+//                 text-decoration: underline;
+//                 color: $light;
+//             }
+//         }
+//     }
+
+//     &__link {
+//         display: inline-block;
+//         position: relative;
+//         cursor: pointer;
+//         width: 100%;
+
+//         font: {
+//             size: rem(16);
+//         }
+
+//         color: $light;
+//         text-transform: uppercase;
+
+//         padding: {
+//             top: rem(16);
+//             bottom: rem(16);
+//         }
+
+//         ;
+//     }
+// }
+
+// @keyframes opacityAnimation {
+//     from {
+//         opacity: 1;
+//     }
+
+//     to {
+//         opacity: 0;
+//     }
+// }
+
+.js-Dropdown {
+    width: 100%;
+}
+
+.js-Dropdown-title:after {
+    content: url('../../img/sprites/sprite.svg#arrow-down-fill');
+    display: inline-block;
+    width: rem(12);
+    height: rem(7);
+    border: none;
+    background-color: inherit;
+    top: 35%;
+}
+
+.js-Dropdown-title {
+    border: none;
+    background-color: transparent;
+
+    position: relative;
+    width: 100%;
+    color: #fff;
+    border-bottom: 0.125rem solid #eceff1;
+    outline: none;
+    line-height: 0.9;
+
+    padding: {
+        top: 0;
+        right: 0;
+        bottom: 0.0875rem;
+        left: 0;
     }
 
-    &__list {
+    text-transform: uppercase;
+
+    font: {
+        weight: 300;
+        size: 0.75rem;
+    }
+
+    &:before {
+        content: attr(data-title);
         position: absolute;
-        left: rem(-10);
-
-        width: 102%;
-        transition: all .5s linear;
-        background-color: #212121;
-        visibility: hidden;
-        opacity: 0;
-        padding-left: rem(10);
-    }
-
-    &__content {
-        &.active {
-            .dropdown__list {
-                visibility: visible;
-                opacity: 1;
-                z-index: 1;
-                height: auto;
-                transition: all .3s linear;
-
-                @each $nth,
-                    $animation-delay in $delay {
-                    .dropdown__item:nth-child(#{$nth}) {
-                        transition: {
-                            delay: $animation-delay;
-                            duration: .4s;
-                            timing-function: linear;
-                            property: opacity;
-                        }
-
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-    }
-
-    &__item {
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        height: 100%;
-
-        opacity: 0;
-
-        &:hover {
-            .dropdown__link {
-                text-decoration: underline;
-                color: $light;
-            }
-        }
-    }
-
-    &__link {
-        display: inline-block;
-        position: relative;
-        cursor: pointer;
-        width: 100%;
-
-        font: {
-            size: rem(16);
-        }
-
+        top: 0.2875rem;
+        left: 0.025rem;
+        font-size: 0.9375rem;
+        transition: all .2s linear;
         color: $light;
+        pointer-events: none;
         text-transform: uppercase;
-
-        padding: {
-            top: rem(16);
-            bottom: rem(16);
-        }
-
-        ;
     }
 }
 
-@keyframes opacityAnimation {
-    from {
-        opacity: 1;
+.js-Dropdown-list {
+    padding-top: rem(10);
+    padding-left: rem(10);
+    left: -10px;
+    border: none;
+    background-color: #212121;
+}
+
+.js-Dropdown-list li {
+    background-color: transparent;
+    border-bottom: none;
+
+    font: {
+        size: rem(15);
+        weight: 300;
     }
 
-    to {
+    padding-left: 0;
+    color: $light;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity .3s linear;
+}
+
+.js-Dropdown-list li.is-selected {
+    background-color: transparent;
+}
+
+.js-Dropdown-list li:hover {
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.js-Dropdown-title-active:before {
+    top: -0.8125rem;
+    left: 0.025rem;
+    transition: all .2s ease-out;
+    pointer-events: none;
+}
+
+.js-Dropdown-textLine {
+    width: rem(1.5);
+    height: rem(14);
+    background-color: $light;
+    position: absolute;
+    left: rem(1);
+    top: rem(9);
+    opacity: 0;
+}
+
+.js-Dropdown-textLine-active {
+    animation-name: textLine;
+    animation-iteration-count: infinite;
+    animation-duration: .8s;
+}
+
+@keyframes textLine {
+    from {
         opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

@@ -6,12 +6,11 @@ include request/request
 include payment/payment
 include confidence/confidence
 mixin modal()
-    section.modal.swiper-container
+    section.modal.swiper-container.modal_active
         .swiper-wrapper
             .swiper-slide
                 .modal__wrapper
                     .modal__inner
-                        +logo('modal')
                         +logo('modal')
                     .modal__inner
                         .modal__content
