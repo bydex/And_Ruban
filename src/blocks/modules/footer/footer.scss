@@ -11,9 +11,7 @@
         &_light {
             background-color: $light;
             color: $secondary;
-            svg {
-                fill: $secondary;
-            }
+            fill: $secondary;
             .modal__logo-span,
             .modal__p {
                 color: $secondary;

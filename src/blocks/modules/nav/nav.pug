@@ -1,14 +1,15 @@
+include ../logo/logo
 .nav
     .nav__logo
-        +logo('light')
+        +logo('light', false)
     .nav__info
         button.btn.btn_small.btn_primary.nav__btn Оставить заявку
         ul.nav__socials
             li
-                a.nav__social(href="#" target="_blank")
+                a.nav__social(href="https://www.houzz.ru/pro/andruban/and-ruban" target="_blank")
                     +icon('socials-house', 'icon-social')
             li
-                a.nav__social(href="#" target="_blank")
+                a.nav__social(href="https://www.instagram.com/and.ruban/" target="_blank")
                     +icon('socials-inst', 'icon-social')
             li
                 a.nav__social(href="#" target="_blank")

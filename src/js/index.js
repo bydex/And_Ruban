@@ -38,12 +38,13 @@ fullpage.on("init", function() {
     })
 });
 fullpage.on("init slideChange", function() {
-    let index   = this.realIndex,
+    let index   = this.activeIndex,
         isEven  = index % 2,
-        slider  = document.querySelector("#fullpage");
+        slider  = document.querySelector("#fullpage"),
+        active  = Array.from(fullpage.slides)[index],
+        theme   = active.dataset.theme;
 
-
-    if (!isEven) {
+    if (theme !== 'light') {
         slider.classList.add("fullpage_theme_light");
     } else {
         slider.classList.remove("fullpage_theme_light");
