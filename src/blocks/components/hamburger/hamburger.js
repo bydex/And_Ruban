@@ -64,6 +64,16 @@ document.addEventListener('keydown', (e) => {
 })
 
 
+const navLinks = document.querySelectorAll('.navigation__list-link');
+
+navLinks.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalClose();
+    })
+})
+
+
 let burger = {
     hamburgerClose: hamburgerClose,
     hamburgerOpen: hamburgerOpen,
