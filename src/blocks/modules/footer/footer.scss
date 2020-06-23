@@ -1,9 +1,39 @@
 .footer {
+    position: relative;
+    z-index: 1;
     margin-top: auto;
-    padding-bottom: rem(36);
+    padding: {
+        top: rem(36);
+        bottom: rem(36);
+    };
 
+    &_theme {
+        &_light {
+            background-color: $light;
+            color: $secondary;
+            svg {
+                fill: $secondary;
+            }
+            .modal__logo-span,
+            .modal__p {
+                color: $secondary;
+            }
+        }
+    }
+
+    &__to-back {
+        position: absolute;
+        bottom: calc(100% + 65px);
+        left: calc(100% + 15px);
+        margin-bottom: 0;
+
+        .btn__icon {
+            margin-right: 0;
+        }
+    }
     &__wrapper {
         @include container();
+        position: relative;
     }
 
     &__inner {

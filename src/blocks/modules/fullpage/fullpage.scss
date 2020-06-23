@@ -9,6 +9,10 @@
         height: 100%;
         transform: translateX(-50%);
         pointer-events: none;
+        transition: {
+            property: visibility, opacity;
+            duration: $duration;
+        }
     }
     &__control-inner {
         display: flex;

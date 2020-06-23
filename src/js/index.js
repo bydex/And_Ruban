@@ -6,6 +6,7 @@ import helpers from "./import/components";
 const rem = helpers.rem;
 console.log(rem);
 
+
 let fullpage = new Swiper("#fullpage", {
     direction: "vertical",
     slidesPerView: 1,
@@ -14,14 +15,17 @@ let fullpage = new Swiper("#fullpage", {
         el: ".fullpage__pagination",
         clickable: true,
     },
-    draggable: false,
-    allowTouchMove:false,
     speed: 1000,
     navigation: {
         nextEl: ".fullpage__arrow_down",
         prevEl: ".fullpage__arrow_up",
     },
     init: false,
+    lazy: {
+        loadPrevNext: true,
+        loadPrevNextAmount: 2
+    },
+    observerUpdate: true
 });
 
 
@@ -29,6 +33,9 @@ fullpage.on("init", function() {
     if (this.slides.length <= 1) {
         document.querySelector("#fullpage").classList.add("fullpage_disabled");
     }
+    Array.from(this.slides).forEach((el, i) => {
+        el.dataset.slideIndex = i;
+    })
 });
 fullpage.on("init slideChange", function() {
     let index   = this.realIndex,
@@ -60,9 +67,9 @@ document.body.addEventListener("mousemove", (e) => {
         const blockConfig = el.getBoundingClientRect();
         if (
             mousePos.x > blockConfig.x &&
-      mousePos.x < blockConfig.x + blockConfig.width &&
-      mousePos.y > blockConfig.y &&
-      mousePos.y < blockConfig.y + blockConfig.height
+            mousePos.x < blockConfig.x + blockConfig.width &&
+            mousePos.y > blockConfig.y &&
+            mousePos.y < blockConfig.y + blockConfig.height
         ) {
             el.closest(".section").classList.add("section_bg_colored");
         } else {
@@ -70,3 +77,31 @@ document.body.addEventListener("mousemove", (e) => {
         }
     });
 });
+
+
+function setCSSWindowHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
+setCSSWindowHeight();
+window.addEventListener('resize', setCSSWindowHeight);
+
+
+
+const buttons = document.querySelectorAll('[data-anchor]');
+
+buttons.forEach((el) => {
+    el.addEventListener('click', function() {
+        const slideId       = this.dataset.anchor,
+              slideTimeout  = +this.dataset.anchorTimeout,
+              anchorSlide   = document.querySelector(`#${slideId}`),
+              slideIndex    = anchorSlide.dataset.slideIndex;
+
+        setTimeout(() => {
+            fullpage.slideTo(slideIndex);
+        }, slideTimeout || 0)
+    })
+})
+
+
+export default fullpage;

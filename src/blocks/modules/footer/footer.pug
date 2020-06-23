@@ -1,6 +1,9 @@
-mixin footer()
-    footer.footer
+mixin footer(theme, anchor)
+    footer.footer(class=`footer_theme_${theme}`)
         .footer__wrapper
+            if (anchor === true)
+                button.btn.btn_rect.btn_transparent_light.btn_uppercase.footer__to-back(data-anchor="header")
+                    +icon('arrow-up', 'btn__icon')
             .footer__inner
                 .footer__logo
                     +logo()

@@ -58,6 +58,7 @@ body, html {
     font-weight: 400;
     font-style: normal;
     overflow: hidden;
+    background-color: $secondary;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -138,6 +139,27 @@ body, html {
 
     &:hover {
         color: $primary;
+    }
+
+    &_bold {
+        text-decoration: none;
+        color: $primary;
+        font-weight: 700;
+        border-bottom: {
+            width: rem(2);
+            color: transparent;
+            style: solid;
+        };
+        transition: {
+            property: border-color;
+            duration: $duration;
+        }
+
+        &:hover {
+            border-bottom: {
+                color: $primary;
+            };
+        }
     }
 }
 
@@ -220,11 +242,13 @@ body, html {
         height: 100%;
         top: 0;
         left: 0;
+        z-index: 1;
         background-color: rgba($color: $light, $alpha: .75);
         transition: {
             property: background-color;
             duration: $duration;
         };
+        pointer-events: none;
     }
 }
 .dark-mask {
@@ -238,11 +262,13 @@ body, html {
         height: 100%;
         top: 0;
         left: 0;
+        z-index: 1;
         background-color: rgba($color: $secondary, $alpha: .75);
         transition: {
             property: background-color;
             duration: $duration;
         };
+        pointer-events: none;
     }
 }
 
@@ -258,5 +284,99 @@ body, html {
         font-size: rem(42);
         font-weight: 700;
         color: $primary;
+    }
+}
+
+
+.houzz {
+    transition: {
+        property: filter;
+        duration: $duration;
+    }
+    filter: grayscale(100%) brightness(0);
+    &:hover {
+        filter: grayscale(0) brightness(100%);
+    }
+}
+
+.slider-background {
+    width: 100%;
+    height: 100%;
+}
+.watch-original {
+    .section_create {
+        .top-slider__control {
+            color: $light;
+            svg {
+                stroke: $light;
+            }
+        }
+        .section__bg {
+            overflow: visible;
+            filter: grayscale(0);
+
+            .swiper-slide {
+                filter: grayscale(100%);
+                transition: {
+                    property: filter, transform;
+                    duration: 1000ms;
+                }
+
+                &:after {
+                    transition: {
+                        property: background-color;
+                        duration: 1000ms;
+                    }
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($secondary, .9);
+                }
+                &-active {
+                    filter: grayscale(0);
+
+                    &:after {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+        .section__wrapper {
+            position: static;
+        }
+        .section__bg-wrapper {
+            z-index: 999;
+            pointer-events: all;
+        }
+        .section__bg {
+            &:after {
+                background: transparent;
+            }
+            &:before {
+                opacity: 1;
+            }
+        }
+        .top-slider {
+            .swiper-slide {
+                &:after {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    .top-slider__slider {
+        z-index: 1000;
+    }
+    .fullpage__control {
+        visibility: hidden;
+        opacity: 0;
+    }
+    .slider-background {
+        overflow: visible;
     }
 }
