@@ -11,8 +11,8 @@ mixin request(payment)
                 .request__title
                     +picture('', 'create-slider-2', 'jpg', 'webp', 'request__image')
                     .request__product-name
-                        p.request__p.request__p_size_large Кухня «Современная классика»
-                        p.p.p_font_light.request__p от 60 000 ₽
+                        p.request__p.request__p_size_large(data-title) Кухня «Современная классика»
+                        p.p.p_font_light.request__p(data-price) от 60 000 ₽
                 form.request__form.form-js(data-action="/")
                     .request__form-wrapper
                         +label('request__label-box', 'request__label', 'Имя', 'request__input', 'name')

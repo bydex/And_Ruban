@@ -10,16 +10,20 @@ section.section.section_light.swiper-slide(id="create" class=`section_create` da
                         ul.mini-slider__body.swiper-wrapper
                             each index in Array(5)
                                 li.swiper-slide
-                                    h4.h4.mini-slider__title Кухня «Современная классика»
-                                    h5.h5.mini-slider__subtitle от 60 000 ₽
+                                    h4.h4.mini-slider__title(data-title) Кухня «Современная классика»
+                                    h5.h5.mini-slider__subtitle(data-price) от 60 000 ₽
                                     p.p.p_font_light.mini-slider__description Угловая кухня среднего размера в стиле современная классика с обеденным столом, накладной раковиной, фасадами с утопленной филенкой, столешницей из ламината, фартуком из дерева.
+                            li.swiper-slide
+                                h4.h4.mini-slider__title(data-title) Кухня «Тестовая классика»
+                                h5.h5.mini-slider__subtitle(data-price) от 99990 000 ₽
+                                p.p.p_font_light.mini-slider__description Угловая кухня среднего размера в стиле современная классика с обеденным столом, накладной раковиной, фасадами с утопленной филенкой, столешницей из ламината, фартуком из дерева.
                         .mini-slider__control
                             button.mini-slider__arrow_prev
                                 +icon('arrow-left', 'arrow-h')
                             .mini-slider__pagination
                             button.mini-slider__arrow_next
                                 +icon('arrow-right', 'arrow-h')
-                        button.btn.btn_large.btn_primary.btn_wide.h6 Хочу кухню
+                        button.btn.btn_large.btn_primary.btn_wide.h6(data-modal="request") Хочу кухню
             .section__col.section__col_right.section__col_flex
                 .title.title_card.section__title
                     h2.h2 Мы создаем мебель

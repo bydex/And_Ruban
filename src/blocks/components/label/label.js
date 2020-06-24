@@ -116,6 +116,10 @@ forms.forEach((el) => {
           method: "post",
         }).then(function() {
             el.reset();
+            if (select) select.previousSibling.querySelector('.js-Dropdown-title-active').innerText = '';
+            el.querySelectorAll('.label-box__label.active').forEach((inputWrap) => {
+                inputWrap.classList.remove('active');
+            })
             burger.modalSectionTo('thanks')
         })
     })

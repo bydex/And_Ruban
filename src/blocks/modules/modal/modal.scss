@@ -59,7 +59,6 @@
     display: block;
     opacity: 1;
     visibility: visible;
-    // transition: opacity .5s linear;
     transition: {
         property: display, visibility, opacity;
         delay: 0s, .1s, .2s;

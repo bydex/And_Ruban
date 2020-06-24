@@ -53,6 +53,30 @@ const modalSectionTo = (className) => {
     })
 
     modalActive.classList.add('modal_active');
+
+    if (className === 'request') {
+        const catalog       = document.querySelector('#create'),
+            activeCardSlide = catalog.querySelector('.card__wrapper .swiper-slide-active'),
+            activeBgSlide   = catalog.querySelector('.section__bg-wrapper .swiper-slide-active'),
+            catalogTitle    = activeCardSlide.querySelector('[data-title]').innerText,
+            catalogPrice    = activeCardSlide.querySelector('[data-price]').innerText,
+            catalogImage    = {
+                webp: activeBgSlide.querySelector('source').getAttribute('srcset'),
+                normal: activeBgSlide.querySelector('img').getAttribute('src'),
+            };
+
+        const modalTitle    = modalActive.querySelector('[data-title]'),
+            modalPrice      = modalActive.querySelector('[data-price]'),
+            modalImage      = {
+                webp: modalActive.querySelector('.request__image').previousSibling,
+                normal: modalActive.querySelector('.request__image'),
+            };
+
+        modalTitle.innerText = catalogTitle;
+        modalPrice.innerText = catalogPrice;
+        modalImage.webp.setAttribute('srcset', catalogImage.webp);
+        modalImage.normal.setAttribute('src', catalogImage.normal);
+    }
 }
 
 const modalSectionLinks = document.querySelectorAll('[data-modal-section]');
