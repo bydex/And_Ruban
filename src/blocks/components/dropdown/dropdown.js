@@ -55,8 +55,8 @@ var CustomSelect = function (options) {
         selectedClass = 'is-selected',
         openClass = 'is-open',
         animateLabel = 'js-Dropdown-title-active';
-        textLineClassActive = 'js-Dropdown-textLine-active';
-        selectOpgroups = elem.getElementsByTagName('optgroup'),
+    textLineClassActive = 'js-Dropdown-textLine-active';
+    selectOpgroups = elem.getElementsByTagName('optgroup'),
         selectOptions = elem.options,
         optionsLength = selectOptions.length,
         index = 0;
@@ -121,8 +121,10 @@ var CustomSelect = function (options) {
 
             li.innerText = options[i].textContent;
             li.setAttribute('data-value', options[i].value);
+            if (li.dataset.value === 'null') {
+                li.style.display = "none";
+            }
             li.setAttribute('data-index', index++);
-
             if (selectOptions[elem.selectedIndex].textContent === options[i].textContent) {
                 li.classList.add(selectedClass);
                 button.textContent = options[i].textContent;
@@ -137,7 +139,15 @@ var CustomSelect = function (options) {
      *
      */
     document.addEventListener('click', function (e) {
-        if (!selectContainer.contains(e.target)) close();
+        if (!selectContainer.contains(e.target)) {
+            close();
+            if (button.innerHTML.length < 1) {
+                button.classList.remove(animateLabel);
+            }
+            if (button.innerHTML.length > 1) {
+                textLine.classList.remove(textLineClassActive);
+            }
+        };
     });
 
     /**
@@ -148,8 +158,9 @@ var CustomSelect = function (options) {
     function onClick(e) {
         e.preventDefault();
         var t = e.target; // || e.srcElement; - uncomment for IE8
+        console.log(t)
+        if (t.classList.contains(titleClass)) {
 
-        if (t.className === titleClass) {
             button.classList.add(animateLabel);
             textLine.classList.add(textLineClassActive);
             toggle();
@@ -162,10 +173,9 @@ var CustomSelect = function (options) {
             //trigger 'change' event
             var evt = new CustomEvent('change');
             elem.dispatchEvent(evt);
-
             // highlight the selected
             for (var i = 0; i < optionsLength; i++) {
-                ul.querySelectorAll('li')[i].classList.remove(selectedClass);
+                document.querySelector('.js-Dropdown-list').querySelectorAll('li')[i].classList.remove(selectedClass);
             }
             t.classList.add(selectedClass);
             close();
@@ -217,7 +227,6 @@ var select = new CustomSelect({
 
 const jsDropdownTitle = document.querySelector('.js-Dropdown-title');
 jsDropdownTitle.dataset.title = "Выберите вид мебели";
-console.log(document.querySelector('.js-Dropdown-title').innerHTML.length)
 jsDropdownTitle.innerHTML = '';
 const jsDropdownlistItems = document.querySelectorAll('.js-Dropdown-list li');
 
