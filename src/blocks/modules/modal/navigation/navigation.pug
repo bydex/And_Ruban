@@ -1,5 +1,5 @@
 mixin navigation()
-    nav.navigation
+    nav.navigation.modal-content
         ul.navigation__list
             li.navigation__list-item
                 a.h2.navigation__list-link(href="" data-anchor="create" data-anchor-timeout="600") Проекты
@@ -7,4 +7,4 @@ mixin navigation()
                 a.h2.navigation__list-link(href="" data-anchor="progress" data-anchor-timeout="600") Достижения
             li.navigation__list-item
                 a.h2.navigation__list-link(href="" data-anchor="and-ruban" data-anchor-timeout="600") AndRuban
-        a.h2.navigation__link(href="#") Оставить<br>заявку
+        a.h2.navigation__link(href="#" data-modal-section="payment") Оставить<br>заявку

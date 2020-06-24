@@ -1,7 +1,8 @@
 import Swiper from "swiper";
 
+let modalScroll = undefined;
 if (document.querySelector(".modal")) {
-    new Swiper(".modal", {
+    modalScroll = new Swiper(".modal", {
         direction: "vertical",
         slidesPerView: "auto",
         freeMode: true,
@@ -12,3 +13,5 @@ if (document.querySelector(".modal")) {
         speed: 2000,
     });
 }
+
+export default modalScroll;

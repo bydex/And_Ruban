@@ -3,7 +3,7 @@ include ../../../components/dropdown/dropdown
 - const payment = true;
 mixin request(payment)
     if payment === false
-        section.request
+        section.request.modal-content
             .request__subject
                 p.p.p_font_light.section__description.thanks__p Спасибо, что хотите оставить нам заявку. Мы свяжемся с вами в течении 2 часов. Если не хотите ждать, то можете напрямую звонить, писать на whatsapp или e-mail.
                 h2.h2.section__title.thanks__h2 Оставить заявку
@@ -11,7 +11,7 @@ mixin request(payment)
                 .request__title
                     +picture('', 'create-slider-2', 'jpg', 'webp', 'request__image')
                     .request__product-name
-                        p.request__p.request__p_size_large Кухня «Современная классика»  
+                        p.request__p.request__p_size_large Кухня «Современная классика»
                         p.p.p_font_light.request__p от 60 000 ₽
                 form.request__form(action="#")
                     .request__form-wrapper
@@ -20,10 +20,10 @@ mixin request(payment)
                     a.btn.btn_large.btn_primary.h6.thanks__link(href="#") Отправить
                 .request__text-bottom
                     .request__personal
-                        span.request__personal-span Нажимая кнопку, Вы принимаете <a class="request__personal-link" href="#">Положение и Согласие на<br> обработку персональных данных.</a>
+                        span.request__personal-span Нажимая кнопку, Вы принимаете <a class="request__personal-link" href="#" data-modal-section="confidence">Положение и Согласие на<br> обработку персональных данных.</a>
                     p.request__p.request__p_size_large.request__exstra Кстати, на такую похожую кухню <br>уже оставили заявку <span class="request__exstra-span">12</span> человек
     else
-        section.payment.request.modal_active
+        section.payment.request.modal-content.modal_active
             .request__subject
                 p.p.p_font_light.section__description.thanks__p Спасибо, что хотите оставить нам заявку. Мы свяжемся с вами в течении 2 часов. Если не хотите ждать, то можете напрямую звонить, писать на whatsapp или e-mail.
                 h2.h2.section__title.thanks__h2 Оставить заявку
