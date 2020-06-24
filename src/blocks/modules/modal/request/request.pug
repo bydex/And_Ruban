@@ -13,11 +13,11 @@ mixin request(payment)
                     .request__product-name
                         p.request__p.request__p_size_large Кухня «Современная классика»
                         p.p.p_font_light.request__p от 60 000 ₽
-                form.request__form(action="#")
+                form.request__form.form-js(data-action="/")
                     .request__form-wrapper
-                        +label('request__label-box', 'request__label', 'Имя', 'request__input')
-                        +label('request__label-box', 'request__label', 'Телефон', 'request__input')
-                    a.btn.btn_large.btn_primary.h6.thanks__link(href="#") Отправить
+                        +label('request__label-box', 'request__label', 'Имя', 'request__input', 'name')
+                        +label('request__label-box', 'request__label', 'Телефон', 'request__input', 'tel')
+                    button.btn.btn_large.btn_primary.h6.thanks__link(type="submit") Отправить
                 .request__text-bottom
                     .request__personal
                         span.request__personal-span Нажимая кнопку, Вы принимаете <a class="request__personal-link" href="#" data-modal-section="confidence">Положение и Согласие на<br> обработку персональных данных.</a>
@@ -31,15 +31,15 @@ mixin request(payment)
                 .request__title
                     .request__product-name
                         p.request__p.request__p_size_large на расчет мебели
-                form.request__form(action="#")
+                form.request__form.form-js(data-action="/")
                     .request__form-wrapper
-                        +label('request__label-box', 'request__label', 'Имя', 'request__input')
-                        +label('request__label-box', 'request__label', 'Телефон', 'request__input')
+                        +label('request__label-box', 'request__label', 'Имя', 'request__input', 'name')
+                        +label('request__label-box', 'request__label', 'Телефон', 'request__input', 'tel')
                     .request__form-dropdown
                         //- +dropdown('payment__dropdown', 'Выберите вид мебели', ['Кухни', 'гардеробные', 'гостиные', 'детские', 'прихожие', 'спальни', 'шкафы'], '', 'payment__dropdown-link')
                         +dropdown(['Кухни', 'гардеробные', 'гостиные', 'детские', 'прихожие', 'спальни', 'шкафы'])
-                    a.btn.btn_large.btn_primary.h6.thanks__link(href="#") Отправить
+                    button.btn.btn_large.btn_primary.h6.thanks__link(type="submit") Отправить
                 .request__text-bottom
                     .request__personal
-                        span.request__personal-span Нажимая кнопку, Вы принимаете <a class="request__personal-link" href="#">Положение и Согласие на<br> обработку персональных данных.</a>
+                        span.request__personal-span Нажимая кнопку, Вы принимаете <a class="request__personal-link" href="#" data-modal-section="confidence">Положение и Согласие на<br> обработку персональных данных.</a>
                     p.request__p.request__p_size_large.request__exstra Кстати, на такую похожую кухню <br>уже оставили заявку <span class="request__exstra-span">12</span> человек

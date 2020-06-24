@@ -12,9 +12,9 @@ section.section.section_dark.swiper-slide(id="feedback" class=`section_feedback`
                             a.links__item.h6(href="tel:+79035874577") 8 (903) 587 45 77
                             a.links__item.h6.link(href="mailto:info@andruban.ru") info@andruban.ru
                         p.p.p_font_light Москва, ул.Планерная 5, офис 101
-                    form.section__form-row
-                        +label('request__label-box section__form-col', 'request__label', 'Имя', 'request__input')
-                        +label('request__label-box section__form-col', 'request__label', 'Телефон', 'request__input')
+                    form.section__form-row.form-js
+                        +label('request__label-box section__form-col', 'request__label', 'Имя', 'request__input', 'name')
+                        +label('request__label-box section__form-col', 'request__label', 'Телефон', 'request__input', 'tel')
                         button.section__form-btn.btn.btn_large.btn_primary.btn_wide.h6(type="submit") Отправить заявку
     .section__bg-wrapper.section__bg-wrapper_bottom
         .section__bg-inner.swiper-wrapper

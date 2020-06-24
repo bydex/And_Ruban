@@ -93,12 +93,18 @@ navLinks.forEach((el) => {
     })
 })
 
+const closeMenuButtons = document.querySelectorAll('[data-close-menu]');
+
+closeMenuButtons.forEach((el) => {
+    el.addEventListener('click', modalClose);
+})
 
 let burger = {
+    modalSectionTo: modalSectionTo,
     hamburgerClose: hamburgerClose,
-    hamburgerOpen: hamburgerOpen,
-    overlayClose: overlayClose,
-    overlayOpen: overlayOpen,
-    hamburger: hamburger,
+    hamburgerOpen:  hamburgerOpen,
+    overlayClose:   overlayClose,
+    overlayOpen:    overlayOpen,
+    hamburger:      hamburger,
 };
 export default burger;

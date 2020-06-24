@@ -2,6 +2,6 @@ mixin thanks()
     section.thanks.modal-content
         p.p.p_font_light.section__description.thanks__p Спасибо, что оставили нам заявку. Мы свяжемся с вами в течении 2 часов. Если не хотите ждать, то можете напрямую звонить, писать на whatsapp или e-mail.
         h2.h2.section__title.thanks__h2 Заявка отправлена
-        a.btn.btn_large.btn_primary.h6.thanks__link(href="#") Назад в портфолио
+        button.btn.btn_large.btn_primary.h6.thanks__link(data-close-menu) Назад в портфолио
         .thanks__image-wrapper
             +icon('thanks', 'thanks__svg')

@@ -36,8 +36,31 @@
             pointer-events: none;
             text-transform: uppercase;
         }
+        &:after {
+            content: '* заполните поле';
+            position: absolute;
+            top: calc(100% + #{rem(10)});
+            left: 0;
+            color: #FF5252;
+            font-weight: 300;
+            font-size: rem(12);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: {
+                property: visibility, opacity;
+                duration: $duration;
+            };
+        }
     }
-
+    &_is-error {
+        .label-box__label {
+            &:after {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
     &_width {
         &_100 {
             width: 100%;

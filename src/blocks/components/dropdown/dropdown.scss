@@ -125,6 +125,29 @@ $delay: (1: .2s, 2: .4s, 3: .6s, 4: .8s, 5: 1s, 6: 1.2s, 7: 1.4s, 8: 1.6s);
 
 .js-Dropdown {
     width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    &:after {
+        content: '* заполните поле';
+        position: absolute;
+        top: calc(100% + #{rem(10)});
+        left: 0;
+        color: #FF5252;
+        font-weight: 300;
+        font-size: rem(12);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: {
+            property: visibility, opacity;
+            duration: $duration;
+        };
+    }
+    &_is-error {
+        &:after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
 }
 
 .js-Dropdown-title:after {
