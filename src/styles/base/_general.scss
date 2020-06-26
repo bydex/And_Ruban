@@ -3,7 +3,13 @@
     background-color: $primary;
 }
 
-h1, h2, h3, h4, h5, h6, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
     margin: 0;
     padding: 0;
 }
@@ -12,6 +18,7 @@ a {
     color: inherit;
     fill: inherit;
     text-decoration: none;
+
     transition: {
         property: color;
         duration: $duration;
@@ -37,6 +44,7 @@ button {
 ul {
     list-style-type: none;
 }
+
 li {
     padding: 0;
     margin: 0;
@@ -46,43 +54,74 @@ li {
 .container {
     @include containerFull();
 }
+
 html {
     box-sizing: border-box;
 }
-body, html {
+
+body,
+html {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-style: normal;
     overflow: hidden;
     background-color: $secondary;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 
 .h1 {
     font-size: rem($h1);
     font-weight: 700;
+
     &_lite {
         color: $light;
     }
 }
+
 .h2 {
     margin-bottom: rem(7);
     font-size: rem($h2);
     font-weight: 700;
     letter-spacing: 0.05em;
     line-height: 100%;
+
+    @media (max-width: $break_xxl) {
+        font-size: rem(67);
+    }
+
+    @media (max-width: $break_xl) {
+        font-size: rem(60);
+    }
+
+    @media (max-width: $break_lg) {
+        font-size: rem(49);
+    }
+
+    @media (max-width: $break_md) {
+        font-size: rem(36);
+    }
+
+    @media (max-width: $break_sm) {
+        font-size: rem(26);
+    }
 }
+
 .h3 {
     font-size: rem($h3);
 }
+
 .h4 {
     font-size: rem($h4);
     font-weight: 400;
     letter-spacing: 0.05em;
 }
+
 .h5 {
     font-size: rem($h5);
     font-weight: 400;
@@ -91,28 +130,34 @@ body, html {
         font-weight: 300;
     }
 }
+
 .h6 {
     font-size: rem($h6);
     font-weight: 400;
 }
+
 .p {
     margin: {
         top: 0;
         bottom: rem(15);
     }
+
     &:last-child {
         margin-bottom: 0;
     }
+
     &_font {
         &_light {
             font-weight: 300;
             line-height: 156%;
         }
+
         &_primary {
             color: $primary;
         }
     }
 }
+
 .small {
     font-size: rem($small);
 }
@@ -120,6 +165,7 @@ body, html {
 .swiper-wrapper {
     transition-timing-function: ease;
 }
+
 #fullpage {
     height: 100vh;
 }
@@ -128,10 +174,13 @@ body, html {
 .link {
     text-decoration-line: underline;
     text-transform: lowercase;
+
     transition: {
         property: color;
         duration: $duration;
-    };
+    }
+
+    ;
 
     &:hover {
         color: $primary;
@@ -141,11 +190,15 @@ body, html {
         text-decoration: none;
         color: $primary;
         font-weight: 700;
+
         border-bottom: {
             width: rem(2);
             color: transparent;
             style: solid;
-        };
+        }
+
+        ;
+
         transition: {
             property: border-color;
             duration: $duration;
@@ -154,7 +207,9 @@ body, html {
         &:hover {
             border-bottom: {
                 color: $primary;
-            };
+            }
+
+            ;
         }
     }
 }
@@ -162,11 +217,18 @@ body, html {
 .icon-social {
     max-width: rem(20);
     max-height: rem(20);
+
+    @media (max-width: $break_xs) {
+        max-width: rem(15);
+    }
+
     fill: inherit;
+
     transition: {
         property: fill;
         duration: $duration;
     }
+
     &_contact {
         fill: $light;
         max-width: rem(26);
@@ -177,12 +239,40 @@ body, html {
         fill: $primary;
     }
 }
+
 .icon-garant {
     min-width: rem(347);
     max-width: rem(347);
     min-height: rem(347);
     max-height: rem(347);
     margin: rem(-30);
+
+    @media (max-width: $break_xl) {
+        max-width: rem(300);
+        max-height: rem(300);
+        min-width: rem(300);
+        min-height: rem(300);
+        margin: rem(-20);
+        margin-right: rem(40);
+    }
+
+    @media (max-width: $break_md) {
+        max-width: rem(230);
+        max-height: rem(230);
+        min-width: rem(230);
+        min-height: rem(230);
+    }
+    @media (max-width: $break_sm) {
+        margin-bottom: rem(110);
+    }
+    @media (max-width: $break_xs) {
+        max-width: rem(70);
+        max-height: rem(70);
+        min-width: rem(70);
+        min-height: rem(70);
+        margin: 1.75rem;
+        margin-bottom: rem(500);
+    }
 }
 
 
@@ -213,8 +303,11 @@ body, html {
         transition: {
             property: stroke;
             duration: $duration;
-        };
+        }
+
+        ;
     }
+
     &-v {
         max-width: rem(12);
         max-height: rem(30);
@@ -222,7 +315,9 @@ body, html {
         transition: {
             property: stroke;
             duration: $duration;
-        };
+        }
+
+        ;
     }
 }
 
@@ -240,13 +335,17 @@ body, html {
         left: 0;
         z-index: 1;
         background-color: rgba($color: $light, $alpha: .75);
+
         transition: {
             property: background-color;
             duration: $duration;
-        };
+        }
+
+        ;
         pointer-events: none;
     }
 }
+
 .dark-mask {
     position: relative;
     z-index: 1;
@@ -260,10 +359,13 @@ body, html {
         left: 0;
         z-index: 1;
         background-color: rgba($color: $secondary, $alpha: .75);
+
         transition: {
             property: background-color;
             duration: $duration;
-        };
+        }
+
+        ;
         pointer-events: none;
     }
 }
@@ -275,6 +377,7 @@ body, html {
         @include size(5);
         margin-bottom: rem(12);
     }
+
     &__num {
         margin-right: rem(10);
         font-size: rem(42);
@@ -289,7 +392,9 @@ body, html {
         property: filter;
         duration: $duration;
     }
+
     filter: grayscale(100%) brightness(0);
+
     &:hover {
         filter: grayscale(0) brightness(100%);
     }
@@ -299,30 +404,36 @@ body, html {
     width: 100%;
     height: 100%;
 }
+
 .is-overlay {
     .fullpage__control {
         z-index: 3000;
     }
+
     .fullpage__control-inner {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
     }
 }
+
 .watch-original {
     .section_create {
         .top-slider__control {
             color: $light;
+
             svg {
                 stroke: $light;
             }
         }
+
         .section__bg {
             overflow: visible;
             filter: grayscale(0);
 
             .swiper-slide {
                 filter: grayscale(100%);
+
                 transition: {
                     property: filter, transform;
                     duration: 1000ms;
@@ -334,6 +445,7 @@ body, html {
                         duration: 1000ms;
                     }
                 }
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -343,6 +455,7 @@ body, html {
                     height: 100%;
                     background-color: rgba($secondary, .9);
                 }
+
                 &-active {
                     filter: grayscale(0);
 
@@ -352,21 +465,26 @@ body, html {
                 }
             }
         }
+
         .section__wrapper {
             position: static;
         }
+
         .section__bg-wrapper {
             z-index: 999;
             pointer-events: all;
         }
+
         .section__bg {
             &:after {
                 background: transparent;
             }
+
             &:before {
                 opacity: 1;
             }
         }
+
         .top-slider {
             .swiper-slide {
                 &:after {
@@ -375,16 +493,20 @@ body, html {
             }
         }
     }
+
     .top-slider__slider {
         z-index: 1000;
     }
+
     .fullpage__control-inner {
         visibility: hidden;
         opacity: 0;
     }
+
     .slider-background {
         overflow: visible;
     }
+
     .hamburger_active {
         .hamburger__text {
             &:after {
@@ -397,14 +519,19 @@ body, html {
 
 .proseo {
     color: $secondary;
+
     transition: {
         property: fill, color;
         duration: $duration;
-    };
+    }
+
+    ;
+
     &_theme {
         &_light {
             fill: $light !important;
         }
+
         &_dark {
             fill: $dark !important;
         }

@@ -108,6 +108,10 @@
         &_50 {
             margin-top: calc(83.33vh / 2 * -1);
             margin-top: calc(var(--vh, 1vh) * 83.33 / 2 * -1);
+            @media (max-width: $break_md) {
+                margin-top: calc(95.43vh / 2 * -1);
+                margin-top: calc(var(--vh, 1vh) * 95.43 / 2 * -1);
+            }
 
             .card__title {
                 &:after {

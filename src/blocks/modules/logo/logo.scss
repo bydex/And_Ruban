@@ -3,10 +3,16 @@
     text-transform: uppercase;
     &__title {
         letter-spacing: 0.1em;
+        @media (max-width: $break_sm) {
+            font-size: rem(19);
+        };
     }
     &__subtitle {
         font-size: rem(10);
         letter-spacing: 0.34em;
+        @media (max-width: $break_sm) {
+            font-size: rem(6);
+        };
     }
     &__dot {
         display: inline-block;

@@ -2,16 +2,20 @@
     position: relative;
     z-index: 1;
     margin-top: auto;
+
     padding: {
-        top: rem(36);
-        bottom: rem(36);
-    };
+        top: rem(40);
+        bottom: rem(40);
+    }
+
+    ;
 
     &_theme {
         &_light {
             background-color: $light;
             color: $secondary;
             fill: $secondary;
+
             .modal__logo-span,
             .modal__p {
                 color: $secondary;
@@ -29,6 +33,7 @@
             margin-right: 0;
         }
     }
+
     &__wrapper {
         @include containerFull();
         position: relative;
@@ -41,16 +46,60 @@
     &__logo {
         @include col();
         @include size(3);
+
+        @media (max-width: $break_xl) {
+            @include size(4);
+        }
+
+        @media (max-width: $break_md) {
+            @include size(3);
+        }
+        @media (max-width: $break_sm) {
+            @include size(12);
+            display: flex;
+            justify-content: center;
+            margin-bottom: rem(15);
+        }
     }
 
     &__copyright {
         @include col();
         @include size(3);
+
+        @media (max-width: $break_lg) {
+            @include size(4);
+            text-align: center;
+        }
+
+        @media (max-width: $break_md) {
+            @include size(5);
+        }
+        @media (max-width: $break_sm) {
+            @include size(12);
+            display: flex;
+            justify-content: center;
+            margin-bottom: rem(15);
+        }
     }
 
     &__developed {
         @include col();
         @include size(6);
+
+        @media (max-width: $break_xl) {
+            @include size(5);
+        }
+
+        @media (max-width: $break_lg) {
+            @include size(4);
+        }
+        @media (max-width: $break_sm) {
+            @include size(12);
+            display: flex;
+            justify-content: center;
+            margin-bottom: rem(15);
+        }
+
         display: flex;
         justify-content: flex-end;
     }
@@ -64,5 +113,30 @@
     &__p {
         margin-bottom: 0;
         font-size: rem(15);
+
+        @media (max-width: $break_md) {
+            font-size: rem(13);
+        }
+    }
+
+    &__title {
+        @media (max-width: $break_lg) {
+            font-size: rem(28);
+        }
+
+        @media (max-width: $break_md) {
+            font-size: rem(14.5);
+        }
+        @media (max-width: $break_sm) {
+            font-size: rem(24);
+        }
+    }
+    .logo__subtitle {
+        @media (max-width: $break_lg) {
+            font-size: rem(8.9);
+        }
+        @media (max-width: $break_sm) {
+            font-size: rem(7.6);
+        }
     }
 }

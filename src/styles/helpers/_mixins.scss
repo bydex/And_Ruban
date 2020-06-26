@@ -1,4 +1,9 @@
 @mixin containerFull() {
     @include container();
-    // @include xxl(max-width, rem(1100));
+    @include xs(max-width, rem(320));
+    @include sm(max-width, rem(576));
+    @include md(max-width, rem(768));
+    @include lg(max-width, rem(992));
+    @include xl(max-width, rem(1200));
+    @include xxl(max-width, rem(1460));
 }
