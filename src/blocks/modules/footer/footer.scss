@@ -30,7 +30,7 @@
         }
     }
     &__wrapper {
-        @include container();
+        @include containerFull();
         position: relative;
     }
 
@@ -40,17 +40,17 @@
 
     &__logo {
         @include col();
-        @include size-xl(3);
+        @include size(3);
     }
 
     &__copyright {
         @include col();
-        @include size-xl(3);
+        @include size(3);
     }
 
     &__developed {
         @include col();
-        @include size-xl(6);
+        @include size(6);
         display: flex;
         justify-content: flex-end;
     }

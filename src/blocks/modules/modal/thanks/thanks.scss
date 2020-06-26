@@ -1,7 +1,7 @@
 .thanks {
 
     @include col();
-    @include size-xl(6);
+    @include size(6);
     display: none;
     visibility: hidden;
     opacity: 0;

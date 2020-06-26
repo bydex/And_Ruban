@@ -22,8 +22,8 @@
         }
         &_modal {
             @include col();
-            @include size-xl(3);
-            @include shift-xl-right(9);
+            @include size(3);
+            @include shift-right(9);
             color: $primary;
         }
     }
