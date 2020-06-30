@@ -2,17 +2,21 @@
     display: inline-block;
     text-align: center;
     box-sizing: border-box;
+
     border: {
         width: rem(1);
         style: solid;
     }
+
     transition: {
         property: color, background-color, border-color, transform;
         duration: $duration;
     }
+
     &_wide {
         width: 100%;
     }
+
     &_primary {
         color: $light;
         background-color: $primary;
@@ -23,6 +27,7 @@
             background-color: transparent;
         }
     }
+
     &_transparent {
         &_primary {
             color: $primary;
@@ -33,11 +38,13 @@
                     stroke: $light;
                 }
             }
+
             .btn__icon {
                 border-color: $primary;
                 stroke: $primary;
             }
         }
+
         &_light {
             color: $light;
 
@@ -47,20 +54,24 @@
                     stroke: $dark;
                 }
             }
+
             .btn__icon {
                 border-color: $light;
                 stroke: $light;
             }
         }
     }
+
     &_small {
         padding: rem(6) rem(16);
     }
+
     &_large {
         padding: rem(23) rem(20);
         text-transform: uppercase;
         font-weight: 300;
     }
+
     &_rect {
         display: flex;
         align-items: center;
@@ -72,16 +83,21 @@
             height: rem(70);
             padding: rem(18);
             margin-right: rem(20);
+
             border: {
                 width: rem(1);
                 style: solid;
             }
+
             transition: {
                 property: border-color, stroke, background-color;
                 duration: $duration;
-            };
+            }
+
+            ;
         }
     }
+
     &_play {
         display: flex;
         align-items: center;
@@ -89,6 +105,11 @@
         color: inherit;
         border: 0;
         background-color: transparent;
+        use {
+            stroke-dashoffset: 1000;
+            stroke-dasharray: 1000;
+            transition: stroke-dasharray 1s ease-out;
+        }
 
         .btn__icon {
             width: rem(72);
@@ -97,15 +118,20 @@
             background-color: transparent;
             stroke: none;
             border: none;
+
             transition: {
                 property: stroke, fill;
                 duration: $duration;
-            };
+            }
+
+            ;
         }
+
         &:hover .btn__icon {
             background-color: transparent;
             stroke: transparent;
         }
+
         &_light {
             &:hover {
                 color: $primary;
@@ -114,10 +140,12 @@
                     fill: $primary;
                 }
             }
+
             .btn__icon {
                 fill: $light;
             }
         }
+
         &_dark {
             &:hover {
                 color: $primary;
@@ -125,12 +153,19 @@
                 .btn__icon {
                     fill: $primary;
                 }
+                use {
+                    stroke-dashoffset: 1000;
+                    stroke-dasharray: 1227;
+                    transition: stroke-dasharray 1s linear ease-in;
+                }
             }
+
             .btn__icon {
                 fill: $secondary;
             }
         }
     }
+
     &_uppercase {
         text-transform: uppercase;
     }

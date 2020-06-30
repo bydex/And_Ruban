@@ -21,11 +21,13 @@
         height: 100%;
         transform: translateX(-50%);
         pointer-events: none;
+
         transition: {
             property: visibility, opacity;
             duration: $duration;
         }
     }
+
     &__control-inner {
         @include xxl(right, rem(-50));
         display: flex;
@@ -38,10 +40,12 @@
         transform: translateY(-50%);
         pointer-events: all;
     }
+
     &__navigation {
         z-index: 999;
         color: $primary;
     }
+
     &__arrow {
         display: block;
         padding: rem(7) rem(10);
@@ -51,8 +55,18 @@
             stroke: $light;
         }
 
+        &_up {
+            margin-bottom: rem(30);
+            .arrow {
+                transform: rotate(-90deg);
+            }
+        }
+
         &_down {
             stroke: $primary;
+            .arrow {
+                transform: rotate(90deg);
+            }
         }
     }
 
@@ -61,7 +75,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-bottom: rem(180);
+        margin-bottom: rem(150);
         counter-reset: fullpage;
 
         .swiper-pagination-bullet {
@@ -72,13 +86,14 @@
             border-radius: 0;
             outline: none;
             opacity: 1;
+
             transition: {
                 property: background-color;
                 duration: $duration;
             }
 
             &:after {
-                content: "0" counter(fullpage);
+                content: "0"counter(fullpage);
                 position: absolute;
                 top: 50%;
                 left: 100%;
@@ -87,17 +102,22 @@
                 color: $light;
                 font-weight: 30;
                 opacity: 0;
+
                 transition: {
                     property: color, opacity, transform;
                     duration: $duration;
                 }
             }
+
             transition: {
                 property: background-color;
                 duration: $duration;
             }
-            &-active, &:hover {
+
+            &-active,
+            &:hover {
                 background-color: $primary;
+
                 &:after {
                     transform: translate(#{rem(15)}, -50%);
                     color: $primary;
@@ -106,6 +126,7 @@
             }
         }
     }
+
     &_disabled {
         .fullpage__control {
             display: none;

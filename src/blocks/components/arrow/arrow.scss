@@ -1,0 +1,83 @@
+.arrow {
+    cursor: pointer;
+    position: relative;
+    width: rem(30);
+    height: rem(7);
+}
+
+.arrow div {
+    position: relative;
+    top: rem(3);
+    width: rem(30);
+    height: rem(1);
+    background-color: $light;
+    box-shadow: 0 rem(3) rem(5) rgba(0, 0, 0, .2);
+    left: 0;
+    display: block;
+    transition-property: width, background-color;
+    transition-timing-function: linear;
+    transition-duration: .3s;
+}
+
+.arrow div::after {
+    content: '';
+    position: absolute;
+    width: rem(8);
+    height: rem(1);
+    top: rem(-3);
+    right: rem(-2);
+    background-color: $light;
+    transition-property: width, background-color;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+    transform: rotate(45deg);
+}
+
+.arrow div::before {
+    content: '';
+    position: absolute;
+    width: rem(8);
+    height: rem(1);
+    top: rem(3);
+    right: rem(-2);
+    background-color: $light;
+    transition-property: width, background-color;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+    box-shadow: 0 rem(3) rem(5) rgba(0, 0, 0, .2);
+    transform: rotate(-45deg);
+}
+
+.arrow:hover {
+    div {
+        width: rem(40);
+        background-color: $primary;
+        transition-property: width, background-color;
+        transition-duration: .3s;
+        transition-timing-function: linear;
+
+        &:before,
+        &:after {
+            background-color: $primary;
+            transition-property: width, background-color;
+            transition-duration: .3s;
+            transition-timing-function: linear;
+        }
+    }
+}
+
+.arrow {
+    &_black {
+        div {
+            background-color: $secondary;
+
+            &::after,
+            &::before {
+                background-color: $secondary;
+            }
+        }
+    }
+    &_left {
+        transform: rotate(180deg);
+    }
+}

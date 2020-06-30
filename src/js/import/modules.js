@@ -10,3 +10,4 @@ import "%modules%/modal/modal";
 import "%modules%/section-feedback/section-feedback";
 import "%modules%/section-create/section-create";
 import "%modules%/footer/footer";
+import "%modules%/btn/btn";

@@ -4,6 +4,7 @@ block variables
 include ../helpers/mixins
 include ../../blocks/modules/modal/modal
 include ../../blocks/components/hamburger/hamburger
+include ../../blocks/components/arrow/arrow
 
 
 doctype html
@@ -44,9 +45,13 @@ html(lang="ru")
 				.fullpage__control-inner
 					.fullpage__pagination
 					.fullpage__navigation
+						//- button.fullpage__arrow.fullpage__arrow_up
+						//- 	+icon('arrow-up', 'arrow-v')
+						//- button.fullpage__arrow.fullpage__arrow_down
+						//- 	+icon('arrow-down', 'arrow-v')
 						button.fullpage__arrow.fullpage__arrow_up
-							+icon('arrow-up', 'arrow-v')
+							+arrow
 						button.fullpage__arrow.fullpage__arrow_down
-							+icon('arrow-down', 'arrow-v')
+							+arrow
 	block footer
 	block scripts
