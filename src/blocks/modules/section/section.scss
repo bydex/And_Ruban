@@ -393,6 +393,16 @@
             @include shift-left(-2);
             @include size(10);
             position: relative;
+            @media (max-height: $vertical_xl), (max-width: $break_xl) {
+                @include shift-left(-.5);
+                margin-bottom: rem(15);
+            }
+        }
+        .section__title {
+            @media (max-height: $vertical_xl), (max-width: $break_xl) {
+                @include shift-left(-1);
+                margin-bottom: rem(15);
+            }
         }
         .card__inner {
             align-items: flex-end;
@@ -400,12 +410,21 @@
         }
         .section__list {
             margin-bottom: rem(20);
+            @media (max-height: $vertical_xl), (max-width: $break_xl) {
+                margin-bottom: rem(10);
+            }
         }
         .section__col-inner {
             @include shift-left(1.5);
+            @media (max-height: $vertical_xl), (max-width: $break_xl) {
+                margin-left: 0;
+            }
         }
         .section__col_right {
             margin-top: rem(70);
+            @media (max-height: $vertical_xl), (max-width: $break_xl) {
+                margin-top: rem(30);
+            }
         }
     }
     &_and-ruban {
@@ -516,10 +535,16 @@
     &__bests {
         @include row-flex();
         margin-bottom: rem(40);
+        @media (max-height: $vertical_xl), (max-width: $break_xl) {
+            margin-bottom: rem(15);
+        }
     }
     &__best {
         @include col();
         width: rem(70);
+        @media (max-height: $vertical_xl), (max-width: $break_xl) {
+            width: rem(50);
+        }
     }
     &__ticker {
         width: 100%;
@@ -552,6 +577,9 @@
                 top: rem(20);
                 bottom: rem(20);
             };
+            @media (max-height: $vertical_xl), (max-width: $break_xl) {
+                height: rem(25);
+            }
         }
     }
     &__logo-row {
@@ -560,9 +588,11 @@
     }
     &__logo-wrapper {
         @include col();
+        @include size(4);
     }
     &__logo-button {
         @include col();
+        @include size(8);
         flex-grow: 1;
     }
 }

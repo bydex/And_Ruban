@@ -114,6 +114,9 @@ $cardHeight_lg: 400;
             }
         }
         .card_right & {
+            @include xl(margin-left, #{rem(15)});
+            @include xl(margin-top, #{rem(15)});
+            @include xl(margin-right, #{rem(15)});
             margin-right: calc(14.89% - #{rem(10)});
             margin-left: calc(14.89% + #{rem(20)});
         }
@@ -179,6 +182,7 @@ $cardHeight_lg: 400;
                 }
             }
             .card__inner {
+                height: rem(600);
                 padding-bottom: calc(83.33vh / 3.6);
                 padding-bottom: calc(var(--vh, 1vh) * 83.33 / 3.6);
             }

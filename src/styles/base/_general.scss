@@ -78,6 +78,18 @@ html {
 
 
 .h1 {
+    @media (max-width: $break_xl), (max-height: $vertical_xl) {
+        font-size: rem(120);
+    }
+    @media (max-width: $break_lg), (max-height: $vertical_lg) {
+        font-size: rem(100);
+    }
+    @media (max-width: $break_md), (max-height: $vertical_md) {
+        font-size: rem(80);
+    }
+    @media (max-width: $break_sm), (max-height: $vertical_sm) {
+        font-size: rem(70);
+    }
     font-size: rem($h1);
     font-weight: 700;
 
@@ -143,6 +155,21 @@ html {
 }
 
 .p {
+    @media (max-width: $break_xl), (max-height: $vertical_xl) {
+        font-size: rem(15);
+    }
+
+    @media (max-width: $break_lg), (max-height: $vertical_lg) {
+        font-size: rem(14);
+    }
+
+    @media (max-width: $break_md), (max-height: $vertical_md) {
+        font-size: rem(13);
+    }
+
+    @media (max-width: $break_sm), (max-height: $vertical_sm) {
+        font-size: rem(12);
+    }
     margin: {
         top: 0;
         bottom: rem(15);
@@ -380,6 +407,11 @@ html {
     &__item {
         @include col();
         @include size(5);
+        @media (max-height: $vertical_xl), (max-width: $break_xl) {
+            @include size(6);
+            margin-bottom: rem(8);
+            font-size: rem(16);
+        }
         margin-bottom: rem(12);
     }
 
@@ -388,6 +420,9 @@ html {
         font-size: rem(42);
         font-weight: 700;
         color: $primary;
+        @media (max-height: $vertical_xl), (max-width: $break_xl) {
+            font-size: rem(30);
+        }
     }
 }
 
