@@ -1,7 +1,12 @@
 .navigation {
     @include col();
     @include size(6);
-    @include md(margin-top, rem(50));
+    @media (max-height: $vertical_xl), (max-width: $break_xl) {
+        margin-top: rem(100);
+    }
+    @media (max-height: $vertical_md), (max-width: $break_md) {
+        margin-top: rem(50);
+    }
     display: none;
     visibility: hidden;
     opacity: 0;
