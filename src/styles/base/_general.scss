@@ -67,7 +67,9 @@ html {
     overflow: hidden;
     background-color: $secondary;
 }
-
+.js-Dropdown-title {
+    font-family: 'Montserrat', sans-serif;
+}
 *,
 *:before,
 *:after {
@@ -95,25 +97,29 @@ html {
         font-size: rem(67);
     }
 
-    @media (max-width: $break_xl) {
+    @media (max-width: $break_xl), (max-height: $vertical_xl) {
         font-size: rem(60);
     }
 
-    @media (max-width: $break_lg) {
+    @media (max-width: $break_lg), (max-height: $vertical_lg) {
         font-size: rem(49);
     }
 
-    @media (max-width: $break_md) {
+    @media (max-width: $break_md), (max-height: $vertical_md) {
         font-size: rem(36);
     }
 
-    @media (max-width: $break_sm) {
+    @media (max-width: $break_sm), (max-height: $vertical_sm) {
         font-size: rem(26);
     }
 }
 
 .h3 {
     font-size: rem($h3);
+
+    @media (max-width: $break_xl), (max-height: $vertical_xl) {
+        font-size: rem(28);
+    }
 }
 
 .h4 {
@@ -218,7 +224,7 @@ html {
     max-width: rem(20);
     max-height: rem(20);
 
-    @media (max-width: $break_xs) {
+    @media (max-width: $break_sm) {
         max-width: rem(15);
     }
 
@@ -263,15 +269,14 @@ html {
         min-height: rem(230);
     }
     @media (max-width: $break_sm) {
-        margin-bottom: rem(110);
+        margin: 0;
+        margin-right: rem(40);
     }
-    @media (max-width: $break_xs) {
+    @media (max-width: $break_sm) {
         max-width: rem(70);
         max-height: rem(70);
         min-width: rem(70);
         min-height: rem(70);
-        margin: 1.75rem;
-        margin-bottom: rem(500);
     }
 }
 
@@ -406,10 +411,6 @@ html {
 }
 
 .is-overlay {
-    .fullpage__control {
-        z-index: 3000;
-    }
-
     .fullpage__control-inner {
         opacity: 0;
         visibility: hidden;
@@ -505,14 +506,6 @@ html {
 
     .slider-background {
         overflow: visible;
-    }
-
-    .hamburger_active {
-        .hamburger__text {
-            &:after {
-                content: 'Закрыть';
-            }
-        }
     }
 }
 

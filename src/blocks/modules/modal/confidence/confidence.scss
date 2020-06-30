@@ -1,6 +1,8 @@
 .confidence {
     @include col();
     @include size(6);
+    @include size-md(12);
+    @include md(padding-top, rem(50));
     display: none;
     visibility: hidden;
     opacity: 0;
@@ -11,6 +13,7 @@
 
     &__p {
         margin-top: rem(75);
+        @include md(margin-top, rem(25));
     }
 
     &__h2 {

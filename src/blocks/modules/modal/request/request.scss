@@ -1,12 +1,14 @@
 .request {
     @include col();
     @include size(6);
+    @include size-md(12);
     display: none;
     visibility: hidden;
     opacity: 0;
     padding-top: rem(68);
 
     &__form-box {
+        @include xxl(left, 0);
         position: relative;
         left: calc(8.33333% + 0.9375rem);
 
@@ -33,6 +35,7 @@
 
         &_size {
             &_large {
+                @include md(font-size, rem(16));
                 font-size: rem(22);
             }
         }
@@ -48,6 +51,7 @@
 
     &__product {
         &-name {
+            @include md(margin-left, rem(15));
             display: flex;
             flex-direction: column;
             justify-content: center;

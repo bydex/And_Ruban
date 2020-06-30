@@ -1,6 +1,9 @@
 .contact {
     @include col();
     @include size(6);
+    @include size-md(12);
+    @include md(margin-top, rem(50));
+    @include xxl(left, 0);
     display: none;
     position: relative;
     left: rem(100);
@@ -13,15 +16,31 @@
         style: solid;
         color: $light;
     }
-
     padding: {
         top: rem(234);
         right: rem(100);
         bottom: rem(234);
         left: rem(100);
     }
+    @media (max-width: $break_lg) {
+        padding: {
+            top: rem(125);
+            right: rem(65);
+            bottom: rem(125);
+            left: rem(65);
+        }
+    }
+    @media (max-width: $break_sm) {
+        padding: {
+            top: rem(80);
+            right: rem(30);
+            bottom: rem(80);
+            left: rem(30);
+        }
+    }
 
     &:after {
+        @include lg(content, none);
         content: "andruban — мебель  иных реальностей";
         position: absolute;
         right: rem(-210);
@@ -34,6 +53,7 @@
     }
 
     &:before {
+        @include lg(content, none);
         content: "";
         position: absolute;
         right: rem(-70);

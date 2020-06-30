@@ -1,12 +1,8 @@
-mixin logo(theme, logoModal = false)
+mixin logo(theme, location = false)
     a.logo(class=`logo_theme_${theme}` href="#")
-        if logoModal === true
-            .h3.logo__title.modal__title AND<span class="modal__logo-span">RUBAN</span>
-            p.logo__subtitle.p.modal__p Мебель с душой
-        else
-            if footer = true
-                .h3.logo__title.footer__title AND<span class="logo__dot">.</span>RUBAN
-                p.logo__subtitle.p Мастерская реальностей
-            else
-                .h3.logo__title AND<span class="logo__dot">.</span>RUBAN
-                p.logo__subtitle.p Мастерская реальностей
+        if location === 'modal'
+            svg(viewBox="0 0 202 54")
+                use(xlink:href='./img/sprites/sprite.svg#logo-modal')
+        else if location ==='header' || location === 'footer'
+            svg(viewBox="0 0 229 49")
+                use(xlink:href='./img/sprites/sprite.svg#logo')
