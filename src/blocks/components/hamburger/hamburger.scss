@@ -1,5 +1,8 @@
 .hamburger {
     @include xxl(right, calc(100% + #{rem(40)}));
+    @include xl(right, auto);
+    @include xl(left, rem(15));
+    @include xl(top, rem(10));
     display: inline-block;
     position: absolute;
     z-index: 2051;
@@ -38,7 +41,6 @@
     }
 
     &_active {
-
         .hamburger__inner {
             transform: rotate(45deg);
             background-color: $primary;
@@ -62,6 +64,12 @@
                 timing-function: linear;
             }
         }
+        .hamburger__text {
+            &:after {
+                @include xl(content, none);
+                content: 'Закрыть';
+            }
+        }
     }
 
     &__box {
@@ -78,6 +86,7 @@
         line-height: 0;
 
         &:after {
+            @include xl(content, none);
             content: 'Меню';
         }
     }
@@ -92,7 +101,12 @@
     width: 0%;
     height: 0%;
     transition: all .3s ease-in;
-    background-color: #212121;
+    background-color: $secondary;
+
+    @media (max-width: $break_xl) {
+        left: rem(30);
+        top: rem(30);
+    }
 
     &_active {
         position: fixed;
@@ -101,6 +115,11 @@
         width: 100%;
         height: 100%;
         transition: all .3s ease-out;
+
+        @media (max-width: $break_xl) {
+            left: 0;
+            top: 0;
+        }
     }
     &_original {
         position: absolute;

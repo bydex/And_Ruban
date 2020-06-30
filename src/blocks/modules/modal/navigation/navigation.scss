@@ -1,6 +1,7 @@
 .navigation {
     @include col();
     @include size(6);
+    @include md(margin-top, rem(50));
     display: none;
     visibility: hidden;
     opacity: 0;
@@ -12,6 +13,7 @@
     }
     &__list {
         &-item {
+            @include md(margin-bottom, rem(35));
             display: inline-block;
             margin: {
                 bottom: rem(50);
@@ -22,6 +24,7 @@
         }
     }
     &__link {
+        @include md(margin-top, rem(15));
         color: $primary;
         display: inline-block;
         margin: {

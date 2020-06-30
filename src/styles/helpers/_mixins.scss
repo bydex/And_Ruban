@@ -4,6 +4,6 @@
     @include sm(max-width, rem(576));
     @include md(max-width, rem(768));
     @include lg(max-width, rem(992));
-    @include xl(max-width, rem(1200));
-    @include xxl(max-width, rem(1460));
+    @include xl(max-width, 100%);
+    @include xxl(max-width, rem(1050));
 }

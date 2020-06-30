@@ -1,36 +1,40 @@
 .logo {
+    display: inline-block;
 
-    text-transform: uppercase;
-    &__title {
-        letter-spacing: 0.1em;
+    svg {
+        height: rem(49);
+
+        @media (max-width: $break_md) {
+            height: rem(35);
+        }
         @media (max-width: $break_sm) {
-            font-size: rem(19);
-        };
-    }
-    &__subtitle {
-        font-size: rem(10);
-        letter-spacing: 0.34em;
-        @media (max-width: $break_sm) {
-            font-size: rem(6);
-        };
-    }
-    &__dot {
-        display: inline-block;
-        width: rem(10);
-        font-family: sans-serif;
+            height: rem(22);
+        }
     }
     &_theme {
         &_light {
             color: $light;
+
+            svg {
+                fill: $light;
+            }
         }
         &_dark {
             color: $dark;
+            svg {
+                fill: $dark;
+            }
         }
         &_modal {
             @include col();
             @include size(3);
             @include shift-right(9);
             color: $primary;
+
+            svg {
+                max-width: rem(201);
+                max-height: rem(54);
+            }
         }
     }
 }

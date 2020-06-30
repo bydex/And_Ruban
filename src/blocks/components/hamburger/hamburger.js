@@ -77,6 +77,7 @@ const modalSectionTo = (className) => {
         modalImage.webp.setAttribute('srcset', catalogImage.webp);
         modalImage.normal.setAttribute('src', catalogImage.normal);
     }
+    modalScroll.update();
 }
 
 const modalSectionLinks = document.querySelectorAll('[data-modal-section]');

@@ -1,4 +1,5 @@
 .modal {
+    @include xl(padding-top, rem(50));
     position: fixed;
     z-index: -999;
     width: 100%;
@@ -12,7 +13,9 @@
     .swiper-slide {
         height: auto;
     }
-
+    .section__description {
+        @include size(11);
+    }
     &__wrapper {
         @include containerFull();
     }
@@ -39,6 +42,7 @@
 
     &__content {
         display: flex;
+        flex-wrap: wrap;
         width: 100%;
     }
 

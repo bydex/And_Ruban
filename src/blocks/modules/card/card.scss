@@ -1,3 +1,6 @@
+$cardHeight: 900;
+$cardHeight_xl: 500;
+$cardHeight_lg: 400;
 .card {
     // @include col();
     position: relative;
@@ -6,8 +9,16 @@
         display: flex;
         align-items: center;
         position: relative;
-        height: 83.33vh;
+        min-height: rem($cardHeight);
+
+        @media (max-height: $vertical_xl), (max-width: $break_xl) {
+            min-height: rem($cardHeight_xl);
+        }
+        @media (max-height: $vertical_xl), (max-width: $break_xl) {
+            min-height: rem($cardHeight_xl);
+        }
         &:before {
+            @include xl(content, none);
             content: "";
             display: flex;
             position: absolute;
@@ -46,9 +57,11 @@
             background-color: rgba($color: $light, $alpha: .4);
         }
         .card_left & {
+            @include xl(margin-left, 0);
             margin-left: -14.89%;
         }
         .card_right & {
+            @include xl(margin-right, 0);
             margin-right: -14.89%;
         }
         background: {
@@ -58,6 +71,7 @@
         };
     }
     &__title {
+        @include xl(display, none);
         display: flex;
         justify-content: flex-start;
         height: 100%;
@@ -87,7 +101,12 @@
     &__wrapper {
         position: relative;
         z-index: 1;
+        transition: {
+            property: color;
+            duration: $duration;
+        };
         .card_left & {
+            @include xl(margin-right, #{rem(15)});
             margin-right: calc(14.89% + #{rem(30)});
 
             &.card-slider {
@@ -106,11 +125,14 @@
 
     &_top {
         &_50 {
-            margin-top: calc(83.33vh / 2 * -1);
-            margin-top: calc(var(--vh, 1vh) * 83.33 / 2 * -1);
-            @media (max-width: $break_md) {
-                margin-top: calc(95.43vh / 2 * -1);
-                margin-top: calc(var(--vh, 1vh) * 95.43 / 2 * -1);
+            margin-top: rem(-$cardHeight / 2);
+            @media (max-height: $vertical_xl), (max-width: $break_xl) {
+                position: static;
+                margin-top: rem(-$cardHeight_xl / 2);
+                padding-bottom: 10px;
+            }
+            @media (max-height: $vertical_lg), (max-width: $break_lg) {
+                margin-top: rem(-$cardHeight_lg / 2);
             }
 
             .card__title {
@@ -121,6 +143,14 @@
             .card__inner {
                 padding-top: calc(83.33vh / 2);
                 padding-top: calc(var(--vh, 1vh) * 83.33 / 2);
+
+                @media (max-height: $vertical_xl), (max-width: $break_xl) {
+                    margin-top: rem(-$cardHeight_xl / 2);
+                    position: absolute;
+                    left: rem(-100);
+                    top: 0;
+                    width: rem(300);
+                }
             }
         }
         &_17 {

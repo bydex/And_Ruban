@@ -1,5 +1,4 @@
 mixin footer(theme, anchor)
-    - const footer = true
     footer.footer(class=`footer_theme_${theme}`)
         .footer__wrapper
             if (anchor === true)
@@ -7,7 +6,7 @@ mixin footer(theme, anchor)
                     +icon('arrow-up', 'btn__icon')
             .footer__inner
                 .footer__logo
-                    +logo()
+                    +logo('dark', 'footer')
                 .footer__copyright
                     p.p.p_font_light.footer__p  © 2020 Andrey Ruban
                     p.p.p_font_light.footer__p  Мебельиных реальностей.
