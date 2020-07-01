@@ -19,7 +19,7 @@ const callModal = document.querySelectorAll('[data-modal]'),
     modalContents = document.querySelectorAll('.modal-content');
 
 const modal = document.querySelector(".modal"),
-    hamburger = document.querySelector(".hamburger");
+    hamburger = document.querySelector(".hamburger_main");
 
 const hamburgerOpen = () => {
         hamburger.classList.add("hamburger_active");
@@ -135,24 +135,27 @@ let burger = {
 export default burger;
 
 
-const tabs = document.querySelector('.tabs'),
-    tabsHamburger = document.querySelector('.hamburger'),
-    tabsItems = document.querySelectorAll('.tabs__item');
+const tabs = document.querySelectorAll('.tabs');
 
-tabsHamburger.addEventListener('click', e => {
-    if (tabsHamburger.classList.contains('hamburger_active')) {
-        tabsHamburger.classList.remove('hamburger_active');
-        tabsItems.forEach((el, i) => {
-            if (i !== 0) {
-                el.classList.remove('tabs__item_active');
-            }
-        });
-    } else {
-        tabsHamburger.classList.add('hamburger_active');
-        tabsItems.forEach((el, i) => {
-            if (i !== 0) {
-                el.classList.add('tabs__item_active');
-            }
-        });
-    }
-});
+tabs.forEach((tab) => {
+    const tabsHamburger = tab.querySelector('.hamburger_tabs'),
+            tabsItems = tab.querySelectorAll('.tabs__item');
+
+    tabsHamburger && tabsHamburger.addEventListener('click', () => {
+        if (tabsHamburger.classList.contains('hamburger_active')) {
+            tabsHamburger.classList.remove('hamburger_active');
+            tabsItems.forEach((el, i) => {
+                if (i !== 0) {
+                    el.classList.remove('tabs__item_active');
+                }
+            });
+        } else {
+            tabsHamburger.classList.add('hamburger_active');
+            tabsItems.forEach((el, i) => {
+                if (i !== 0) {
+                    el.classList.add('tabs__item_active');
+                }
+            });
+        }
+    });
+})

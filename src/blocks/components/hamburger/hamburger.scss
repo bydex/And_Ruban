@@ -40,6 +40,12 @@
         }
     }
 
+    &_tabs {
+        display: none;
+        @media (max-width: $break_md), (max-height: $vertical_md) {
+            display: block;
+        }
+    }
     &_active {
         .hamburger__inner {
             transform: rotate(45deg);

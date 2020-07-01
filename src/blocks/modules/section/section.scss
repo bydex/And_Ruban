@@ -9,9 +9,9 @@
 
         &_left {
             @include size(5);
-            @media (max-width: $break_sm) {
-                margin-left: -90px;
-            }
+            // @media (max-width: $break_sm) {
+            //     margin-left: rem(-90);
+            // }
         }
         &_right {
             @include size(7);
@@ -188,6 +188,9 @@
         &_colored {
             .top-slider {
                 color: $light;
+                @media (max-height: $vertical_md), (max-width: $break_md) {
+                    color: $secondary;
+                }
 
                 .swiper-slide {
                     &:after {
@@ -207,6 +210,13 @@
                         .btn__icon {
                             background-color: $light;
                             stroke: $secondary;
+                        }
+                    }
+                    @media (max-height: $vertical_md), (max-width: $break_md) {
+                        color: $primary;
+                        .btn__icon {
+                            border-color: $primary;
+                            stroke: $primary;
                         }
                     }
 
@@ -258,10 +268,16 @@
             @media (max-width: $break_xl) {
                 .card__wrapper {
                     color: $light;
+                    @media (max-height: $vertical_md), (max-width: $break_md) {
+                        color: $secondary;
+                    }
                 }
 
                 .arrow-h {
                     stroke: $light;
+                    @media (max-height: $vertical_md), (max-width: $break_md) {
+                        stroke: $secondary;
+                    }
                 }
             }
         }
@@ -270,11 +286,18 @@
                 margin-top: auto;
             }
         }
+        .section__col {
+            @media (max-width: $break_md), (max-height: $vertical_md) {
+                @include size(12);
+                margin-top: 0;
+            }
+        }
         .section__title {
             margin-top: rem(60);
             margin-bottom: rem(70);
 
             @media (max-width: $break_xl), (max-height: $vertical_lg) {
+                @include shift-left(0);
                 margin-bottom: rem(20);
                 margin-top: rem(20);
             }
@@ -309,6 +332,11 @@
         .card__wrapper {
             @media (max-height: $vertical_xl), (max-width: $break_xl) {
                 margin-top: rem(25);
+            }
+        }
+        .section__row {
+            @media (max-height: $vertical_md), (max-width: $break_md) {
+                flex-direction: column-reverse;
             }
         }
     }

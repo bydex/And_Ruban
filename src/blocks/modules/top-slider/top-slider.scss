@@ -43,7 +43,11 @@
             duration: $duration;
         }
     }
-
+    &__slider {
+        @media (max-height: $vertical_md), (max-width: $break_md) {
+            display: none;
+        }
+    }
     &__footer {
         margin-top: auto;
     }
