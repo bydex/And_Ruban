@@ -3,46 +3,46 @@ import modalScroll from '../../modules/modal/modal';
 let siteOverlay = document.querySelector(".overlay");
 
 const overlayOpen = (original) => {
-    let overlay = siteOverlay;
-    if (original === true) overlay = document.querySelector('.overlay_original');
-    overlay.classList.add("overlay_active");
-    document.body.classList.add('is-overlay');
-},
-overlayClose = (original) => {
-    let overlay = siteOverlay;
-    if (original === true) overlay = document.querySelector('.overlay_original');
-    overlay.classList.remove("overlay_active");
-    document.body.classList.remove('is-overlay');
-};
+        let overlay = siteOverlay;
+        if (original === true) overlay = document.querySelector('.overlay_original');
+        overlay.classList.add("overlay_active");
+        document.body.classList.add('is-overlay');
+    },
+    overlayClose = (original) => {
+        let overlay = siteOverlay;
+        if (original === true) overlay = document.querySelector('.overlay_original');
+        overlay.classList.remove("overlay_active");
+        document.body.classList.remove('is-overlay');
+    };
 
-const callModal     = document.querySelectorAll('[data-modal]'),
-    modalContents   = document.querySelectorAll('.modal-content');
+const callModal = document.querySelectorAll('[data-modal]'),
+    modalContents = document.querySelectorAll('.modal-content');
 
-const modal     = document.querySelector(".modal"),
-    hamburger   = document.querySelector(".hamburger");
+const modal = document.querySelector(".modal"),
+    hamburger = document.querySelector(".hamburger");
 
 const hamburgerOpen = () => {
-    hamburger.classList.add("hamburger_active");
-},
-hamburgerClose = () => {
-    hamburger.classList.remove("hamburger_active");
-};
+        hamburger.classList.add("hamburger_active");
+    },
+    hamburgerClose = () => {
+        hamburger.classList.remove("hamburger_active");
+    };
 
 const modalOpen = () => {
-    hamburgerOpen();
-    overlayOpen();
-    setTimeout(() => {
-        modal.classList.add("modal_active");
-        modalScroll.update();
-    }, 300);
-},
-modalClose = () => {
-    modal.classList.remove("modal_active");
-    setTimeout(() => {
-      overlayClose();
-      hamburgerClose();
-    }, 300);
-};
+        hamburgerOpen();
+        overlayOpen();
+        setTimeout(() => {
+            modal.classList.add("modal_active");
+            modalScroll.update();
+        }, 300);
+    },
+    modalClose = () => {
+        modal.classList.remove("modal_active");
+        setTimeout(() => {
+            overlayClose();
+            hamburgerClose();
+        }, 300);
+    };
 
 
 const modalSectionTo = (className) => {
@@ -55,19 +55,19 @@ const modalSectionTo = (className) => {
     modalActive.classList.add('modal_active');
 
     if (className === 'request') {
-        const catalog       = document.querySelector('#create'),
+        const catalog = document.querySelector('#create'),
             activeCardSlide = catalog.querySelector('.card__wrapper .swiper-slide-active'),
-            activeBgSlide   = catalog.querySelector('.section__bg-wrapper .swiper-slide-active'),
-            catalogTitle    = activeCardSlide.querySelector('[data-title]').innerText,
-            catalogPrice    = activeCardSlide.querySelector('[data-price]').innerText,
-            catalogImage    = {
+            activeBgSlide = catalog.querySelector('.section__bg-wrapper .swiper-slide-active'),
+            catalogTitle = activeCardSlide.querySelector('[data-title]').innerText,
+            catalogPrice = activeCardSlide.querySelector('[data-price]').innerText,
+            catalogImage = {
                 webp: activeBgSlide.querySelector('source').getAttribute('srcset'),
                 normal: activeBgSlide.querySelector('img').getAttribute('src'),
             };
 
-        const modalTitle    = modalActive.querySelector('[data-title]'),
-            modalPrice      = modalActive.querySelector('[data-price]'),
-            modalImage      = {
+        const modalTitle = modalActive.querySelector('[data-title]'),
+            modalPrice = modalActive.querySelector('[data-price]'),
+            modalImage = {
                 webp: modalActive.querySelector('.request__image').previousSibling,
                 normal: modalActive.querySelector('.request__image'),
             };
@@ -83,22 +83,22 @@ const modalSectionTo = (className) => {
 const modalSectionLinks = document.querySelectorAll('[data-modal-section]');
 
 modalSectionLinks.forEach((el) => {
-    el.addEventListener('click', function() {
+    el.addEventListener('click', function () {
         let modalClass = this.dataset.modalSection;
         modalSectionTo(modalClass);
     })
 })
 
 callModal.forEach((el) => {
-    el.addEventListener('click', function(e) {
+    el.addEventListener('click', function (e) {
         e.preventDefault();
-        let modalClass  = this.dataset.modal;
+        let modalClass = this.dataset.modal;
 
         modalSectionTo(modalClass);
 
         if (!document.body.classList.contains('watch-original')) {
             if (hamburger.classList.contains("hamburger_active")) modalClose();
-            else  modalOpen();
+            else modalOpen();
         }
     })
 
@@ -127,9 +127,32 @@ closeMenuButtons.forEach((el) => {
 let burger = {
     modalSectionTo: modalSectionTo,
     hamburgerClose: hamburgerClose,
-    hamburgerOpen:  hamburgerOpen,
-    overlayClose:   overlayClose,
-    overlayOpen:    overlayOpen,
-    hamburger:      hamburger,
+    hamburgerOpen: hamburgerOpen,
+    overlayClose: overlayClose,
+    overlayOpen: overlayOpen,
+    hamburger: hamburger,
 };
 export default burger;
+
+
+const tabs = document.querySelector('.tabs'),
+    tabsHamburger = document.querySelector('.hamburger'),
+    tabsItems = document.querySelectorAll('.tabs__item');
+
+tabsHamburger.addEventListener('click', e => {
+    if (tabsHamburger.classList.contains('hamburger_active')) {
+        tabsHamburger.classList.remove('hamburger_active');
+        tabsItems.forEach((el, i) => {
+            if (i !== 0) {
+                el.classList.remove('tabs__item_active');
+            }
+        });
+    } else {
+        tabsHamburger.classList.add('hamburger_active');
+        tabsItems.forEach((el, i) => {
+            if (i !== 0) {
+                el.classList.add('tabs__item_active');
+            }
+        });
+    }
+});

@@ -1,5 +1,10 @@
-mixin hamburger()
-    a.hamburger(data-modal='navigation')
-        p.p.p_font_primary.hamburger__text
-        span.hamburger__inner
-        .hamburger__box
+mixin hamburger(title)
+    if title === true
+        a.hamburger(data-modal='tabs')
+            span.hamburger__inner
+            .hamburger__box
+    else
+        a.hamburger(data-modal='navigation')
+            p.p.p_font_primary.hamburger__text
+            span.hamburger__inner
+            .hamburger__box
