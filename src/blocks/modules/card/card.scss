@@ -159,7 +159,9 @@ $cardHeight_lg: 400;
         &_17 {
             margin-top: calc(83.33vh / 5.7 * -1);
             margin-top: calc(var(--vh, 1vh) * 83.33 / 5.7 * -1);
-
+            @media (max-height: $vertical_xl), (max-width: $break_xl) {
+                margin-top: rem(-150);
+            }
             .card__title {
                 &:after {
                     height: 0;
@@ -168,9 +170,8 @@ $cardHeight_lg: 400;
             .card__inner {
                 @media (max-height: $vertical_xl), (max-width: $break_xl) {
                     height: rem(600);
-                    padding-bottom: 0;
+                    padding-top: rem(150);
                     display: flex;
-                    align-items: center;
                 }
                 padding-top: calc(83.33vh / 5.7);
                 padding-top: calc(var(--vh, 1vh) * 83.33 / 5.7);
