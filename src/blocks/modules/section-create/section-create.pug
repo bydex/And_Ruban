@@ -57,9 +57,10 @@ section.section.section_light.swiper-slide(id="create" class=`section_create` da
                             ul.swiper-wrapper
                                 each index, val in Array(5)
                                     li.swiper-slide.light-mask
-                                        picture
-                                            source(srcset=`./img/create-thumb-${val + 1}.webp`)
-                                            img(src=`./img/create-thumb-${val + 1}.jpg` alt="")
+                                        //- picture
+                                        //-     source(srcset=`./img/create-thumb-${val + 1}.webp`)
+                                        //-     img(src=`./img/create-thumb-${val + 1}.jpg` alt="")
+                                        +picture('', `create-thumb-${val + 1}`, 'jpg', 'webp')
                                 each index, val in Array(5)
                                     li.swiper-slide.light-mask
                                         picture
