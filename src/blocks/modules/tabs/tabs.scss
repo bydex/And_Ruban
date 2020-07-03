@@ -8,16 +8,26 @@
         left: rem(-20);
     }
 
-    @media (max-width: $break_xs) {
-        color: $light;
-        background-color: $secondary;
+    @media (max-width: $break_md) {
+        max-width: 100%;
+        margin: 0 auto;
+    }
 
+    @media (max-width: $break_md) {
         padding: {
             top: rem(15);
             right: rem(50);
             bottom: rem(15);
             left: rem(15);
         }
+
+        margin: {
+            bottom: rem(40)
+        }
+
+        ;
+        color: $light;
+        background-color: $secondary;
     }
 
     &_col {
@@ -94,12 +104,12 @@
     }
 
     &__item {
-        @media (max-width: $break_xs) {
+        @media (max-width: $break_md) {
             display: none;
         }
 
         &_active {
-            @media (max-width: $break_xs) {
+            @media (max-width: $break_md) {
                 display: block;
                 width: 100%;
 
@@ -115,12 +125,13 @@
         }
 
         right: rem(20);
+
         margin: {
             bottom: rem(14);
             left: rem(20);
         }
 
-        @media (max-width: $break_xs) {
+        @media (max-width: $break_md) {
             margin: 0;
         }
 
@@ -154,7 +165,7 @@
             duration: $duration;
         }
 
-        @media (max-width: $break_xs) {
+        @media (max-width: $break_md) {
             display: none;
         }
     }
@@ -180,6 +191,34 @@
 
         span {
             background-color: $light;
+        }
+    }
+
+    &__wrapper {
+        @media (max-width: $break_md) {
+            position: relative;
+
+            margin: {
+                left: rem(-15);
+                right: rem(-15);
+                bottom: rem(40)
+            }
+        }
+    }
+
+    &__active {
+        padding-top: 0.9375rem;
+        padding-bottom: rem(15 + 18);
+        .tabs {
+            @media (max-width: $break_md) {
+                position: absolute;
+                top:0;
+                right: 0;
+                left: 0;
+                z-index: 10;
+                opacity: 1;
+                transition: opacity .3s linear;
+            }
         }
     }
 }

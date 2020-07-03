@@ -1,10 +1,10 @@
 mixin hamburger(title)
     if title === true
-        a.hamburger(data-modal='tabs')
+        a.hamburger.hamburger_tabs
             span.hamburger__inner
             .hamburger__box
     else
-        a.hamburger(data-modal='navigation')
+        a.hamburger.hamburger_main(data-modal='navigation')
             p.p.p_font_primary.hamburger__text
             span.hamburger__inner
             .hamburger__box

@@ -33,16 +33,17 @@ section.section.section_light.swiper-slide(id="create" class=`section_create` da
                 .top-slider.top-slider_left
                     .top-slider__header
                         p.p.p_font_light.top-slider__description AndRuban — мастерская по изготовлению современной, удобной и практичной мебели, выполненной из лучших материалов. Мы способны воплотить в жизнь самый смелый дизайн. Работаем в стиле фьюжн и производим мебель иных реальностей.
-                        ul.tabs(data-tabs)
-                            each index, val in ['Кухни', 'Прихожие', 'Гостинные', 'Детские', 'Гостинные', 'Детские']
-                                if val === 0
-                                    li.tabs__item.tabs__item_active
-                                        span(data-tabs-item)= index
-                                else
-                                    li.tabs__item
-                                        span(data-tabs-item)= index
-                            span.tabs__underline(data-tabs-underline)
-                            +hamburger(true)
+                        .tabs__wrapper
+                            ul.tabs(data-tabs)
+                                each index, val in ['Кухни', 'Прихожие', 'Гостинные', 'Детские', 'Гостинные', 'Детские']
+                                    if val === 0
+                                        li.tabs__item.tabs__item_active
+                                            span(data-tabs-item)= index
+                                    else
+                                        li.tabs__item
+                                            span(data-tabs-item)= index
+                                span.tabs__underline(data-tabs-underline)
+                                +hamburger(true)
                     .top-slider__footer
                         button.top-slider__btn.btn.btn_rect.btn_transparent_primary.btn_uppercase(id="watch-original")
                             +icon('eye', 'btn__icon')
@@ -57,14 +58,13 @@ section.section.section_light.swiper-slide(id="create" class=`section_create` da
                             ul.swiper-wrapper
                                 each index, val in Array(5)
                                     li.swiper-slide.light-mask
-                                        //- picture
-                                        //-     source(srcset=`./img/create-thumb-${val + 1}.webp`)
-                                        //-     img(src=`./img/create-thumb-${val + 1}.jpg` alt="")
-                                        +picture('', `create-thumb-${val + 1}`, 'jpg', 'webp')
+                                        picture
+                                            source(srcset=`./img/create-thumb-${val + 1}.webp` type="image/webp")
+                                            img(src=`./img/create-thumb-${val + 1}.jpg` alt="")
                                 each index, val in Array(5)
                                     li.swiper-slide.light-mask
                                         picture
-                                            source(srcset=`./img/create-thumb-${val + 1}.webp`)
+                                            source(srcset=`./img/create-thumb-${val + 1}.webp` type="image/webp")
                                             img(src=`./img/create-thumb-${val + 1}.jpg` alt="")
                                 span.swiper-border
     .section__bg-wrapper.section__bg-wrapper_bottom
@@ -74,10 +74,10 @@ section.section.section_light.swiper-slide(id="create" class=`section_create` da
                     each index, val in Array(5)
                         .swiper-slide
                             picture
-                                source(srcset=`./img/create-slider-${val + 1}.webp`)
+                                source(srcset=`./img/create-slider-${val + 1}.webp` type="image/webp")
                                 img(src=`./img/create-slider-${val + 1}.jpg` alt="")
                     each index, val in Array(5)
                         .swiper-slide
                             picture
-                                source(srcset=`./img/create-slider-${val + 1}.webp`)
+                                source(srcset=`./img/create-slider-${val + 1}.webp` type="image/webp")
                                 img(src=`./img/create-slider-${val + 1}.jpg` alt="")
