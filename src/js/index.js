@@ -7,10 +7,11 @@ const rem = helpers.rem;
 console.log(rem);
 
 
-let fullpage = new Swiper("#fullpage", {
+let fullpageSettings = {
     direction: "vertical",
     slidesPerView: 1,
     mousewheel: true,
+    allowTouchMove: false,
     pagination: {
         el: ".fullpage__pagination",
         clickable: true,
@@ -26,7 +27,17 @@ let fullpage = new Swiper("#fullpage", {
         loadPrevNextAmount: 2
     },
     observerUpdate: true
-});
+}
+
+let windowWidth = window.innerWidth,
+    isMobile    = windowWidth < 767;
+if (isMobile) {
+    fullpageSettings.slidesPerView  = 'auto';
+    fullpageSettings.freeMode       = true;
+    fullpageSettings.allowTouchMove = true;
+}
+
+let fullpage = new Swiper("#fullpage", fullpageSettings);
 
 
 fullpage.on("init", function() {

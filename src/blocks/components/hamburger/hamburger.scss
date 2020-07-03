@@ -128,6 +128,7 @@
         }
     }
     &_original {
+        @include md(position, fixed);
         position: absolute;
         z-index: 500;
     }

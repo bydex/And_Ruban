@@ -1,5 +1,13 @@
 .section {
-
+    @include md(height, auto);
+    @include md(padding-top, rem(50));
+    @include md(padding-bottom, rem(50));
+    &#header {
+        @include md(padding-top, rem(0));
+    }
+    &.section_feedback {
+        @include md(padding-bottom, rem(0));
+    }
     &_bottom {
         display: flex;
         align-items: flex-end;
@@ -301,6 +309,7 @@
                 margin-bottom: rem(20);
                 margin-top: rem(20);
             }
+            @include md(margin-left, 0);
         }
         .top-slider__description {
             @media (max-width: $break_xl), (max-height: $vertical_lg) {
@@ -547,6 +556,7 @@
         }
         .section__wrapper {
             @include md(max-height, calc(100% - #{rem(92)}));
+            @include md(padding-bottom, rem(25));
             max-height: calc(100% - #{rem(123)});
         }
         .section__bg-wrapper_bottom {

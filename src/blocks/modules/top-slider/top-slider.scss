@@ -45,7 +45,13 @@
     }
     &__slider {
         @media (max-height: $vertical_md), (max-width: $break_md) {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            position: absolute;
+            left: rem(-999);
+            width: rem(100);
+            height: rem(100);
         }
     }
     &__footer {

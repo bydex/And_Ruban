@@ -8,16 +8,18 @@
         left: rem(-20);
     }
 
-    @media (max-width: $break_xs) {
-        color: $light;
-        background-color: $secondary;
-
+    @media (max-width: $break_md) {
         padding: {
             top: rem(15);
             right: rem(50);
             bottom: rem(15);
             left: rem(15);
         }
+        margin: {
+            bottom: rem(40)
+        };
+        color: $light;
+        background-color: $secondary;
     }
 
     &_col {
@@ -94,12 +96,12 @@
     }
 
     &__item {
-        @media (max-width: $break_xs) {
+        @media (max-width: $break_md) {
             display: none;
         }
 
         &_active {
-            @media (max-width: $break_xs) {
+            @media (max-width: $break_md) {
                 display: block;
                 width: 100%;
 
@@ -120,7 +122,7 @@
             left: rem(20);
         }
 
-        @media (max-width: $break_xs) {
+        @media (max-width: $break_md) {
             margin: 0;
         }
 
@@ -154,7 +156,7 @@
             duration: $duration;
         }
 
-        @media (max-width: $break_xs) {
+        @media (max-width: $break_md) {
             display: none;
         }
     }

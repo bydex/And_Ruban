@@ -9,7 +9,7 @@ const btn = document.querySelector('#watch-original');
 const initWatchOriginal = () => {
     document.body.classList.add('watch-original');
 
-    fullpage.allowTouchMove = false;
+    // fullpage.allowTouchMove = false;
     fullpage.mousewheel.disable();
 
     let indexBackSlider = sliders.backSlider.realIndex;
@@ -38,7 +38,7 @@ const initWatchOriginal = () => {
 destroyWatchOriginal = () => {
     document.body.classList.remove('watch-original');
 
-    fullpage.allowTouchMove = true;
+    // fullpage.allowTouchMove = true;
     fullpage.mousewheel.enable();
 
     let indexBackSlider = sliders.backSlider.realIndex;

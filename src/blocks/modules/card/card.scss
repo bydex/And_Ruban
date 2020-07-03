@@ -1,6 +1,7 @@
 $cardHeight: 900;
 $cardHeight_xl: 500;
 $cardHeight_lg: 400;
+$cardHeight_md: 230;
 .card {
     // @include col();
     position: relative;
@@ -17,6 +18,7 @@ $cardHeight_lg: 400;
         @media (max-height: $vertical_xl), (max-width: $break_xl) {
             min-height: rem($cardHeight_xl);
         }
+        @include md(min-height, rem($cardHeight_md));
         &:before {
             @include xl(content, none);
             content: "";
@@ -132,12 +134,12 @@ $cardHeight_lg: 400;
             @media (max-height: $vertical_xl), (max-width: $break_xl) {
                 position: static;
                 margin-top: rem(-$cardHeight_xl / 2);
-                padding-bottom: 10px;
+                padding-bottom: rem(10);
             }
             @media (max-height: $vertical_lg), (max-width: $break_lg) {
                 margin-top: 0;
             }
-
+            @include md(margin-top, 0);
             .card__title {
                 &:after {
                     height: 0;
@@ -152,8 +154,13 @@ $cardHeight_lg: 400;
                     position: absolute;
                     left: rem(-100);
                     top: 0;
+                    z-index: -5;
                     width: rem(300);
                 }
+                @include md(padding-top, 0);
+                @include md(margin-top, 0);
+                @include md(top, 0);
+                @include md(transform, translate(-25%, calc(-50% - #{rem(50)})));
             }
         }
         &_17 {
