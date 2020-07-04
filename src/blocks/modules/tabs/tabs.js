@@ -33,12 +33,17 @@ tabs.forEach((el) => {
             Array.from(thistab.parentNode.children).forEach((elchild) => {
                 if (elchild.classList.contains('tabs__item_active')) {
                     elchild.classList.remove("tabs__item_active");
-                }
+                 }
             })
             thistab.classList.add("tabs__item_active");
         })
     })
 })
 
+const tabsTitle = document.querySelectorAll('.tabs__title');
+
+tabsTitle.forEach(el => {
+    el.innerHTML = el.nextElementSibling.querySelectorAll('li')[0].querySelector('span').innerHTML;
+});
 
 export default setUnderline;

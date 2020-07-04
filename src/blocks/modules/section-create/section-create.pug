@@ -34,6 +34,7 @@ section.section.section_light.swiper-slide(id="create" class=`section_create` da
                     .top-slider__header
                         p.p.p_font_light.top-slider__description AndRuban — мастерская по изготовлению современной, удобной и практичной мебели, выполненной из лучших материалов. Мы способны воплотить в жизнь самый смелый дизайн. Работаем в стиле фьюжн и производим мебель иных реальностей.
                         .tabs__wrapper
+                            p.tabs__title
                             ul.tabs(data-tabs)
                                 each index, val in ['Кухни', 'Прихожие', 'Гостинные', 'Детские', 'Гостинные', 'Детские']
                                     if val === 0
@@ -43,7 +44,7 @@ section.section.section_light.swiper-slide(id="create" class=`section_create` da
                                         li.tabs__item
                                             span(data-tabs-item)= index
                                 span.tabs__underline(data-tabs-underline)
-                                +hamburger(true)
+                            +hamburger(true)
                     .top-slider__footer
                         button.top-slider__btn.btn.btn_rect.btn_transparent_primary.btn_uppercase(id="watch-original")
                             +icon('eye', 'btn__icon')
