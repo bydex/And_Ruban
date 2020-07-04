@@ -2,7 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-
     margin: {
         right: rem(-20);
         left: rem(-20);
@@ -10,6 +9,7 @@
 
 
     @media (max-width: $break_md) {
+<<<<<<< HEAD
         min-width: 100%;
         padding: {
             top: 0;
@@ -48,6 +48,20 @@
                 left: rem(15);
             }
         }
+=======
+        width: 100%;
+        padding: {
+            top: rem(15);
+            right: rem(15);
+            bottom: rem(15);
+            left: rem(15);
+        }
+        margin: {
+            bottom: rem(40)
+        };
+        color: $light;
+        background-color: $secondary;
+>>>>>>> 8dd13e5b23675198a5112f48ad6b3c1c44e9a0e8
     }
 
     &_col {
@@ -55,6 +69,7 @@
             width: calc(50% - #{rem(40)});
 
             &.swiper-slide {
+                @include md(width, 100% !important);
                 position: static;
                 width: calc(50% - #{rem(40)}) !important;
                 height: auto;
@@ -67,6 +82,7 @@
         counter-reset: tabNumber;
 
         .tabs__item {
+            @include md(order, 0 !important);
             padding-left: rem(50);
             min-height: rem(40);
 
@@ -125,7 +141,30 @@
 
     &__item {
         @media (max-width: $break_md) {
+<<<<<<< HEAD
             width: 100%;
+=======
+            display: none;
+            white-space: nowrap;
+        }
+
+        &_active {
+            @media (max-width: $break_md) {
+                display: block;
+                width: 100%;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+
+                &:nth-child(2) {
+                    margin-top: rem(21);
+                }
+
+                &:not(:first-of-type):not(:last-of-type) {
+                    margin-bottom: rem(15);
+                }
+            }
+
+>>>>>>> 8dd13e5b23675198a5112f48ad6b3c1c44e9a0e8
         }
 
         right: rem(20);

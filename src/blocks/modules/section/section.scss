@@ -35,6 +35,7 @@
     }
     &__wrapper {
         @include containerFull();
+        @include md(max-height, none);
         box-sizing: border-box;
         position: relative;
         z-index: 4;
@@ -373,10 +374,13 @@
         .section__description {
             @include size(12);
             @include shift-left(2);
+            @include shift-md-left(0);
+            @include md(margin-bottom, rem(20));
         }
         .section__title {
             @include col();
             @include size(12);
+            @include md(margin-bottom, rem(30));
 
             .h2 {
                 margin-right: rem(-30);
@@ -395,6 +399,9 @@
             .btn__icon {
                 fill: $light;
             }
+        }
+        .section__col {
+            @include size-md(12);
         }
     }
     &_video {
@@ -428,7 +435,9 @@
     &_progress {
         .section__description {
             @include shift-left(-2);
+            @include shift-md-left(0);
             @include size(10);
+            @include size-md(12);
             position: relative;
             @media (max-height: $vertical_xl), (max-width: $break_xl) {
                 @include shift-left(-.5);
@@ -440,6 +449,7 @@
                 @include shift-left(-1);
                 margin-bottom: rem(15);
             }
+            @include shift-md-left(0);
         }
         .card__inner {
             align-items: flex-end;
@@ -463,6 +473,9 @@
                 margin-top: rem(30);
             }
         }
+        .section__col {
+            @include size-md(12);
+        }
     }
     &_and-ruban {
         .section__wrapper {
@@ -475,19 +488,25 @@
             color: $secondary;
         }
         .section__col_left {
+            @include size-md(12);
             margin-top: auto;
         }
         .section__col_right {
+            @include size-md(12);
             margin-top: auto;
             margin-bottom: auto;
         }
         .section__title {
+            @include md(margin-bottom, rem(25));
             margin-bottom: rem(55);
+
         }
         .section__history {
             @include shift-left(1.5);
+            @include md(margin-left, 0);
         }
         .tabs {
+            @include md(margin-bottom, rem(15));
             margin-bottom: rem(25);
         }
         .swiper-container {
