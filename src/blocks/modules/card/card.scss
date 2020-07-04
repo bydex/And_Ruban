@@ -18,7 +18,7 @@ $cardHeight_md: 230;
         @media (max-height: $vertical_xl), (max-width: $break_xl) {
             min-height: rem($cardHeight_xl);
         }
-        @include md(min-height, rem($cardHeight_md));
+        @include md(min-height, auto);
         &:before {
             @include xl(content, none);
             content: "";
@@ -112,6 +112,7 @@ $cardHeight_md: 230;
             margin-right: calc(14.89% + #{rem(30)});
 
             &.card-slider {
+                @include md(margin-left, rem(15));
                 margin-left: calc(14.89% - #{rem(10)});
             }
         }
@@ -157,10 +158,11 @@ $cardHeight_md: 230;
                     z-index: -5;
                     width: rem(300);
                 }
+                @include md(height, rem(200));
                 @include md(padding-top, 0);
                 @include md(margin-top, 0);
                 @include md(top, 0);
-                @include md(transform, translate(-25%, calc(-50% - #{rem(50)})));
+                @include md(transform, translate(-40%, calc(-50% - #{rem(50)})));
             }
         }
         &_17 {
@@ -169,6 +171,7 @@ $cardHeight_md: 230;
             @media (max-height: $vertical_xl), (max-width: $break_xl) {
                 margin-top: rem(-150);
             }
+            @include md(margin-top, 0);
             .card__title {
                 &:after {
                     height: 0;
@@ -180,6 +183,9 @@ $cardHeight_md: 230;
                     padding-top: rem(150);
                     display: flex;
                 }
+                @include md(padding-top, rem(30));
+                @include md(padding-bottom, rem(30));
+                @include md(height, auto);
                 padding-top: calc(83.33vh / 5.7);
                 padding-top: calc(var(--vh, 1vh) * 83.33 / 5.7);
             }
@@ -193,6 +199,8 @@ $cardHeight_md: 230;
                 margin-bottom: 0;
                 top: rem(150);
             }
+            @include md(margin-top, 0);
+            @include md(top, 0);
 
             .card__title {
                 &:after {
@@ -210,6 +218,14 @@ $cardHeight_md: 230;
                 padding-bottom: calc(var(--vh, 1vh) * 83.33 / 3.6);
                 @media (max-height: $vertical_xl), (max-width: $break_xl) {
                     padding-bottom: rem(150);
+                }
+                @include md(height, auto);
+                @include md(padding-top, rem(40));
+                @include md(padding-bottom, rem(40));
+                @include md(background-image, none !important);
+                @include md(background-color, transparent);
+                &:after {
+                    @include md(content, none);
                 }
             }
         }

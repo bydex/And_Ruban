@@ -2,7 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-
     margin: {
         right: rem(-20);
         left: rem(-20);
@@ -14,18 +13,16 @@
     }
 
     @media (max-width: $break_md) {
+        width: 100%;
         padding: {
             top: rem(15);
-            right: rem(50);
+            right: rem(15);
             bottom: rem(15);
             left: rem(15);
         }
-
         margin: {
             bottom: rem(40)
-        }
-
-        ;
+        };
         color: $light;
         background-color: $secondary;
     }
@@ -35,6 +32,7 @@
             width: calc(50% - #{rem(40)});
 
             &.swiper-slide {
+                @include md(width, 100% !important);
                 position: static;
                 width: calc(50% - #{rem(40)}) !important;
                 height: auto;
@@ -47,6 +45,7 @@
         counter-reset: tabNumber;
 
         .tabs__item {
+            @include md(order, 0 !important);
             padding-left: rem(50);
             min-height: rem(40);
 
@@ -106,12 +105,15 @@
     &__item {
         @media (max-width: $break_md) {
             display: none;
+            white-space: nowrap;
         }
 
         &_active {
             @media (max-width: $break_md) {
                 display: block;
                 width: 100%;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
 
                 &:nth-child(2) {
                     margin-top: rem(21);
