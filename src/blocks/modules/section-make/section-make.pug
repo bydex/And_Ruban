@@ -43,24 +43,26 @@ section.section.section_light.swiper-slide.section_bottom(id="make" class="secti
                     .title.section__title
                         h2.h2 Как мы создаем мебель
                         h4.h4 Простые шаги к вашей новой реальности
-                    ul.tabs.tabs_numbers.tabs_col.section__tabs.swiper-container(data-tabs id="make-card-thumb")
-                        .swiper-wrapper
-                            each index, val in ['Заявка', 'Предварительный <br>расчет', 'Замер', 'Проектирование', 'Производство', 'Сборка и <br>монтаж']
-                                if val === 0
-                                    li.tabs__item.tabs__item_active.swiper-slide
-                                        span(data-tabs-item) !{index}
-                                else
-                                    li.tabs__item.swiper-slide
-                                        span(data-tabs-item) !{index}
-                            li.tabs__underline(data-tabs-underline)
-                            +hamburger(true)
+                    .tabs__wrapper
+                        p.tabs__title
+                        ul.tabs.tabs_numbers.tabs_col.section__tabs.swiper-container(data-tabs id="make-card-thumb")
+                            .swiper-wrapper
+                                each index, val in ['Заявка', 'Предварительный <br>расчет', 'Замер', 'Проектирование', 'Производство', 'Сборка и <br>монтаж']
+                                    if val === 0
+                                        li.tabs__item.tabs__item_active.swiper-slide
+                                            span(data-tabs-item) !{index}
+                                    else
+                                        li.tabs__item.swiper-slide
+                                            span(data-tabs-item) !{index}
+                                li.tabs__underline(data-tabs-underline)
+                        +hamburger(true)
                 div
                     button.btn.btn_transparent_primary.btn_play.btn_play_dark
                         +icon('play-animate', 'btn__icon')
                         span.btn__title Видеоролик <br>«Процесса заказа»
             .section__col.section__col_left
                 .card.card_right.card_bottom_30
-                    .card__inner.swiper-lazy(data-background="./img/card-img-4.jpg")
+                    .card__inner.swiper-lazy(style="background-image: url(./img/card-img-4.jpg)")
                         .card__title andruban — мебель  иных реальностей
                         .card__wrapper.swiper-container.card-slider(id="make-card-slider")
                             ul.swiper-wrapper.card-slider__swiper
@@ -71,11 +73,11 @@ section.section.section_light.swiper-slide.section_bottom(id="make" class="secti
                                         h3.h3.card-slider__title= val.title
                                         p.card-slider__description.p.p_font_light Всё просто — вы оставляете заявку на сайте и мы связываемся с вами в течении дня. Или вы звоните напрямую по номеру  телефона и мы договариваемся о встрече. Также вы можете связаться с нами по e-mail.
                             button.btn.btn_large.btn_primary.btn_wide.h6(data-modal="request") Онлайн расчет в Whatsapp
-                            .card-slider__control
-                                button.card-slider__arrow.card-slider__arrow_next
-                                    +icon('arrow-right', 'arrow-h')
+                            .card-slider__control.arrow-wrapper.card-slider__arrow_next
+                                .card-slider__arrow
+                                    +arrow('arrow_right arrow_black')
     .section__bg-wrapper.section__bg-wrapper_bottom
         .section__bg-inner.swiper-wrapper
             picture.section__bg.section__bg_grayscale.section__bg_left.section__bg_top.light-mask
-                source.swiper-lazy(data-srcset=`./img/section-4.webp` type="image/webp")
-                img.swiper-lazy(data-src=`./img/section-4.jpg` alt="")
+                source.swiper-lazy(srcset=`./img/section-4.webp` type="image/webp")
+                img.swiper-lazy(src=`./img/section-4.jpg` alt="")

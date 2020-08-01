@@ -1,3 +1,7 @@
+// IF INTENRNET EXPLORER
+// import 'nodelist-foreach-polyfill';
+// import 'element-closest-polyfill';
+// import 'core-js/es/array/from';
 import Swiper from "swiper";
 import "./import/modules";
 import "./import/components";
@@ -29,8 +33,8 @@ let fullpageSettings = {
     observerUpdate: true
 }
 
-let windowWidth = window.innerWidth,
-    isMobile    = windowWidth < 767;
+let windowWidth     = window.innerWidth,
+    isMobile        = windowWidth < 767;
 if (isMobile) {
     fullpageSettings.slidesPerView  = 'auto';
     fullpageSettings.freeMode       = true;
@@ -62,33 +66,47 @@ fullpage.on("init slideChange", function() {
     }
 });
 
-fullpage.init();
-
-
-const backgrounds = document.querySelectorAll(".section__bg");
-
-const getPos = (e) => ({
-    x: e.clientX,
-    y: e.clientY,
-});
-
-document.body.addEventListener("mousemove", (e) => {
-    const mousePos = getPos(e);
-
-    backgrounds.forEach((el) => {
-        const blockConfig = el.getBoundingClientRect();
-        if (
-            mousePos.x > blockConfig.x &&
-            mousePos.x < blockConfig.x + blockConfig.width &&
-            mousePos.y > blockConfig.y &&
-            mousePos.y < blockConfig.y + blockConfig.height
-        ) {
-            el.closest(".section").classList.add("section_bg_colored");
-        } else {
-            el.closest(".section").classList.remove("section_bg_colored");
-        }
+if (!isMobile) {
+    fullpage.init();
+    setTimeout(() => {
+        fullpage.update();
+    }, 50);
+    window.addEventListener('resize orientationchange', () => {
+        fullpage.update();
+        setTimeout(() => {
+            fullpage.update();
+        }, 5);
     });
-});
+}
+
+
+
+if (!isMobile) {
+    const backgrounds = document.querySelectorAll(".section__bg");
+
+    const getPos = (e) => ({
+        x: e.clientX,
+        y: e.clientY,
+    });
+
+    document.body.addEventListener("mousemove", (e) => {
+        const mousePos = getPos(e);
+
+        backgrounds.forEach((el) => {
+            const blockConfig = el.getBoundingClientRect();
+            if (
+                mousePos.x > blockConfig.x &&
+                mousePos.x < blockConfig.x + blockConfig.width &&
+                mousePos.y > blockConfig.y &&
+                mousePos.y < blockConfig.y + blockConfig.height
+            ) {
+                el.closest(".section").classList.add("section_bg_colored");
+            } else {
+                el.closest(".section").classList.remove("section_bg_colored");
+            }
+        });
+    });
+}
 
 
 function setCSSWindowHeight() {
@@ -105,12 +123,24 @@ const buttons = document.querySelectorAll('[data-anchor]');
 buttons.forEach((el) => {
     el.addEventListener('click', function() {
         const slideId       = this.dataset.anchor,
-              slideTimeout  = +this.dataset.anchorTimeout,
-              anchorSlide   = document.querySelector(`#${slideId}`),
-              slideIndex    = anchorSlide.dataset.slideIndex;
+            slideTimeout  = +this.dataset.anchorTimeout,
+            anchorSlide   = document.querySelector(`#${slideId}`) || false;
+
+        if (anchorSlide === false) location.href = `/#${slideId}`;
+
+        const slideIndex    = anchorSlide.dataset.slideIndex,
+            slideOffset   = anchorSlide.getBoundingClientRect().top + window.scrollY;
+
 
         setTimeout(() => {
-            fullpage.slideTo(slideIndex);
+            if (isMobile) {
+                window.scroll({
+                    top: slideOffset,
+                    behavior: 'smooth'
+                });
+            } else {
+                fullpage.slideTo(slideIndex);
+            }
         }, slideTimeout || 0)
     })
 })

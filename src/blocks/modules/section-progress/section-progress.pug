@@ -20,7 +20,7 @@ section.section.section_light.swiper-slide(id="progress" class=`section_progress
         .section__row.section__row_fullheight
             .section__col.section__col_left
                 .card.card_left.card_top_17
-                    .card__inner.swiper-lazy(data-background="./img/card-img-6.jpg")
+                    .card__inner.swiper-lazy(style="background-image: url(./img/card-img-6.jpg)")
                         .card__title andruban — мебель  иных реальностей
                         .card__wrapper.swiper-container.card-slider(id="make-card-slider2")
                             ul.swiper-wrapper.card-slider__swiper
@@ -29,9 +29,10 @@ section.section.section_light.swiper-slide(id="progress" class=`section_progress
                                         svg(class=`card-slider__icon` viewBox=val.viewbox width=val.width)
                                             use(xlink:href=`./img/sprites/sprite.svg#progress-${val.icon}`)
                                         h3.h3.card-slider__title= val.title
-                            .card-slider__control
-                                button.card-slider__arrow.card-slider__arrow_next
-                                    +icon('arrow-right', 'arrow-h')
+                            .card-slider__control.card-slider__arrow_next
+                                .card-slider__arrow.arrow-wrapper
+                                    //- +icon('arrow-right', 'arrow-h')
+                                    +arrow('arrow_right arrow_black')
             .section__col.section__col_right.section__col_flex
                 .section__row
                     .section__description
@@ -49,7 +50,7 @@ section.section.section_light.swiper-slide(id="progress" class=`section_progress
                         li.h5.list__item <span class="list__num">22</span>спальни
                     p.p.p_font_light Состоим в членстве Британской Высшей школы дизайна
                     p.p
-                        svg(viewBox="0 0 129 50" width="128")
+                        svg(class="scool" viewBox="0 0 129 50" width="128")
                             use(xlink:href='./img/sprites/sprite.svg#design-school')
                     p.p.p_font_light 4 года подряд получали награду за лучшее качество обслуживания клиентов сообществом Houzz
                     p.p.section__bests
@@ -66,7 +67,7 @@ section.section.section_light.swiper-slide(id="progress" class=`section_progress
                             svg(viewBox="0 0 70 70" class="houzz")
                                 use(xlink:href='./img/sprites/sprite.svg#houzz-logo_2020')
                     .section__logo-row
-                        a.section__logo-wrapper.houzz(target="_blank" href="https://www.houzz.ru/hznb/professionaly/mebely-i-aksessuary/and-ruban-pfvwus-pf~344163869?")
+                        a.section__logo-wrapper(target="_blank" href="https://www.houzz.ru/hznb/professionaly/mebely-i-aksessuary/and-ruban-pfvwus-pf~344163869?")
                             svg(viewBox="0 0 170 39" width="170")
                                 use(xlink:href='./img/sprites/sprite.svg#houzz_logo')
                         .section__logo-button

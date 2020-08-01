@@ -2,7 +2,8 @@
     display: inline-block;
     text-align: center;
     box-sizing: border-box;
-
+    @include xxl(font-size, rem(15));
+    @include sm(font-size, rem(14));
     border: {
         width: rem(1);
         style: solid;
@@ -67,6 +68,7 @@
     }
 
     &_large {
+        @include xxl(padding, rem(15));
         @include sm(padding, rem(15));
         @include sm(font-size, rem(14));
         padding: rem(23) rem(20);
@@ -86,18 +88,20 @@
             height: rem(70);
             padding: rem(18);
             margin-right: rem(20);
-
             border: {
                 width: rem(1);
                 style: solid;
             }
-
             transition: {
                 property: border-color, stroke, background-color;
                 duration: $duration;
+            };
+            @media (max-width: $break_sm) {
+                width: rem(50);
+                height: rem(50);
+                padding: rem(12);
+                margin-right: rem(10);
             }
-
-            ;
         }
     }
 
@@ -127,7 +131,7 @@
                 duration: $duration;
             };
 
-            @media (max-width: $break_sm) {
+            @media (max-width: $break_md) {
                 width: rem(50);
                 height: rem(50);
                 margin-right: rem(10);
@@ -144,7 +148,13 @@
                 color: $primary;
 
                 .btn__icon {
-                    fill: $primary;
+                    fill: $light;
+                    color: $light;
+                }
+                use {
+                    stroke-dashoffset: 1000;
+                    stroke-dasharray: 1227;
+                    transition: stroke-dasharray .3s linear ease-in;
                 }
             }
 
@@ -158,12 +168,18 @@
                 color: $primary;
 
                 .btn__icon {
-                    fill: $primary;
+                    fill: $secondary;
+                    color: $secondary;
+
+                    .section_bg_colored & {
+                        fill: $light;
+                        color: $light;
+                    }
                 }
                 use {
                     stroke-dashoffset: 1000;
                     stroke-dasharray: 1227;
-                    transition: stroke-dasharray 1s linear ease-in;
+                    transition: stroke-dasharray .3s linear ease-in;
                 }
             }
 
@@ -172,7 +188,8 @@
             }
         }
         .btn__title {
-            @include sm(font-size, rem(16));
+            @include md(font-size, rem(16));
+            @include sm(font-size, rem(14));
         }
     }
 

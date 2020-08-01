@@ -64,28 +64,25 @@
         }
     }
 
-    &__form {
-        &-wrapper {
-            display: flex;
-            justify-content: space-between;
-
-            margin: {
-                top: rem(74);
-            }
-
-            ;
-        }
+    &__form-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: {
+            top: rem(74);
+        };
     }
 
-    &__label {
-        &-box {
-            width: calc(50% - 0.9375rem);
+    &__label-box {
+        @include md(width, 100%);
+        @include md(margin-bottom, rem(45));
+        width: calc(50% - 0.9375rem);
+        margin: {
+            bottom: 0;
+        };
 
-            margin: {
-                bottom: 0;
-            }
-
-            ;
+        &:last-of-type {
+            margin-bottom: 0;
         }
     }
 

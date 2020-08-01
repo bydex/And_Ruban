@@ -9,22 +9,21 @@
 
 
     @media (max-width: $break_md) {
-<<<<<<< HEAD
+        position: absolute;
+        left: 0;
+        top: 100%;
         min-width: 100%;
         padding: {
-            top: 0;
+            top: rem(15);
             right: rem(15);
-            bottom: 0;
+            bottom: rem(15);
             left: rem(15);
         }
         margin: 0 auto;
         color: $light;
         background-color: $secondary;
-
-        position: absolute;
         transform: translate(0, rem(32));
         opacity: 0;
-
         transition: {
             property: transform, opacity;
             duration: .3s;
@@ -36,32 +35,29 @@
         display: none;
 
         @media (max-width: $break_md) {
+            br {
+                display: none;
+            }
             display: block;
-            background-color: $secondary;
-            color: $light;
-            text-transform: uppercase;
-
             padding: {
                 top: rem(20);
                 right: rem(15);
                 bottom: rem(20);
                 left: rem(15);
             }
+            margin: {
+                top: 0;
+                bottom: 0;
+            }
+            background-color: $secondary;
+            color: $light;
+            text-transform: uppercase;
+
+            .tabs__wrapper_light & {
+                background-color: $light;
+                color: $secondary;
+            }
         }
-=======
-        width: 100%;
-        padding: {
-            top: rem(15);
-            right: rem(15);
-            bottom: rem(15);
-            left: rem(15);
-        }
-        margin: {
-            bottom: rem(40)
-        };
-        color: $light;
-        background-color: $secondary;
->>>>>>> 8dd13e5b23675198a5112f48ad6b3c1c44e9a0e8
     }
 
     &_col {
@@ -83,42 +79,29 @@
 
         .tabs__item {
             @include md(order, 0 !important);
+            @include md(padding-left, 0);
+            @include md(min-height, 0);
+            @include md(margin-bottom, rem(14));
             padding-left: rem(50);
             min-height: rem(40);
-
             margin: {
                 bottom: rem(20);
             }
 
-            &:nth-child(1) {
-                order: 1;
-            }
-
-            &:nth-child(2) {
-                order: 3;
-            }
-
-            &:nth-child(3) {
-                order: 5;
-            }
-
-            &:nth-child(4) {
-                order: 2;
-            }
-
-            &:nth-child(5) {
-                order: 4;
-            }
-
-            &:nth-child(6) {
-                order: 6;
-            }
+            &:last-of-type { @include md(margin-bottom, 0); }
+            &:nth-child(1) { order: 1; }
+            &:nth-child(2) { order: 3; }
+            &:nth-child(3) { order: 5; }
+            &:nth-child(4) { order: 2; }
+            &:nth-child(5) { order: 4; }
+            &:nth-child(6) { order: 6; }
 
 
             & span {
                 position: relative;
 
                 &:before {
+                    @include md(content, none);
                     counter-increment: tabNumber;
                     content: "0"counter(tabNumber);
                     position: absolute;
@@ -140,61 +123,36 @@
     }
 
     &__item {
-        @media (max-width: $break_md) {
-<<<<<<< HEAD
-            width: 100%;
-=======
-            display: none;
-            white-space: nowrap;
-        }
-
-        &_active {
-            @media (max-width: $break_md) {
-                display: block;
-                width: 100%;
-                margin-top: 0 !important;
-                margin-bottom: 0 !important;
-
-                &:nth-child(2) {
-                    margin-top: rem(21);
-                }
-
-                &:not(:first-of-type):not(:last-of-type) {
-                    margin-bottom: rem(15);
-                }
-            }
-
->>>>>>> 8dd13e5b23675198a5112f48ad6b3c1c44e9a0e8
-        }
-
         right: rem(20);
-
         margin: {
             bottom: rem(14);
             left: rem(20);
         }
-
-        @media (max-width: $break_md) {
-            margin: {
-                left: 0;
-                right: 0;
-            }
-        }
-
         text-transform: uppercase;
         font-weight: 300;
         cursor: pointer;
-
         transition: {
             property: color;
             duration: $duration;
-        }
-
-        ;
+        };
 
         span {
             padding: {
                 bottom: rem(3);
+            }
+        }
+        body #fullpage & {
+            @media (max-width: $break_md) {
+                width: 100% !important;
+            }
+        }
+        &:hover {
+            @include md(text-decoration, underline);
+        }
+        @media (max-width: $break_md) {
+            margin: {
+                left: 0;
+                right: 0;
             }
         }
     }
@@ -205,7 +163,6 @@
         left: 0;
         height: rem(4);
         background-color: $primary;
-
         transition: {
             property: width, transform;
             duration: $duration;
@@ -234,35 +191,47 @@
 
         @media (max-width: $break_md) {
             position: relative;
-
+            width: 100%;
             margin: {
-                left: rem(-15);
-                right: rem(-15);
                 bottom: rem(40)
             }
 
             .hamburger {
                 position: absolute;
                 right: rem(15);
-                top: rem(8);
+                top: 50%;
                 left: auto;
-
+                transform: translateY(-50%);
                 span {
                     background-color: $light;
+
+                    .tabs__wrapper_light & {
+                        background-color: $secondary;
+                    }
                 }
             }
 
             &_active {
                 .tabs {
-                    transform: translate(0, rem(-16));
+                    transform: translate(0, 0);
                     opacity: 1;
-
                     transition: {
                         property: transform, opacity;
                         duration: .3s;
                         timing-function: linear;
                     }
                     pointer-events: inherit;
+                }
+            }
+            &_light {
+                .hamburger {
+                    span, span:before {
+                        background-color: $secondary;
+                    }
+                }
+                .tabs {
+                    color: $secondary;
+                    background-color: $light;
                 }
             }
         }

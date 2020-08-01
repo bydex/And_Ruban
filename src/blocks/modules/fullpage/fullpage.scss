@@ -11,6 +11,9 @@
         }
     }
 
+    > .swiper-wrapper {
+        @include md(display, block);
+    }
     &__control {
         @include containerFull();
         position: fixed;
@@ -52,7 +55,11 @@
         stroke: $dark;
 
         .fullpage_theme_light & {
-            stroke: $light;
+            .arrow div {
+                &, &:after, &:before {
+                    background-color: $light;
+                }
+            }
         }
 
         &_up {

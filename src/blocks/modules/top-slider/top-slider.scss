@@ -44,7 +44,7 @@
         }
     }
     &__slider {
-        @media (max-height: $vertical_md), (max-width: $break_md) {
+        @media (max-width: $break_md) {
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
@@ -61,11 +61,28 @@
         display: flex;
         width: fit-content;
         margin-bottom: rem(25);
+        @media (max-width: $break_md) {
+            position: absolute !important;
+            top: calc(100%);
+            left: 0;
+            justify-content: center;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 40px;
+            margin-bottom: 0;
+            opacity: 0;
+            visibility: hidden;
+
+            .watch-original & {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
     }
     &__pagination {
+        @include md(width, auto);
         margin-left: rem(15);
         margin-right: rem(15);
-
         transition: {
             property: color;
             duration: $duration;
@@ -84,7 +101,8 @@
     }
     &__arrow {
         &_prev, &_next {
-
+            @include md(cursor, default);
+            @include md(outline, none !important);
         }
     }
 

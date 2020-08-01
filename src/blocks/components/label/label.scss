@@ -14,7 +14,12 @@
         font-size: rem(12);
         color: $light;
         background-color: transparent;
-        border-bottom: rem(2) solid #eceff1;
+        border-bottom: {
+            width: 2px;
+            style: solid;
+            color: #eceff1;
+        }
+        border-radius: 0;
         outline: none;
         line-height: 0.9;
         padding-bottom: rem(11);

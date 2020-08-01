@@ -125,6 +125,7 @@ $cardHeight_md: 230;
         }
     }
     &__mini-slider {
+        @include md(margin-top, rem(0));
         margin-top: rem(55);
     }
     // width: col(5.5);
@@ -147,8 +148,7 @@ $cardHeight_md: 230;
                 }
             }
             .card__inner {
-                padding-top: calc(83.33vh / 2);
-                padding-top: calc(var(--vh, 1vh) * 83.33 / 2);
+                padding-top: rem($cardHeight / 2);
 
                 @media (max-height: $vertical_xl), (max-width: $break_xl) {
                     margin-top: rem(-$cardHeight_xl / 2);
@@ -172,6 +172,8 @@ $cardHeight_md: 230;
                 margin-top: rem(-150);
             }
             @include md(margin-top, 0);
+            @include md(margin-left, rem(-15));
+            @include md(margin-right, rem(-15));
             .card__title {
                 &:after {
                     height: 0;
@@ -201,6 +203,8 @@ $cardHeight_md: 230;
             }
             @include md(margin-top, 0);
             @include md(top, 0);
+            @include md(margin-left, rem(-15));
+            @include md(margin-right, rem(-15));
 
             .card__title {
                 &:after {

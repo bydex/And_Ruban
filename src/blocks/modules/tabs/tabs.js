@@ -12,15 +12,36 @@ const setUnderline = (element, underline) => {
         top         = rem(positions.top + element.offsetHeight);
     underline.style.width       = rem(element.offsetWidth);
     underline.style.transform   = `translate(${left},${top})`;
+}, setTabTitle = (tab) => {
+    const tabsTitle = tab.previousElementSibling,
+        activeText  = tab.querySelector('.tabs__item_active').textContent,
+        wrapper     = tab.closest('.tabs__wrapper'),
+        hamburger   = wrapper.querySelector('.hamburger_tabs');
+
+    tabsTitle.textContent = activeText;
+    hamburger.classList.remove('hamburger_active');
+    wrapper.classList.remove('tabs__wrapper_active');
 };
 tabs.forEach((el) => {
-    const tab       = el.querySelectorAll("[data-tabs-item]"),
-          underline = el.querySelector("[data-tabs-underline]");
+    const tab           = el.querySelectorAll("[data-tabs-item]"),
+          underline     = el.querySelector("[data-tabs-underline]"),
+          tabWrapper    = el.closest('.tabs__wrapper'),
+          tabsHamburger = tabWrapper.querySelector('.hamburger_tabs');
 
+    tabsHamburger.addEventListener('click', () => {
+        tabWrapper.classList.toggle('tabs__wrapper_active');
+        if (tabsHamburger.classList.contains('hamburger_active')) {
+            tabsHamburger.classList.remove('hamburger_active');
+        } else {
+            tabsHamburger.classList.add('hamburger_active');
+        }
+    });
     const setOnLoad = () => {
+        let element = el.querySelector(".tabs__item_active [data-tabs-item]");
         if (el.querySelector('.tabs__item_active')) {
-            let element = el.querySelector(".tabs__item_active [data-tabs-item]");
+
             setUnderline(element, underline);
+            setTabTitle(el, element, tabsHamburger);
         };
     }
     window.addEventListener('resize orientationchange', setOnLoad);
@@ -33,17 +54,19 @@ tabs.forEach((el) => {
             Array.from(thistab.parentNode.children).forEach((elchild) => {
                 if (elchild.classList.contains('tabs__item_active')) {
                     elchild.classList.remove("tabs__item_active");
-                 }
+                }
             })
             thistab.classList.add("tabs__item_active");
+            setTabTitle(el, thistab, tabsHamburger);
         })
     })
 })
 
-const tabsTitle = document.querySelectorAll('.tabs__title');
 
-tabsTitle.forEach(el => {
-    el.innerHTML = el.nextElementSibling.querySelectorAll('li')[0].querySelector('span').innerHTML;
-});
 
-export default setUnderline;
+const cardMethods = {
+    setUnderline: setUnderline,
+    setTabTitle: setTabTitle
+}
+
+export default cardMethods;

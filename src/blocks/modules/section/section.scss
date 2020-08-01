@@ -99,6 +99,7 @@
         };
     }
     &__btn {
+        position: relative;
         z-index:10;
         @include col();
         @include size(4);
@@ -197,7 +198,7 @@
         &_colored {
             .top-slider {
                 color: $light;
-                @media (max-height: $vertical_md), (max-width: $break_md) {
+                @media (max-width: $break_md) {
                     color: $secondary;
                 }
 
@@ -221,7 +222,7 @@
                             stroke: $secondary;
                         }
                     }
-                    @media (max-height: $vertical_md), (max-width: $break_md) {
+                    @media (max-width: $break_md) {
                         color: $primary;
                         .btn__icon {
                             border-color: $primary;
@@ -236,6 +237,8 @@
                 }
                 &__arrow {
                     &_prev, &_next {
+                        @include md(cursor, default);
+                        @include md(outline, none !important);
                         svg {
                             stroke: $light;
                         }
@@ -274,17 +277,27 @@
     }
     &_create {
         &.section_bg_colored {
+            .top-slider {
+                .arrow div {
+                    &, &:after, &:before {
+                        background-color: $light;
+                    }
+                    @media (max-width: $break_md) {
+                        background-color: $secondary;
+                    }
+                }
+            }
             @media (max-width: $break_xl) {
                 .card__wrapper {
                     color: $light;
-                    @media (max-height: $vertical_md), (max-width: $break_md) {
+                    @media (max-width: $break_md) {
                         color: $secondary;
                     }
                 }
 
-                .arrow-h {
+                .arrow {
                     stroke: $light;
-                    @media (max-height: $vertical_md), (max-width: $break_md) {
+                    @media (max-width: $break_md) {
                         stroke: $secondary;
                     }
                 }
@@ -296,7 +309,7 @@
             }
         }
         .section__col {
-            @media (max-width: $break_md), (max-height: $vertical_md) {
+            @media (max-width: $break_md) {
                 @include size(12);
                 margin-top: 0;
             }
@@ -345,8 +358,17 @@
             }
         }
         .section__row {
-            @media (max-height: $vertical_md), (max-width: $break_md) {
+            @media (max-width: $break_md) {
                 flex-direction: column-reverse;
+            }
+        }
+        .tabs__wrapper {
+            @media (max-width: $break_md) {
+                width: auto;
+                margin: {
+                    left: rem(-15);
+                    right: rem(-15);
+                }
             }
         }
     }
@@ -354,7 +376,7 @@
         .section__title {
             @include col();
             @include size(6);
-            @include size-sm(12);
+            @include size-xxl(12);
             margin-bottom: rem(30);
         }
         .section__wrapper {
@@ -367,6 +389,7 @@
             @include size-lg(7);
             @include size-md(8);
             @include size-sm(12);
+            @include xl(margin-bottom, rem(20));
             @include sm(margin-bottom, rem(15));
         }
     }
@@ -386,19 +409,26 @@
                 margin-right: rem(-30);
             }
         }
+        .tabs__wrapper {
+            @include col();
+            @include md(margin-left, 0);
+            @include md(margin-right, 0);
+        }
         .section__tabs {
-            margin: {
-                right: rem(-5);
-                left: rem(-5);
+            @media (max-width: $break_md) {
+                margin: {
+                    right: rem(0);
+                    left: rem(0);
+                }
             }
         }
         &.section_bg_colored {
             .section__col_right {
                 color: $light;
             }
-            .btn__icon {
-                fill: $light;
-            }
+            // .btn__icon {
+            //     fill: $light;
+            // }
         }
         .section__col {
             @include size-md(12);
@@ -433,6 +463,9 @@
         }
     }
     &_progress {
+        .scool {
+            @include xxl(max-width, rem(100));
+        }
         .section__description {
             @include shift-left(-2);
             @include shift-md-left(0);
@@ -470,7 +503,7 @@
         .section__col_right {
             margin-top: rem(70);
             @media (max-height: $vertical_xl), (max-width: $break_xl) {
-                margin-top: rem(30);
+                margin-top: rem(20);
             }
         }
         .section__col {
@@ -478,6 +511,15 @@
         }
     }
     &_and-ruban {
+        .tabs__wrapper {
+            @media (max-width: $break_md) {
+                width: auto;
+                margin: {
+                    left: rem(-15);
+                    right: rem(-15);
+                }
+            }
+        }
         .section__wrapper {
             max-height: none;
         }
@@ -497,6 +539,7 @@
             margin-bottom: auto;
         }
         .section__title {
+            @include xxl(margin-bottom, rem(30));
             @include md(margin-bottom, rem(25));
             margin-bottom: rem(55);
 
@@ -510,6 +553,7 @@
             margin-bottom: rem(25);
         }
         .swiper-container {
+            @include xxl(margin-bottom, rem(25));
             margin-bottom: rem(45);
 
             .p {
@@ -530,9 +574,19 @@
             margin-bottom: calc(83.33vh / 5 * -1);
             margin-bottom: calc(var(--vh, 1vh) * 83.33 / 5 * -1);
         }
+        .btn_play {
+            color: $light;
+
+            &:hover {
+                .btn__icon {
+                    color: $light !important;
+                }
+            }
+        }
     }
     &_feedback {
         .section__title {
+            @include xxl(margin-bottom, rem(20));
             @include sm(margin-bottom, rem(15));
         }
         .section__description {
@@ -549,6 +603,7 @@
 
             &__item {
                 @include col();
+                @include md(margin-bottom, rem(10));
             }
         }
         .section__form-row {
@@ -557,11 +612,14 @@
         .section__form-col {
             @include col();
             @include size(6);
+            @include size-md(12);
             margin-bottom: rem(40);
         }
         .section__form-btn {
             @include col();
             @include size(8);
+            @include size-md(12);
+            @include md(margin-top, rem(35));
         }
         .section__row {
             justify-content: center;
@@ -580,9 +638,11 @@
         }
         .section__bg-wrapper_bottom {
             @include md(bottom, rem(92));
+            @include md(height, rem(435));
             bottom: rem(123);
         }
         .section__col_right {
+            @include xxl(margin-top, rem(40));
             @include size-lg(8);
             @include size-md(10);
             @include size-sm(12);
@@ -592,15 +652,28 @@
     &__bests {
         @include row-flex();
         margin-bottom: rem(40);
-        @media (max-height: $vertical_xl), (max-width: $break_xl) {
-            margin-bottom: rem(15);
+        @media (max-height: $vertical_xxl), (max-width: $break_xxl) {
+            margin-bottom: rem(10);
+        }
+        @media (max-width: rem(420)) {
+            justify-content: space-between;
+            margin: {
+                right: rem(-8);
+                left: rem(-8);
+            };
         }
     }
     &__best {
         @include col();
         width: rem(70);
         @media (max-height: $vertical_xl), (max-width: $break_xl) {
-            width: rem(50);
+            width: rem(45);
+        }
+        @media (max-width: rem(420)) {
+            margin: {
+                right: rem(8);
+                left: rem(8);
+            };
         }
     }
     &__ticker {
@@ -625,7 +698,14 @@
     &__logos {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        width: calc(100% - #{rem(16)});
+        @media (max-width: rem(420)) {
+            justify-content: space-between;
+            margin: {
+                right: rem(8);
+                left: rem(8);
+            };
+        }
         svg {
             @include col();
             // @include size(3);
@@ -636,6 +716,16 @@
             };
             @media (max-height: $vertical_xl), (max-width: $break_xl) {
                 height: rem(25);
+                margin: {
+                    top: rem(12);
+                    bottom: rem(12);
+                }
+            }
+            @media (max-width: $break_md) {
+                margin: {
+                    right: rem(8);
+                    left: rem(8);
+                };
             }
         }
     }
@@ -646,6 +736,15 @@
     &__logo-wrapper {
         @include col();
         @include size(4);
+        @include size-md(6);
+        @include md(margin-bottom, rem(15));
+
+        svg {
+            max-width: 100%;
+        }
+        &:hover {
+            color: $green;
+        }
     }
     &__logo-button {
         @include col();

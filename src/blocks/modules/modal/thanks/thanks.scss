@@ -2,6 +2,7 @@
 
     @include col();
     @include size(6);
+    @include size-md(12);
     display: none;
     visibility: hidden;
     opacity: 0;

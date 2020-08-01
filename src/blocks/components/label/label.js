@@ -67,9 +67,10 @@ let slicePhone = (val) => {
     }
 };
 const isTel = (tel) => {
-    if (slicePhone(tel.value).length === 16) {
+    if (slicePhone(tel.value).length === 16)
         return true;
-    } else return false;
+    else
+        return false;
 }
 const validationName = input => {
     const val = input.value;
@@ -111,7 +112,7 @@ forms.forEach((el) => {
         }
 
 
-        fetch("api/SampleData", {
+        fetch("mail.php", {
           body: formData,
           method: "post",
         }).then(function() {

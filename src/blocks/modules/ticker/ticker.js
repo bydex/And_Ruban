@@ -8,6 +8,6 @@ new Swiper(".ticker", {
     autoplay: {
         delay: 0,
     },
-    speed: 10000,
+    speed: 25000,
     allowTouchMove: false,
 });

@@ -6,20 +6,20 @@ const overlayOpen = (original) => {
         let overlay = siteOverlay;
         if (original === true) overlay = document.querySelector('.overlay_original');
         overlay.classList.add("overlay_active");
-        document.body.classList.add('is-overlay');
+        document.querySelector('html').classList.add('is-overlay');
     },
     overlayClose = (original) => {
         let overlay = siteOverlay;
         if (original === true) overlay = document.querySelector('.overlay_original');
         overlay.classList.remove("overlay_active");
-        document.body.classList.remove('is-overlay');
+        document.querySelector('html').classList.remove('is-overlay');
     };
 
-const callModal = document.querySelectorAll('[data-modal]'),
-    modalContents = document.querySelectorAll('.modal-content');
+const callModal     = document.querySelectorAll('[data-modal]'),
+    modalContents   = document.querySelectorAll('.modal-content');
 
-const modal = document.querySelector(".modal"),
-    hamburger = document.querySelector(".hamburger_main");
+const modal     = document.querySelector(".modal"),
+    hamburger   = document.querySelector(".hamburger_main");
 
 const hamburgerOpen = () => {
         hamburger.classList.add("hamburger_active");
@@ -55,19 +55,20 @@ const modalSectionTo = (className) => {
     modalActive.classList.add('modal_active');
 
     if (className === 'request') {
-        const catalog = document.querySelector('#create'),
+        if (!document.querySelector('#create')) window.location = '/';
+        const catalog       = document.querySelector('#create'),
             activeCardSlide = catalog.querySelector('.card__wrapper .swiper-slide-active'),
-            activeBgSlide = catalog.querySelector('.section__bg-wrapper .swiper-slide-active'),
-            catalogTitle = activeCardSlide.querySelector('[data-title]').innerText,
-            catalogPrice = activeCardSlide.querySelector('[data-price]').innerText,
-            catalogImage = {
+            activeBgSlide   = catalog.querySelector('.section__bg-wrapper .swiper-slide-active'),
+            catalogTitle    = activeCardSlide.querySelector('[data-title]').innerText,
+            catalogPrice    = activeCardSlide.querySelector('[data-price]').innerText,
+            catalogImage    = {
                 webp: activeBgSlide.querySelector('source').getAttribute('srcset'),
                 normal: activeBgSlide.querySelector('img').getAttribute('src'),
             };
 
-        const modalTitle = modalActive.querySelector('[data-title]'),
-            modalPrice = modalActive.querySelector('[data-price]'),
-            modalImage = {
+        const modalTitle    = modalActive.querySelector('[data-title]'),
+            modalPrice      = modalActive.querySelector('[data-price]'),
+            modalImage      = {
                 webp: modalActive.querySelector('.request__image').previousSibling,
                 normal: modalActive.querySelector('.request__image'),
             };
@@ -79,6 +80,8 @@ const modalSectionTo = (className) => {
     }
     modalScroll.update();
 }
+
+
 
 const modalSectionLinks = document.querySelectorAll('[data-modal-section]');
 
@@ -133,30 +136,3 @@ let burger = {
     hamburger: hamburger,
 };
 export default burger;
-
-
-const tabs = document.querySelectorAll('.tabs');
-
-tabs.forEach((tab) => {
-    const tabsHamburger = tab.querySelector('.hamburger_tabs'),
-            tabsItems = tab.querySelectorAll('.tabs__item');
-
-    tabsHamburger && tabsHamburger.addEventListener('click', () => {
-        tabs[0].parentElement.classList.toggle('tabs__active');
-        if (tabsHamburger.classList.contains('hamburger_active')) {
-            tabsHamburger.classList.remove('hamburger_active');
-            tabsItems.forEach((el, i) => {
-                if (i !== 0) {
-                    el.classList.remove('tabs__item_active');
-                }
-            });
-        } else {
-            tabsHamburger.classList.add('hamburger_active');
-            tabsItems.forEach((el, i) => {
-                if (i !== 0) {
-                    el.classList.add('tabs__item_active');
-                }
-            });
-        }
-    });
-})

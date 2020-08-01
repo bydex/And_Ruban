@@ -25,4 +25,10 @@
     &__description {
         line-height: 156%;
     }
+    &__arrow {
+        &_next, &_prev {
+            @include md(cursor, default);
+            @include md(outline, none !important);
+        }
+    }
 }

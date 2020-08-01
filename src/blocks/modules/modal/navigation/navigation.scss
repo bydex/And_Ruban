@@ -1,10 +1,11 @@
 .navigation {
     @include col();
     @include size(6);
+    @include size-md(12);
     @media (max-height: $vertical_xl), (max-width: $break_xl) {
         margin-top: rem(100);
     }
-    @media (max-height: $vertical_md), (max-width: $break_md) {
+    @media (max-width: $break_md) {
         margin-top: rem(50);
     }
     display: none;
@@ -19,7 +20,7 @@
     &__list {
         &-item {
             @include md(margin-bottom, rem(35));
-            display: inline-block;
+            display: block;
             margin: {
                 bottom: rem(50);
             };

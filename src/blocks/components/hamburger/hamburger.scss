@@ -42,7 +42,7 @@
 
     &_tabs {
         display: none;
-        @media (max-width: $break_md), (max-height: $vertical_md) {
+        @media (max-width: $break_md) {
             display: block;
         }
     }
@@ -129,6 +129,7 @@
     }
     &_original {
         @include md(position, fixed);
+        @include md(height, 100%);
         position: absolute;
         z-index: 500;
     }

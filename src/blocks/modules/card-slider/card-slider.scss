@@ -19,9 +19,20 @@
         margin-bottom: rem(30);
     }
     &__control {
+        @include md(cursor, default);
+        @include md(outline, none !important);
         position: absolute;
         z-index: 1;
         top: 0;
-        right: 0;
+        right: rem(6);
+        padding: {
+            top: rem(6);
+            bottom: rem(6);
+        }
+        cursor: pointer;
+    }
+    &__arrow {
+        @include md(cursor, default);
+        @include md(outline, none !important);
     }
 }

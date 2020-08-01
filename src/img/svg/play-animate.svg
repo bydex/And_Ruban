@@ -6,13 +6,13 @@
 	.st0{fill:none;stroke-width:2;stroke-miterlimit:10;}
 </style>
 <g id="Layer_1" fill="transparent">
-	<path class="st0" d="M37,1C17.1,1,1,17.1,1,37s16.1,36,36,36c19.9,0,36-16.1,36-36S56.9,1,37,1z" stroke="#fff" stroke-dasharray="1227" stroke-dashoffset="1000"/>
+	<path class="st0" d="M37,1C17.1,1,1,17.1,1,37s16.1,36,36,36c19.9,0,36-16.1,36-36S56.9,1,37,1z" stroke="currentColor" stroke-dasharray="1227" stroke-dashoffset="1000"/>
 </g>
 <g id="Layer_2" fill="transparent">
 	<path class="st0" d="M37,1C17.1,1,1,17.1,1,37s16.1,36,36,36c19.9,0,36-16.1,36-36S56.9,1,37,1z" stroke="#870AB7"/>
 </g>
 <g id="Layer_3" fill="transparent">
-	<path class="st0" stroke="#fff" d="M29.5,22.3v29.4L55,37L29.5,22.3z" stroke-dasharray="1227" stroke-dashoffset="1000"/>
+	<path class="st0" stroke="currentColor" d="M29.5,22.3v29.4L55,37L29.5,22.3z" stroke-dasharray="1227" stroke-dashoffset="1000"/>
 </g>
 <g id="Layer_3" fill="transparent">
 	<path class="st0" stroke="#870AB7" d="M29.5,22.3v29.4L55,37L29.5,22.3z"/>

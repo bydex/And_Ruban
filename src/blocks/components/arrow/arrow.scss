@@ -1,8 +1,14 @@
 .arrow {
+    @include md(cursor, default);
+    @include md(outline, none !important);
     cursor: pointer;
     position: relative;
     width: rem(30);
     height: rem(7);
+    margin: {
+        right: rem(5);
+        left: rem(5);
+    }
 }
 
 .arrow div {
@@ -48,17 +54,17 @@
     transform: rotate(-45deg);
 }
 
-.arrow:hover {
+.arrow:hover, .arrow-wrapper:hover .arrow {
     div {
         width: rem(40);
-        background-color: $primary;
+        background-color: $primary !important;
         transition-property: width, background-color;
         transition-duration: .3s;
         transition-timing-function: linear;
 
         &:before,
         &:after {
-            background-color: $primary;
+            background-color: $primary !important;
             transition-property: width, background-color;
             transition-duration: .3s;
             transition-timing-function: linear;

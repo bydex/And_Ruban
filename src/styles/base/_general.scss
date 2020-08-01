@@ -59,8 +59,22 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    @media (max-width: $break_md) {
+        position: static;
+        height: auto;
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
 body,
 html {
+    @media (max-width: $break_md) {
+        overflow-y: auto;
+    }
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -70,6 +84,21 @@ html {
 .js-Dropdown-title {
     font-family: 'Montserrat', sans-serif;
 }
+.js-Dropdown-list {
+    display: block;
+    opacity: 0;
+    transform: translateY(rem(30));
+    pointer-events: none;
+    transition: {
+        property: transform, opacity;
+        duration: $duration;
+    };
+
+    &.is-open {
+        transform: translateY(rem(0));
+        pointer-events: all;
+    }
+}
 *,
 *:before,
 *:after {
@@ -78,13 +107,13 @@ html {
 
 
 .h1 {
-    @media (max-width: $break_xl), (max-height: $vertical_xl) {
+    @media (max-width: $break_xxl), (max-height: $vertical_xxl) {
         font-size: rem(120);
     }
-    @media (max-width: $break_lg), (max-height: $vertical_lg) {
-        font-size: rem(100);
+    @media (max-width: $break_xxl), (max-height: $vertical_xxl) {
+        font-size: rem(90);
     }
-    @media (max-width: $break_md), (max-height: $vertical_md) {
+    @media (max-width: $break_md) {
         font-size: rem(80);
     }
     @media (max-width: $break_sm), (max-height: $vertical_sm) {
@@ -107,9 +136,13 @@ html {
 
     @media (max-width: $break_xxl) {
         font-size: rem(67);
+
+        .section & br {
+            display: none;
+        }
     }
 
-    @media (max-width: $break_xl), (max-height: $vertical_xl) {
+    @media (max-width: $break_xxl), (max-height: $vertical_xxl) {
         font-size: rem(60);
     }
 
@@ -117,7 +150,7 @@ html {
         font-size: rem(49);
     }
 
-    @media (max-width: $break_md), (max-height: $vertical_md) {
+    @media (max-width: $break_md) {
         font-size: rem(36);
     }
 
@@ -129,9 +162,10 @@ html {
 .h3 {
     font-size: rem($h3);
 
-    @media (max-width: $break_xl), (max-height: $vertical_xl) {
+    @media (max-width: $break_xxl), (max-height: $vertical_xxl) {
         font-size: rem(28);
     }
+    @include md(font-size, rem(20));
 }
 
 .h4 {
@@ -165,7 +199,7 @@ html {
         font-size: rem(14);
     }
 
-    @media (max-width: $break_md), (max-height: $vertical_md) {
+    @media (max-width: $break_md) {
         font-size: rem(13);
     }
 
@@ -202,7 +236,7 @@ html {
 }
 
 #fullpage {
-    height: 100vh;
+    height: 100%;
 }
 
 
@@ -448,6 +482,9 @@ html {
 }
 
 .is-overlay {
+    &, & body, #fullpage > .swiper-wrapper {
+        @include md(overflow, hidden !important);
+    }
     .fullpage__control-inner {
         opacity: 0;
         visibility: hidden;
@@ -457,11 +494,16 @@ html {
 
 .watch-original {
     .section_create {
+        z-index: 9999;
         .top-slider__control {
+            position: relative;
+            z-index: 9999;
             color: $light;
 
-            svg {
-                stroke: $light;
+            .arrow div {
+                &, &:after, &:before {
+                    background-color: $light;
+                }
             }
         }
 
@@ -570,4 +612,10 @@ html {
     &:hover {
         color: $green;
     }
+}
+
+
+
+video {
+    object-fit: cover;
 }

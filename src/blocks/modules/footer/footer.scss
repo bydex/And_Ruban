@@ -69,6 +69,7 @@
 
     &__proseo {
         @include sm(width, rem(70));
+        @include sm(margin-left, rem(10));
         width: rem(101);
         height: rem(43);
         margin-left: rem(18);
@@ -79,10 +80,7 @@
         font-size: rem(15);
 
         @media (max-width: $break_md) {
-            font-size: rem(13);
-        }
-        @media (max-width: $break_md) {
-            font-size: rem(10);
+            font-size: rem(11) !important;
         }
     }
 
