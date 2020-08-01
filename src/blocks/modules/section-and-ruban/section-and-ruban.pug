@@ -37,7 +37,7 @@ section.section.section_dark.swiper-slide(id="and-ruban" class=`section_and-ruba
 
             .section__col.section__col_left
                 .card.card_right.card_bottom_30
-                    .card__inner.swiper-lazy(style="background-image: url(./img/card-img-and-ruban.jpg)")
+                    .card__inner(style="background-image: url(./img/card-img-and-ruban.jpg)")
                         .card__title andruban — мебель  иных реальностей
                         .card__wrapper
                             button.btn.btn_transparent_primary.btn_play.btn_play_dark
@@ -46,7 +46,7 @@ section.section.section_dark.swiper-slide(id="and-ruban" class=`section_and-ruba
     .section__bg-wrapper.section__bg-wrapper_center
         .section__bg-inner.swiper-wrapper
             picture.section__bg.section__bg_grayscale.section__bg_left.section__bg_top.dark-mask
-                source.swiper-lazy(data-srcset=`./img/section-and-ruban.webp` type="image/webp")
-                img.swiper-lazy(data-src=`./img/section-and-ruban.jpg` alt="")
+                source(srcset=`./img/section-and-ruban.webp` type="image/webp")
+                img(src=`./img/section-and-ruban.jpg` alt="")
             //- .section__bg
             //-     <iframe src="https://player.vimeo.com/video/203703152" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
